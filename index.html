@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LiveIntel — AI-powered cybersecurity product suite covering phishing detection, security awareness training, password management, and secret storage." />
+  <meta name="description" content="LiveIntel — AI-powered cybersecurity product suite covering phishing detection, URL safety, security awareness training, password management, and secret storage." />
   <title>LiveIntel | Cybersecurity Product Suite</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -84,11 +84,11 @@
               <span class="terminal-title">liveintel — threat-cli v2.0</span>
             </div>
             <div class="terminal-body" aria-hidden="true">
-              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishguard analyze --email suspicious.eml</span></div>
+              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishcheck analyze --email suspicious.eml</span></div>
               <div class="terminal-line"><span class="t-out t-ok">✔ Header analysis       PASS</span></div>
               <div class="terminal-line"><span class="t-out t-warn">⚠ Phishing link         DETECTED (3)</span></div>
               <div class="terminal-line"><span class="t-out t-err">✖ Domain intelligence   FLAGGED</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">passcheck score --pwd "P@ssw0rd!"</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">passmeter score --pwd "P@ssw0rd!"</span></div>
               <div class="terminal-line"><span class="t-out t-warn">⚠ Entropy: 42 bits — Weak</span></div>
               <div class="terminal-line"><span class="t-out t-err">✖ Dictionary match:     YES</span></div>
               <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">vault get --id sec_db_prod</span></div>
@@ -109,7 +109,7 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">5</div>
+          <div class="stat-number">6</div>
           <div class="stat-label">Security Products</div>
         </div>
         <div class="stat-item">
@@ -141,13 +141,13 @@
 
       <div class="products-grid">
 
-        <!-- PhishGuard -->
+        <!-- PhishCheck -->
         <article class="product-card fade-in" aria-labelledby="pg-name">
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <span class="badge badge-blue">Threat Detection</span>
-          <h3 class="product-card-name" id="pg-name">LiveIntel PhishGuard</h3>
+          <h3 class="product-card-name" id="pg-name">LiveIntel PhishCheck</h3>
           <p class="product-card-purpose">Phishing detection and analysis</p>
           <p class="product-card-desc">Email phishing detection and analysis engine.</p>
           <ul class="func-list" aria-label="Features">
@@ -157,7 +157,7 @@
             <li class="func-tag">attachment risk scoring</li>
             <li class="func-tag">domain intelligence</li>
           </ul>
-          <a href="products/phishguard.html" class="product-card-link" aria-label="Learn more about PhishGuard">
+          <a href="products/phishcheck.html" class="product-card-link" aria-label="Learn more about PhishCheck">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -183,6 +183,27 @@
           </a>
         </article>
 
+        <!-- SafeLink -->
+        <article class="product-card fade-in" aria-labelledby="sl-name">
+          <div class="product-card-icon icon-blue" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <span class="badge badge-blue">URL Safety</span>
+          <h3 class="product-card-name" id="sl-name">LiveIntel SafeLink</h3>
+          <p class="product-card-purpose">URL safety scanning</p>
+          <p class="product-card-desc">Real-time URL safety scanning and malicious link detection.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">URL reputation check</li>
+            <li class="func-tag">real-time link scanning</li>
+            <li class="func-tag">phishing site detection</li>
+            <li class="func-tag">malware URL detection</li>
+            <li class="func-tag">link preview</li>
+          </ul>
+          <a href="products/safelink.html" class="product-card-link" aria-label="Learn more about SafeLink">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
         <!-- PassForge -->
         <article class="product-card fade-in" aria-labelledby="pf-name">
           <div class="product-card-icon icon-green" aria-hidden="true">
@@ -203,13 +224,13 @@
           </a>
         </article>
 
-        <!-- PassCheck -->
+        <!-- PassMeter -->
         <article class="product-card fade-in" aria-labelledby="pc-name">
           <div class="product-card-icon icon-yellow" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <span class="badge badge-yellow">Strength Analysis</span>
-          <h3 class="product-card-name" id="pc-name">LiveIntel PassCheck</h3>
+          <h3 class="product-card-name" id="pc-name">LiveIntel PassMeter</h3>
           <p class="product-card-purpose">Password strength analysis</p>
           <p class="product-card-desc">Password and passphrase strength evaluation.</p>
           <ul class="func-list" aria-label="Features">
@@ -218,7 +239,7 @@
             <li class="func-tag">pattern weakness</li>
             <li class="func-tag">breach exposure</li>
           </ul>
-          <a href="products/passcheck.html" class="product-card-link" aria-label="Learn more about PassCheck">
+          <a href="products/passmeter.html" class="product-card-link" aria-label="Learn more about PassMeter">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -264,9 +285,10 @@
             combining real-world threat data with developer-friendly APIs.
           </p>
           <p style="color:var(--clr-text-muted);">
-            Whether you're protecting inboxes from phishing with <strong style="color:var(--clr-text)">PhishGuard</strong>,
-            training employees via <strong style="color:var(--clr-text)">PhishSim</strong>, generating strong credentials
-            with <strong style="color:var(--clr-text)">PassForge</strong>, verifying them with <strong style="color:var(--clr-text)">PassCheck</strong>,
+            Whether you're protecting inboxes from phishing with <strong style="color:var(--clr-text)">PhishCheck</strong>,
+            training employees via <strong style="color:var(--clr-text)">PhishSim</strong>, scanning links with
+            <strong style="color:var(--clr-text)">SafeLink</strong>, generating strong credentials
+            with <strong style="color:var(--clr-text)">PassForge</strong>, verifying them with <strong style="color:var(--clr-text)">PassMeter</strong>,
             or locking down secrets inside <strong style="color:var(--clr-text)">Vault</strong> — LiveIntel has you covered.
           </p>
         </div>
@@ -329,10 +351,11 @@
       <nav aria-label="Products footer links">
         <h3 class="footer-col-title">Products</h3>
         <ul class="footer-links" role="list">
-          <li><a href="products/phishguard.html">PhishGuard</a></li>
+          <li><a href="products/phishcheck.html">PhishCheck</a></li>
           <li><a href="products/phishsim.html">PhishSim</a></li>
+          <li><a href="products/safelink.html">SafeLink</a></li>
           <li><a href="products/passforge.html">PassForge</a></li>
-          <li><a href="products/passcheck.html">PassCheck</a></li>
+          <li><a href="products/passmeter.html">PassMeter</a></li>
           <li><a href="products/vault.html">Vault</a></li>
         </ul>
       </nav>
