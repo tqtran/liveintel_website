@@ -1,0 +1,50 @@
+# ==============================================================
+# LiveIntel — www/ Public Web Root .htaccess
+#
+# Purpose:
+#   1. Force HTTPS — redirect any plain-HTTP request to HTTPS.
+#   2. Force the www. subdomain — redirect bare-domain requests
+#      to https://www.<domain>/ (canonical-www).
+#   3. Front-controller routing — pass all requests that do
+#      not map to a real file or directory through index.php.
+#   4. Set security response headers.
+# ==============================================================
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── 1. Force HTTPS ─────────────────────────────────────────
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ── 2. Force www. subdomain ────────────────────────────────
+  # Matches hosts that do NOT begin with the literal string
+  # "www." (anchored at start with ^, dot escaped with \.).
+  # "wwwexample.com" does not match "^www\." so it safely
+  # redirects to "www.wwwexample.com" as expected for that
+  # domain. Hosts already starting with "www." are skipped.
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ── 3. Front-controller routing ────────────────────────────
+  # Serve real files and directories directly.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Route everything else through index.php.
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+# ── 4. Security headers ────────────────────────────────────
+<IfModule mod_headers.c>
+  # Prevent clickjacking.
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Stop MIME-type sniffing.
+  Header always set X-Content-Type-Options "nosniff"
+  # Control referrer information.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Enable browser XSS filter (legacy support).
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

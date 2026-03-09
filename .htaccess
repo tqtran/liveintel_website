@@ -1,0 +1,32 @@
+# ==============================================================
+# LiveIntel — Root .htaccess
+#
+# Purpose:
+#   1. Block direct HTTP access to non-public directories
+#      (api/, services/, shared/, admin/, liveinsight/,
+#       scripts/, docs/).
+#   2. Route all remaining web requests into the www/ public
+#      web root, which carries its own .htaccess for the
+#      canonical-www and HTTPS redirects.
+# ==============================================================
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── Block access to non-public server directories ──────────
+  # Returns 403 Forbidden for any request that begins with one
+  # of these directory names.
+  RewriteRule ^(api|services|shared|admin|liveinsight|scripts|docs)(/|$) - [F,L]
+
+  # ── Route web requests to www/ public web root ─────────────
+  # Skip if the request is already inside www/.
+  RewriteCond %{REQUEST_URI} !^/www/
+  # Skip real files and directories that exist on disk
+  # (e.g. .well-known/acme-challenge for Let's Encrypt).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ www/$1 [L,QSA]
+</IfModule>
