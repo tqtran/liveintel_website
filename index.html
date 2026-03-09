@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LiveIntel — a platform for practical security intelligence and analysis. Analyze phishing threats, assess suspicious URLs, evaluate credential strength, and manage secrets." />
+  <meta name="description" content="LiveIntel — Security Intelligence Platform designed to analyze, simulate, and understand security threats and human behavior across modern digital environments." />
   <title>LiveIntel | Security Intelligence Platform</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -55,17 +55,18 @@
         <div>
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span class="badge badge-blue">LiveIntel Product Suite</span>
+            <span class="badge badge-blue">Security Intelligence Platform</span>
           </div>
 
           <h1 class="hero-title" id="hero-heading">
-            Practical Security<br /><span>Intelligence</span> &amp; Analysis
+            Security<br /><span>Intelligence</span> Platform
           </h1>
 
           <p class="hero-desc">
-            LiveIntel provides services that help you analyze phishing threats,
-            evaluate credential strength, and manage secrets — a focused toolkit
-            for phishing defense, credential safety, and secret management.
+            LiveIntel is a platform designed to analyze, simulate, and understand
+            security threats and human behavior across modern digital environments.
+            It integrates threat analysis, behavioral simulation, and security analytics
+            into a cohesive intelligence system.
           </p>
 
           <div class="hero-actions">
@@ -88,12 +89,12 @@
               <div class="terminal-line"><span class="t-out t-ok">✔ Header analysis       PASS</span></div>
               <div class="terminal-line"><span class="t-out t-warn">⚠ Phishing link         DETECTED (3)</span></div>
               <div class="terminal-line"><span class="t-out t-err">✖ Domain intelligence   FLAGGED</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">passmeter score --pwd "P@ssw0rd!"</span></div>
-              <div class="terminal-line"><span class="t-out t-warn">⚠ Entropy: 42 bits — Weak</span></div>
-              <div class="terminal-line"><span class="t-out t-err">✖ Dictionary match:     YES</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">vault get --id sec_db_prod</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Authenticated via bearer token</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Secret retrieved successfully</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">phishsim campaign --report q1</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ Click rate:           18.4% (+3.1%)</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Training completion:  91%</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">liveinsight report --period 30d</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Risk posture:         improving</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Report delivered to 4 stakeholders</span></div>
             </div>
           </div>
         </div>
@@ -109,8 +110,12 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Platform Layers</div>
+        </div>
+        <div class="stat-item">
           <div class="stat-number">7</div>
-          <div class="stat-label">Security Products</div>
+          <div class="stat-label">Products &amp; Services</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">99.8%</div>
@@ -133,13 +138,24 @@
   ============================================================ -->
   <section class="section" id="products" aria-labelledby="products-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="products-heading">LiveIntel Product Suite</h2>
+      <h2 class="section-title fade-in" id="products-heading">LiveIntel Platform</h2>
       <p class="section-subtitle fade-in">
-        Purpose-built security products engineered for modern threats.
-        Each tool in the suite integrates seamlessly to deliver layered defence.
+        Three integrated layers — intelligence services, behavioral simulation, and
+        analytics — forming a continuous security intelligence cycle:
+        <strong style="color:var(--clr-text)">analyze → simulate → measure → improve</strong>.
       </p>
 
       <div class="products-grid">
+
+        <!-- ── LAYER 1: Intelligence Services ────────────────────── -->
+        <div style="grid-column:1/-1; padding:1.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:.5rem;" class="fade-in">
+          <span class="badge badge-blue" style="margin-bottom:.5rem;display:inline-block;">Intelligence Services</span>
+          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveIntel — Threat &amp; Signal Analysis</h3>
+          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
+            Analysis engines that evaluate suspicious content, examine potentially
+            malicious links, and assess credential strength to identify threats and weaknesses.
+          </p>
+        </div>
 
         <!-- PhishCheck -->
         <article class="product-card fade-in" aria-labelledby="pg-name">
@@ -147,7 +163,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <span class="badge badge-blue">Threat Detection</span>
-          <h3 class="product-card-name" id="pg-name">LiveIntel PhishCheck</h3>
+          <h3 class="product-card-name" id="pg-name">PhishCheck</h3>
           <p class="product-card-purpose">Phishing email analysis</p>
           <p class="product-card-desc">Analyze phishing emails across headers, links, attachments, and sender reputation.</p>
           <ul class="func-list" aria-label="Features">
@@ -162,34 +178,13 @@
           </a>
         </article>
 
-        <!-- PhishSim -->
-        <article class="product-card fade-in" aria-labelledby="ps-name">
-          <div class="product-card-icon icon-purple" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <span class="badge badge-purple">Security Awareness</span>
-          <h3 class="product-card-name" id="ps-name">LiveIntel PhishSim</h3>
-          <p class="product-card-purpose">Simulated phishing campaigns</p>
-          <p class="product-card-desc">Security awareness testing through realistic phishing simulations.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">simulation campaigns</li>
-            <li class="func-tag">awareness testing</li>
-            <li class="func-tag">click tracking</li>
-            <li class="func-tag">credential tracking</li>
-            <li class="func-tag">reporting &amp; training</li>
-          </ul>
-          <a href="products/phishsim.html" class="product-card-link" aria-label="Learn more about PhishSim">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
         <!-- SafeLink -->
         <article class="product-card fade-in" aria-labelledby="sl-name">
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </div>
           <span class="badge badge-blue">URL Safety</span>
-          <h3 class="product-card-name" id="sl-name">LiveIntel SafeLink</h3>
+          <h3 class="product-card-name" id="sl-name">SafeLink</h3>
           <p class="product-card-purpose">Suspicious URL analysis</p>
           <p class="product-card-desc">Analyze suspicious URLs for phishing, malware, and drive-by threats in real time.</p>
           <ul class="func-list" aria-label="Features">
@@ -210,7 +205,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <span class="badge badge-green">Password Security</span>
-          <h3 class="product-card-name" id="pf-name">LiveIntel PassForge</h3>
+          <h3 class="product-card-name" id="pf-name">PassForge</h3>
           <p class="product-card-purpose">Password / passphrase generator</p>
           <p class="product-card-desc">Secure password and passphrase generation engine.</p>
           <ul class="func-list" aria-label="Features">
@@ -230,7 +225,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <span class="badge badge-yellow">Strength Analysis</span>
-          <h3 class="product-card-name" id="pc-name">LiveIntel PassMeter</h3>
+          <h3 class="product-card-name" id="pc-name">PassMeter</h3>
           <p class="product-card-purpose">Password strength and crack-time analysis</p>
           <p class="product-card-desc">Evaluate password strength, crack-time estimates, breach exposure, and entropy.</p>
           <ul class="func-list" aria-label="Features">
@@ -250,7 +245,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 12h2M15 12h2"/></svg>
           </div>
           <span class="badge badge-red">Secret Storage</span>
-          <h3 class="product-card-name" id="vt-name">LiveIntel Vault</h3>
+          <h3 class="product-card-name" id="vt-name">Vault</h3>
           <p class="product-card-purpose">Secure key-value secret storage</p>
           <p class="product-card-desc">Store and retrieve API keys, tokens, and credentials in a zero-knowledge vault.</p>
           <ul class="func-list" aria-label="Features">
@@ -264,6 +259,47 @@
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
+
+        <!-- ── LAYER 2: Behavioral Simulation ─────────────────────── -->
+        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
+          <span class="badge badge-purple" style="margin-bottom:.5rem;display:inline-block;">Behavioral Simulation</span>
+          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">PhishSim — Security Behavior Simulation</h3>
+          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
+            Introduces a human behavioral layer by simulating real-world phishing scenarios
+            to measure user awareness, identify behavioral risk patterns, and reinforce training.
+          </p>
+        </div>
+
+        <!-- PhishSim -->
+        <article class="product-card fade-in" aria-labelledby="ps-name">
+          <div class="product-card-icon icon-purple" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="badge badge-purple">Behavioral Simulation</span>
+          <h3 class="product-card-name" id="ps-name">PhishSim</h3>
+          <p class="product-card-purpose">Security behavior simulation</p>
+          <p class="product-card-desc">Conduct controlled phishing campaigns that generate structured behavioral telemetry and drive targeted training.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">simulation campaigns</li>
+            <li class="func-tag">click &amp; open tracking</li>
+            <li class="func-tag">credential telemetry</li>
+            <li class="func-tag">reporting activity</li>
+            <li class="func-tag">automated training</li>
+          </ul>
+          <a href="products/phishsim.html" class="product-card-link" aria-label="Learn more about PhishSim">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- ── LAYER 3: Analytics & Intelligence ───────────────────── -->
+        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
+          <span class="badge badge-blue" style="margin-bottom:.5rem;display:inline-block;">Analytics &amp; Intelligence</span>
+          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveInsight — Organizational Intelligence</h3>
+          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
+            Aggregates telemetry from all platform services and converts security activity
+            into dashboards, trend analysis, and strategic visibility for security teams and leadership.
+          </p>
+        </div>
 
         <!-- LiveInsight -->
         <article class="product-card fade-in" aria-labelledby="li-name">
@@ -295,38 +331,61 @@
   ============================================================ -->
   <section class="section" id="about" aria-labelledby="about-heading" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border);">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
         <div>
-          <span class="badge badge-blue" style="margin-bottom:1rem;display:inline-block;">About LiveIntel</span>
-          <h2 class="section-title fade-in" id="about-heading">Practical security intelligence and analysis</h2>
+          <span class="badge badge-blue" style="margin-bottom:1rem;display:inline-block;">Platform Architecture</span>
+          <h2 class="section-title fade-in" id="about-heading">Three layers. One intelligence cycle.</h2>
           <p style="color:var(--clr-text-muted); margin-bottom:1.25rem;">
-            LiveIntel is a platform for practical security intelligence and analysis,
-            providing services that help you analyze phishing threats, evaluate
-            credential strength, and manage secrets. Every tool is focused,
-            API-first, and built for real-world security workflows.
+            Rather than offering isolated utilities, LiveIntel integrates multiple capabilities
+            into a cohesive intelligence system that helps organizations identify threats,
+            measure risk, and improve security awareness.
           </p>
-          <p style="color:var(--clr-text-muted);">
-            Analyze phishing emails with <strong style="color:var(--clr-text)">PhishCheck</strong>,
-            inspect suspicious URLs via <strong style="color:var(--clr-text)">SafeLink</strong>,
-            run awareness campaigns with <strong style="color:var(--clr-text)">PhishSim</strong>,
-            generate strong credentials using <strong style="color:var(--clr-text)">PassForge</strong>,
-            assess their strength with <strong style="color:var(--clr-text)">PassMeter</strong>,
-            lock down secrets inside <strong style="color:var(--clr-text)">Vault</strong>,
-            and surface it all as dashboards and reports with <strong style="color:var(--clr-text)">LiveInsight</strong>.
+
+          <div style="display:flex; flex-direction:column; gap:1.25rem; margin-bottom:1.5rem;">
+            <div>
+              <span class="badge badge-blue" style="margin-bottom:.4rem;display:inline-block;">Intelligence Services</span>
+              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
+                <strong style="color:var(--clr-text)">LiveIntel</strong> provides the analysis engines —
+                PhishCheck, SafeLink, PassForge, PassMeter, and Vault — that evaluate security
+                signals and technical indicators.
+              </p>
+            </div>
+            <div>
+              <span class="badge badge-purple" style="margin-bottom:.4rem;display:inline-block;">Behavioral Simulation</span>
+              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
+                <strong style="color:var(--clr-text)">PhishSim</strong> introduces a human behavioral layer,
+                generating structured telemetry — click events, credential submissions, reporting
+                activity — that becomes the primary source of behavioral security insight.
+              </p>
+            </div>
+            <div>
+              <span class="badge badge-blue" style="margin-bottom:.4rem;display:inline-block;">Analytics &amp; Intelligence</span>
+              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
+                <strong style="color:var(--clr-text)">LiveInsight</strong> aggregates telemetry from all
+                platform services and transforms it into behavioral risk metrics, trend visualizations,
+                and organizational security posture insights.
+              </p>
+            </div>
+          </div>
+
+          <p style="color:var(--clr-text-muted); font-size:.9rem; font-style:italic; border-left:3px solid var(--clr-primary); padding-left:.85rem; margin:0;">
+            "Security decisions should be driven by intelligence derived from real signals and real
+            behavior, not isolated technical checks."
           </p>
         </div>
+
         <div class="spec-box fade-in">
           <div class="spec-box-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            platform-overview
+            platform-architecture
           </div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Product family</span><span class="spec-val">LiveIntel Suite</span></div>
-            <div class="spec-row"><span class="spec-key">Deployment</span><span class="spec-val">Cloud / On-Prem / Hybrid</span></div>
+            <div class="spec-row"><span class="spec-key">Layer 1</span><span class="spec-val">LiveIntel — Intelligence Services</span></div>
+            <div class="spec-row"><span class="spec-key">Layer 2</span><span class="spec-val">PhishSim — Behavioral Simulation</span></div>
+            <div class="spec-row"><span class="spec-key">Layer 3</span><span class="spec-val">LiveInsight — Analytics &amp; Intelligence</span></div>
+            <div class="spec-row"><span class="spec-key">Intelligence cycle</span><span class="spec-val">analyze → simulate → measure → improve</span></div>
             <div class="spec-row"><span class="spec-key">API standard</span><span class="spec-val">REST + JSON</span></div>
-            <div class="spec-row"><span class="spec-key">Authentication</span><span class="spec-val">Bearer Token / API Key</span></div>
             <div class="spec-row"><span class="spec-key">Encryption</span><span class="spec-val">AES-256-GCM at rest &amp; in transit</span></div>
-            <div class="spec-row"><span class="spec-key">Compliance</span><span class="spec-val">SOC 2 Type II ready</span></div>
           </div>
         </div>
       </div>
@@ -368,7 +427,7 @@
           </svg>
           Live<span>Intel</span>
         </a>
-        <p>Practical security intelligence and analysis — phishing defense, credential safety, and secret management.</p>
+        <p>Analyze threats, simulate behavior, and understand risk — a continuous security intelligence cycle.</p>
       </div>
 
       <nav aria-label="Products footer links">
