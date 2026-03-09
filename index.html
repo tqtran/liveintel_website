@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LiveIntel — AI-powered cybersecurity product suite covering phishing detection, security awareness training, password management, and secret storage." />
+  <title>LiveIntel | Cybersecurity Product Suite</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="LiveIntel home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+          <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Live<span>Intel</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#products" class="btn btn-primary nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<main>
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Copy -->
+        <div>
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+            <span class="badge badge-blue">LiveIntel Product Suite</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-heading">
+            Intelligence-Driven<br /><span>Cybersecurity</span> Tools
+          </h1>
+
+          <p class="hero-desc">
+            From phishing detection and security awareness training to password
+            strength analysis and secret storage — LiveIntel gives your team the
+            edge against modern threats.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
+            <a href="#about"    class="btn btn-outline btn-lg">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Terminal visual -->
+        <div class="hero-visual">
+          <div class="hero-terminal" role="img" aria-label="LiveIntel terminal demo">
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red"    aria-hidden="true"></span>
+              <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
+              <span class="terminal-dot dot-green"  aria-hidden="true"></span>
+              <span class="terminal-title">liveintel — threat-cli v2.0</span>
+            </div>
+            <div class="terminal-body" aria-hidden="true">
+              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishguard analyze --email suspicious.eml</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Header analysis       PASS</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ Phishing link         DETECTED (3)</span></div>
+              <div class="terminal-line"><span class="t-out t-err">✖ Domain intelligence   FLAGGED</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">passcheck score --pwd "P@ssw0rd!"</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ Entropy: 42 bits — Weak</span></div>
+              <div class="terminal-line"><span class="t-out t-err">✖ Dictionary match:     YES</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">vault get --id sec_db_prod</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Authenticated via bearer token</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Secret retrieved successfully</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS STRIP
+  ============================================================ -->
+  <div class="stats-strip" aria-label="LiveIntel at a glance">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Security Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.8%</div>
+          <div class="stat-label">Phish Detection Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0-Trust</div>
+          <div class="stat-label">Vault Architecture</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">256-bit</div>
+          <div class="stat-label">Encryption at Rest</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCTS SECTION
+  ============================================================ -->
+  <section class="section" id="products" aria-labelledby="products-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="products-heading">LiveIntel Product Suite</h2>
+      <p class="section-subtitle fade-in">
+        Purpose-built security products engineered for modern threats.
+        Each tool in the suite integrates seamlessly to deliver layered defence.
+      </p>
+
+      <div class="products-grid">
+
+        <!-- PhishGuard -->
+        <article class="product-card fade-in" aria-labelledby="pg-name">
+          <div class="product-card-icon icon-blue" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="badge badge-blue">Threat Detection</span>
+          <h3 class="product-card-name" id="pg-name">LiveIntel PhishGuard</h3>
+          <p class="product-card-purpose">Phishing detection and analysis</p>
+          <p class="product-card-desc">Email phishing detection and analysis engine.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">email header analysis</li>
+            <li class="func-tag">phishing link detection</li>
+            <li class="func-tag">impersonation detection</li>
+            <li class="func-tag">attachment risk scoring</li>
+            <li class="func-tag">domain intelligence</li>
+          </ul>
+          <a href="products/phishguard.html" class="product-card-link" aria-label="Learn more about PhishGuard">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- PhishSim -->
+        <article class="product-card fade-in" aria-labelledby="ps-name">
+          <div class="product-card-icon icon-purple" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="badge badge-purple">Security Awareness</span>
+          <h3 class="product-card-name" id="ps-name">LiveIntel PhishSim</h3>
+          <p class="product-card-purpose">Simulated phishing campaigns</p>
+          <p class="product-card-desc">Security awareness testing through realistic phishing simulations.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">simulation campaigns</li>
+            <li class="func-tag">awareness testing</li>
+            <li class="func-tag">click tracking</li>
+            <li class="func-tag">credential tracking</li>
+            <li class="func-tag">reporting &amp; training</li>
+          </ul>
+          <a href="products/phishsim.html" class="product-card-link" aria-label="Learn more about PhishSim">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- PassForge -->
+        <article class="product-card fade-in" aria-labelledby="pf-name">
+          <div class="product-card-icon icon-green" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <span class="badge badge-green">Password Security</span>
+          <h3 class="product-card-name" id="pf-name">LiveIntel PassForge</h3>
+          <p class="product-card-purpose">Password / passphrase generator</p>
+          <p class="product-card-desc">Secure password and passphrase generation engine.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">password generation</li>
+            <li class="func-tag">passphrase generation</li>
+            <li class="func-tag">policy-driven rules</li>
+            <li class="func-tag">human-memorable</li>
+          </ul>
+          <a href="products/passforge.html" class="product-card-link" aria-label="Learn more about PassForge">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- PassCheck -->
+        <article class="product-card fade-in" aria-labelledby="pc-name">
+          <div class="product-card-icon icon-yellow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="badge badge-yellow">Strength Analysis</span>
+          <h3 class="product-card-name" id="pc-name">LiveIntel PassCheck</h3>
+          <p class="product-card-purpose">Password strength analysis</p>
+          <p class="product-card-desc">Password and passphrase strength evaluation.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">entropy scoring</li>
+            <li class="func-tag">dictionary detection</li>
+            <li class="func-tag">pattern weakness</li>
+            <li class="func-tag">breach exposure</li>
+          </ul>
+          <a href="products/passcheck.html" class="product-card-link" aria-label="Learn more about PassCheck">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <!-- Vault -->
+        <article class="product-card fade-in" aria-labelledby="vt-name">
+          <div class="product-card-icon icon-red" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 12h2M15 12h2"/></svg>
+          </div>
+          <span class="badge badge-red">Secret Storage</span>
+          <h3 class="product-card-name" id="vt-name">LiveIntel Vault</h3>
+          <p class="product-card-purpose">Secret storage service</p>
+          <p class="product-card-desc">Secure centralized secret storage and retrieval.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">key ID retrieval</li>
+            <li class="func-tag">bearer token auth</li>
+            <li class="func-tag">IP allowlists</li>
+            <li class="func-tag">zero-knowledge</li>
+            <li class="func-tag">brute force detection</li>
+          </ul>
+          <a href="products/vault.html" class="product-card-link" aria-label="Learn more about Vault">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="section" id="about" aria-labelledby="about-heading" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+        <div>
+          <span class="badge badge-blue" style="margin-bottom:1rem;display:inline-block;">About LiveIntel</span>
+          <h2 class="section-title fade-in" id="about-heading">Security intelligence for the modern enterprise</h2>
+          <p style="color:var(--clr-text-muted); margin-bottom:1.25rem;">
+            LiveIntel builds precision security tools that empower organisations to
+            detect, simulate, and respond to cyber threats faster than ever before.
+            Every product in our suite is built on an intelligence-first philosophy —
+            combining real-world threat data with developer-friendly APIs.
+          </p>
+          <p style="color:var(--clr-text-muted);">
+            Whether you're protecting inboxes from phishing with <strong style="color:var(--clr-text)">PhishGuard</strong>,
+            training employees via <strong style="color:var(--clr-text)">PhishSim</strong>, generating strong credentials
+            with <strong style="color:var(--clr-text)">PassForge</strong>, verifying them with <strong style="color:var(--clr-text)">PassCheck</strong>,
+            or locking down secrets inside <strong style="color:var(--clr-text)">Vault</strong> — LiveIntel has you covered.
+          </p>
+        </div>
+        <div class="spec-box fade-in">
+          <div class="spec-box-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            platform-overview
+          </div>
+          <div class="spec-box-body">
+            <div class="spec-row"><span class="spec-key">Product family</span><span class="spec-val">LiveIntel Suite</span></div>
+            <div class="spec-row"><span class="spec-key">Deployment</span><span class="spec-val">Cloud / On-Prem / Hybrid</span></div>
+            <div class="spec-row"><span class="spec-key">API standard</span><span class="spec-val">REST + JSON</span></div>
+            <div class="spec-row"><span class="spec-key">Authentication</span><span class="spec-val">Bearer Token / API Key</span></div>
+            <div class="spec-row"><span class="spec-key">Encryption</span><span class="spec-val">AES-256-GCM at rest &amp; in transit</span></div>
+            <div class="spec-row"><span class="spec-key">Compliance</span><span class="spec-val">SOC 2 Type II ready</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="section" id="contact" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-banner fade-in">
+        <h2 class="cta-banner-title" id="cta-heading">Ready to secure your organisation?</h2>
+        <p class="cta-banner-desc">
+          Get in touch with the LiveIntel team to schedule a demo, start a free trial,
+          or discuss an enterprise deployment.
+        </p>
+        <div class="cta-banner-actions">
+          <a href="mailto:hello@liveintel.io" class="btn btn-primary btn-lg">Contact Us</a>
+          <a href="#products" class="btn btn-outline btn-lg">View Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="LiveIntel home">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+            <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Live<span>Intel</span>
+        </a>
+        <p>Intelligence-driven cybersecurity products built for the modern threat landscape.</p>
+      </div>
+
+      <nav aria-label="Products footer links">
+        <h3 class="footer-col-title">Products</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="products/phishguard.html">PhishGuard</a></li>
+          <li><a href="products/phishsim.html">PhishSim</a></li>
+          <li><a href="products/passforge.html">PassForge</a></li>
+          <li><a href="products/passcheck.html">PassCheck</a></li>
+          <li><a href="products/vault.html">Vault</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company footer links">
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal footer links">
+        <h3 class="footer-col-title">Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> LiveIntel. All rights reserved.</p>
+      <p>Built with ❤ for cybersecurity professionals.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

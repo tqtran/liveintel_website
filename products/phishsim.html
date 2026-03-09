@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LiveIntel PhishSim — Security awareness testing through realistic phishing simulations covering campaigns, click tracking, credential tracking, and reporting." />
+  <title>PhishSim | LiveIntel</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo" aria-label="LiveIntel home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+          <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Live<span>Intel</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- PRODUCT HERO -->
+  <section class="product-hero" aria-labelledby="ps-title" style="--hero-accent: rgba(124,58,237,.08);">
+    <div class="container">
+      <div class="product-hero-inner">
+        <div>
+          <a href="../index.html#products" class="product-hero-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            All Products
+          </a>
+          <span class="badge badge-purple">Security Awareness</span>
+          <h1 class="product-hero-title" id="ps-title">LiveIntel PhishSim</h1>
+          <p class="product-hero-desc">
+            Simulate real-world phishing attacks against your own organisation to
+            identify at-risk employees, measure awareness levels, and drive targeted
+            security training — all from a single platform.
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="../index.html#contact" class="btn btn-primary">Request Demo</a>
+            <a href="#features" class="btn btn-outline">See Features</a>
+          </div>
+        </div>
+
+        <div class="spec-box fade-in">
+          <div class="spec-box-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            phishsim — product spec
+          </div>
+          <div class="spec-box-body">
+            <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">LiveIntel PhishSim</span></div>
+            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Simulated phishing campaigns</span></div>
+            <div class="spec-row"><span class="spec-key">Templates</span><span class="spec-val">500+ realistic lure templates</span></div>
+            <div class="spec-row"><span class="spec-key">Tracking</span><span class="spec-val">Open / Click / Credential submission</span></div>
+            <div class="spec-row"><span class="spec-key">Training</span><span class="spec-val">Auto-triggered micro-learning</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
+      <p class="section-subtitle fade-in">
+        PhishSim provides end-to-end campaign management, from template selection
+        to post-campaign analytics and automated training delivery.
+      </p>
+
+      <div class="features-grid">
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <h3 class="feature-title">Phishing Simulation Campaigns</h3>
+          <p class="feature-desc">
+            Design and schedule targeted campaigns using industry-standard lure
+            templates or build custom ones with a drag-and-drop editor. Segment
+            targeting by department, role, or risk tier.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">🧠</div>
+          <h3 class="feature-title">User Awareness Testing</h3>
+          <p class="feature-desc">
+            Benchmark employee susceptibility scores over time with standardised
+            difficulty tiers. Track improvement between campaign cycles automatically.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">🖱️</div>
+          <h3 class="feature-title">Click Tracking</h3>
+          <p class="feature-desc">
+            Pixel-accurate link tracking logs every click with timestamp, device,
+            geolocation (where permitted), and user agent data for full campaign
+            visibility.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">🔑</div>
+          <h3 class="feature-title">Credential Submission Tracking</h3>
+          <p class="feature-desc">
+            Safely capture simulated credential submissions (no real data stored)
+            to identify employees who reach the highest-risk stage of a phishing attack.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">📈</div>
+          <h3 class="feature-title">Reporting &amp; Training Triggers</h3>
+          <p class="feature-desc">
+            Automated reports delivered to managers after each campaign cycle.
+            Employees who click are instantly enrolled in targeted micro-learning
+            modules without admin intervention.
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">🔄</div>
+          <h3 class="feature-title">Continuous Programme Management</h3>
+          <p class="feature-desc">
+            Schedule recurring campaigns to maintain awareness momentum. Risk-based
+            scheduling increases frequency for high-risk users automatically.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN LIFECYCLE -->
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="lifecycle-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="lifecycle-heading">Campaign Lifecycle</h2>
+      <p class="section-subtitle fade-in">Run a complete awareness campaign in five steps.</p>
+
+      <div class="spec-box fade-in" style="max-width:720px;">
+        <div class="spec-box-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          campaign-lifecycle
+        </div>
+        <div class="spec-box-body">
+          <div class="spec-row"><span class="spec-key">Step 1</span><span class="spec-val">Select lure template &amp; landing page</span></div>
+          <div class="spec-row"><span class="spec-key">Step 2</span><span class="spec-val">Configure target group &amp; schedule delivery</span></div>
+          <div class="spec-row"><span class="spec-key">Step 3</span><span class="spec-val">PhishSim delivers personalised simulated phishing emails</span></div>
+          <div class="spec-row"><span class="spec-key">Step 4</span><span class="spec-val">Events logged: opens, clicks, credential submissions</span></div>
+          <div class="spec-row"><span class="spec-key">Step 5</span><span class="spec-val">Auto-trigger training + generate management report</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-banner fade-in">
+        <h2 class="cta-banner-title" id="cta-heading">Know who your weakest links are — before attackers do</h2>
+        <p class="cta-banner-desc">
+          Launch your first simulated phishing campaign in under 30 minutes with
+          PhishSim's guided campaign wizard.
+        </p>
+        <div class="cta-banner-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-lg">Start Free Trial</a>
+          <a href="../index.html#products" class="btn btn-outline btn-lg">Other Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" aria-label="LiveIntel home">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+            <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Live<span>Intel</span>
+        </a>
+        <p>Intelligence-driven cybersecurity products built for the modern threat landscape.</p>
+      </div>
+      <nav aria-label="Products footer links">
+        <h3 class="footer-col-title">Products</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="phishguard.html">PhishGuard</a></li>
+          <li><a href="phishsim.html">PhishSim</a></li>
+          <li><a href="passforge.html">PassForge</a></li>
+          <li><a href="passcheck.html">PassCheck</a></li>
+          <li><a href="vault.html">Vault</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company footer links">
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal footer links">
+        <h3 class="footer-col-title">Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> LiveIntel. All rights reserved.</p>
+      <p>Built with ❤ for cybersecurity professionals.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
