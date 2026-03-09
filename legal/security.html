@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LiveIntel Security — our security practices, vulnerability disclosure program, and how we protect your data." />
+  <title>Security | LiveIntel</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .legal-section { max-width: 760px; margin: 0 auto; }
+    .legal-section h2 { font-size: 1.25rem; color: var(--clr-text); margin: 2rem 0 .75rem; }
+    .legal-section p, .legal-section ul { color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .legal-section ul { padding-left: 1.5rem; }
+    .legal-section ul li { margin-bottom: .4rem; }
+    .legal-meta { font-size: .85rem; color: var(--clr-text-muted); margin-bottom: 2.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo" aria-label="LiveIntel home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+          <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Live<span>Intel</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <a href="../index.html#contact" class="btn btn-primary nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="product-hero" aria-labelledby="sec-heading">
+    <div class="container">
+      <div class="product-hero-inner">
+        <div>
+          <span class="badge badge-blue">Security Practices</span>
+          <h1 class="product-hero-title" id="sec-heading">Security at LiveIntel</h1>
+          <p class="product-hero-desc">
+            Security is not a feature we add on top — it is the foundation everything else is built
+            on. This page describes how we protect our platform, your data, and how to report
+            vulnerabilities responsibly.
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="mailto:security@liveintel.com" class="btn btn-primary">Report a Vulnerability</a>
+            <a href="#practices" class="btn btn-outline">Our Practices</a>
+          </div>
+        </div>
+
+        <!-- Security spec card -->
+        <div class="spec-box fade-in">
+          <div class="spec-box-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            security-overview
+          </div>
+          <div class="spec-box-body">
+            <div class="spec-row"><span class="spec-key">Encryption in transit</span><span class="spec-val">TLS 1.3</span></div>
+            <div class="spec-row"><span class="spec-key">Encryption at rest</span><span class="spec-val">AES-256-GCM</span></div>
+            <div class="spec-row"><span class="spec-key">Authentication</span><span class="spec-val">MFA supported, SAML 2.0 / OIDC</span></div>
+            <div class="spec-row"><span class="spec-key">Vulnerability disclosure</span><span class="spec-val">security@liveintel.com</span></div>
+            <div class="spec-row"><span class="spec-key">Response SLA</span><span class="spec-val">Acknowledgement within 48 hours</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY PRACTICES -->
+  <section class="section" id="practices" aria-labelledby="practices-heading">
+    <div class="container">
+      <div class="legal-section">
+        <h2 class="section-title fade-in" id="practices-heading" style="text-align:left; margin-bottom:1.5rem;">Security Practices</h2>
+
+        <h2 class="fade-in">Infrastructure Security</h2>
+        <ul class="fade-in">
+          <li>All data in transit is encrypted with <strong>TLS 1.3</strong>; older protocol versions are not accepted.</li>
+          <li>All data at rest is encrypted with <strong>AES-256-GCM</strong>, including backups.</li>
+          <li>Infrastructure is hosted on SOC 2 Type II certified cloud providers with private networking and restricted egress.</li>
+          <li>Secrets and credentials are managed via a dedicated secret store; no credentials in source code or configuration files.</li>
+          <li>Production access is limited to a small number of authorised engineers using MFA and short-lived SSH certificates.</li>
+          <li>All infrastructure changes are applied through automated pipelines with audit trails.</li>
+        </ul>
+
+        <h2 class="fade-in">Application Security</h2>
+        <ul class="fade-in">
+          <li>Code changes undergo mandatory peer review and automated static analysis (SAST) before merge.</li>
+          <li>Dependencies are monitored for known vulnerabilities using automated advisory scanning.</li>
+          <li>Regular penetration testing is conducted by independent third-party security firms.</li>
+          <li>HTTP security headers are enforced on all endpoints: HSTS, CSP, X-Frame-Options, and more.</li>
+          <li>Input validation and parameterised queries are enforced throughout the application stack.</li>
+          <li>Rate limiting and brute-force detection are applied to all authentication endpoints.</li>
+        </ul>
+
+        <h2 class="fade-in">Access Control</h2>
+        <ul class="fade-in">
+          <li>Role-based access control (RBAC) is enforced at every API endpoint.</li>
+          <li>Principle of least privilege — users and services are granted only the minimum permissions required.</li>
+          <li>Multi-factor authentication (MFA) is available for all user accounts and required for all internal staff.</li>
+          <li>SAML 2.0 and OIDC are supported for enterprise single sign-on.</li>
+          <li>Session tokens are short-lived and automatically rotated.</li>
+        </ul>
+
+        <h2 class="fade-in">Monitoring and Incident Response</h2>
+        <ul class="fade-in">
+          <li>All platform activity is logged to an immutable, append-only audit log.</li>
+          <li>Real-time security monitoring and anomaly detection are operational 24/7.</li>
+          <li>A formal incident response plan is in place with defined escalation paths and communication procedures.</li>
+          <li>Affected customers will be notified of any data breach within 72 hours of our becoming aware, in line with applicable law.</li>
+        </ul>
+
+        <h2 class="fade-in">Vulnerability Disclosure Program</h2>
+        <p class="fade-in">
+          We welcome responsible disclosure from the security community. If you believe you have
+          discovered a security vulnerability in LiveIntel, please report it to us before disclosing
+          it publicly.
+        </p>
+
+        <div class="spec-box fade-in" style="max-width:100%; margin-bottom:1.5rem;">
+          <div class="spec-box-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            disclosure-process
+          </div>
+          <div class="spec-box-body">
+            <div class="spec-row"><span class="spec-key">Step 1</span><span class="spec-val">Email a detailed report to security@liveintel.com</span></div>
+            <div class="spec-row"><span class="spec-key">Step 2</span><span class="spec-val">We acknowledge receipt within 48 hours</span></div>
+            <div class="spec-row"><span class="spec-key">Step 3</span><span class="spec-val">We investigate and confirm the issue within 5 business days</span></div>
+            <div class="spec-row"><span class="spec-key">Step 4</span><span class="spec-val">We develop and deploy a fix, keeping you informed</span></div>
+            <div class="spec-row"><span class="spec-key">Step 5</span><span class="spec-val">We coordinate public disclosure timing with you</span></div>
+            <div class="spec-row"><span class="spec-key">Recognition</span><span class="spec-val">Valid reports are credited in our security acknowledgements</span></div>
+          </div>
+        </div>
+
+        <p class="fade-in">
+          <strong>Please include in your report:</strong> a description of the vulnerability, the
+          affected component or URL, steps to reproduce, and potential impact. We ask that you act
+          in good faith, avoid accessing or modifying user data, and refrain from denial-of-service
+          testing.
+        </p>
+        <p class="fade-in">
+          We commit to responding promptly and working with you in good faith. Researchers who
+          follow these guidelines will not face legal action from LiveIntel.
+        </p>
+
+        <h2 class="fade-in">Contact</h2>
+        <p class="fade-in">
+          For security vulnerability reports: <a href="mailto:security@liveintel.com">security@liveintel.com</a><br />
+          For general security questions: <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" aria-label="LiveIntel home">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
+            <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Live<span>Intel</span>
+        </a>
+        <p>Analyze threats, simulate behavior, and understand risk — a continuous security intelligence cycle.</p>
+      </div>
+      <nav aria-label="Products footer links">
+        <h3 class="footer-col-title">Products</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="../products/phishcheck.html">PhishCheck</a></li>
+          <li><a href="../products/phishsim.html">PhishSim</a></li>
+          <li><a href="../products/safelink.html">SafeLink</a></li>
+          <li><a href="../products/passforge.html">PassForge</a></li>
+          <li><a href="../products/passmeter.html">PassMeter</a></li>
+          <li><a href="../products/vault.html">Vault</a></li>
+          <li><a href="../products/liveinsight.html">LiveInsight</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company footer links">
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal footer links">
+        <h3 class="footer-col-title">Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="security.html">Security</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> LiveIntel. All rights reserved.</p>
+      <p>Built with ❤ for cybersecurity professionals.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
