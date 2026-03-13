@@ -1,47 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LiveIntel — Security Intelligence Platform designed to analyze, simulate, and understand security threats and human behavior across modern digital environments." />
-  <title>LiveIntel | Security Intelligence Platform</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    /* Fade-in animation */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
-</head>
-<body>
-
-<!-- ============================================================
-     HEADER
-============================================================ -->
-<header class="site-header">
-  <div class="container">
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html" class="nav-logo" aria-label="LiveIntel home">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-          <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
-          <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Live<span>Intel</span>
-      </a>
-
-      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <a href="#products" class="btn btn-primary nav-cta">Get Started</a>
-    </nav>
-  </div>
-</header>
+<?php
+$basePath = "";
+$pageTitle = "LiveIntel | Security Intelligence Platform";
+$pageDescription = "LiveIntel — Security Intelligence Platform designed to analyze, simulate, and understand security threats and human behavior across modern digital environments.";
+require_once __DIR__ . '/includes/header.php';
+?>
 
 <!-- ============================================================
      HERO
@@ -173,7 +135,7 @@
             <li class="func-tag">attachment risk scoring</li>
             <li class="func-tag">domain intelligence</li>
           </ul>
-          <a href="products/phishcheck.html" class="product-card-link" aria-label="Learn more about PhishCheck">
+          <a href="products/phishcheck.php" class="product-card-link" aria-label="Learn more about PhishCheck">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -194,7 +156,7 @@
             <li class="func-tag">malware URL detection</li>
             <li class="func-tag">link preview</li>
           </ul>
-          <a href="products/safelink.html" class="product-card-link" aria-label="Learn more about SafeLink">
+          <a href="products/safelink.php" class="product-card-link" aria-label="Learn more about SafeLink">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -214,7 +176,7 @@
             <li class="func-tag">policy-driven rules</li>
             <li class="func-tag">human-memorable</li>
           </ul>
-          <a href="products/passforge.html" class="product-card-link" aria-label="Learn more about PassForge">
+          <a href="products/passforge.php" class="product-card-link" aria-label="Learn more about PassForge">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -234,7 +196,7 @@
             <li class="func-tag">pattern weakness</li>
             <li class="func-tag">breach exposure</li>
           </ul>
-          <a href="products/passmeter.html" class="product-card-link" aria-label="Learn more about PassMeter">
+          <a href="products/passmeter.php" class="product-card-link" aria-label="Learn more about PassMeter">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -255,7 +217,7 @@
             <li class="func-tag">zero-knowledge</li>
             <li class="func-tag">brute force detection</li>
           </ul>
-          <a href="products/vault.html" class="product-card-link" aria-label="Learn more about Vault">
+          <a href="products/vault.php" class="product-card-link" aria-label="Learn more about Vault">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -286,7 +248,7 @@
             <li class="func-tag">reporting activity</li>
             <li class="func-tag">automated training</li>
           </ul>
-          <a href="products/phishsim.html" class="product-card-link" aria-label="Learn more about PhishSim">
+          <a href="products/phishsim.php" class="product-card-link" aria-label="Learn more about PhishSim">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -317,7 +279,7 @@
             <li class="func-tag">scheduled reports</li>
             <li class="func-tag">executive summaries</li>
           </ul>
-          <a href="products/liveinsight.html" class="product-card-link" aria-label="Learn more about LiveInsight">
+          <a href="products/liveinsight.php" class="product-card-link" aria-label="Learn more about LiveInsight">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -413,62 +375,4 @@
 
 </main>
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-<footer class="site-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" aria-label="LiveIntel home">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
-            <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Live<span>Intel</span>
-        </a>
-        <p>Analyze threats, simulate behavior, and understand risk — a continuous security intelligence cycle.</p>
-      </div>
-
-      <nav aria-label="Products footer links">
-        <h3 class="footer-col-title">Products</h3>
-        <ul class="footer-links" role="list">
-          <li><a href="products/phishcheck.html">PhishCheck</a></li>
-          <li><a href="products/phishsim.html">PhishSim</a></li>
-          <li><a href="products/safelink.html">SafeLink</a></li>
-          <li><a href="products/passforge.html">PassForge</a></li>
-          <li><a href="products/passmeter.html">PassMeter</a></li>
-          <li><a href="products/vault.html">Vault</a></li>
-          <li><a href="products/liveinsight.html">LiveInsight</a></li>
-        </ul>
-      </nav>
-
-      <nav aria-label="Company footer links">
-        <h3 class="footer-col-title">Company</h3>
-        <ul class="footer-links" role="list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <nav aria-label="Legal footer links">
-        <h3 class="footer-col-title">Legal</h3>
-        <ul class="footer-links" role="list">
-          <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
-          <li><a href="legal/security.html">Security</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> LiveIntel. All rights reserved.</p>
-      <p>Built with ❤ for cybersecurity professionals.</p>
-    </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
