@@ -18,6 +18,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
             <span class="badge badge-blue">Security Intelligence Platform</span>
+            <span class="badge badge-green">Free · Early Access</span>
           </div>
 
           <h1 class="hero-title" id="hero-heading">
@@ -25,16 +26,15 @@ require_once __DIR__ . '/includes/header.php';
           </h1>
 
           <p class="hero-desc">
-            LiveIntel is a platform designed to analyze, simulate, and understand
-            security threats and human behavior across modern digital environments.
-            It integrates threat analysis, behavioral simulation, security analytics,
-            and external status checks into a cohesive intelligence system that helps
-            teams catch issues earlier and operate with more confidence.
+            LiveIntel is a free, evolving platform designed to analyze, simulate, and
+            understand security threats and human behavior across modern digital environments.
+            Start with free tools today — and grow into deeper security intelligence as the
+            platform develops.
           </p>
 
           <div class="hero-actions">
-            <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
-            <a href="#about"    class="btn btn-outline btn-lg">Learn More</a>
+            <a href="#products" class="btn btn-primary btn-lg">Explore Free Tools</a>
+            <a href="#platform" class="btn btn-outline btn-lg">Platform Vision</a>
           </div>
         </div>
 
@@ -325,6 +325,73 @@ require_once __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ============================================================
+       PLATFORM DIRECTION
+  ============================================================ -->
+  <section class="section" id="platform" aria-labelledby="platform-heading" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;" class="fade-in">
+        <span class="badge badge-green" style="margin-bottom:.75rem;display:inline-block;">Early Access</span>
+        <h2 class="section-title" id="platform-heading">Free today. Evolving into something more.</h2>
+        <p class="section-subtitle" style="margin-inline:auto; text-align:center;">
+          LiveIntel is currently free to use. The tools here are the foundation of a larger
+          security intelligence platform — one that deepens over time.
+        </p>
+      </div>
+
+      <div class="platform-direction-grid">
+
+        <div class="platform-step fade-in">
+          <div class="platform-step-icon icon-green" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="badge badge-green">Available Now · Free</span>
+          <h3 class="platform-step-title">Start with tools</h3>
+          <p class="platform-step-desc">
+            Analyze threats, simulate phishing campaigns, check URLs, generate strong credentials,
+            and monitor external services — all at no cost. These tools are your entry point into
+            the platform.
+          </p>
+        </div>
+
+        <div class="platform-step-arrow" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="platform-step fade-in">
+          <div class="platform-step-icon icon-blue" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <span class="badge badge-blue">Growing · In Development</span>
+          <h3 class="platform-step-title">Grow into intelligence</h3>
+          <p class="platform-step-desc">
+            LiveInsight will aggregate your platform activity into trends, risk metrics, and
+            strategic visibility — turning tool output into organizational security intelligence
+            that informs real decisions.
+          </p>
+        </div>
+
+        <div class="platform-step-arrow" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="platform-step fade-in">
+          <div class="platform-step-icon icon-purple" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="badge badge-purple">Future · Platform Vision</span>
+          <h3 class="platform-step-title">A full security intelligence system</h3>
+          <p class="platform-step-desc">
+            Early access means you are here at the beginning. As the intelligence layer expands,
+            the platform you've already started using grows with you — and the data you've
+            accumulated becomes more valuable over time.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        ABOUT
   ============================================================ -->
   <section class="section" id="about" aria-labelledby="about-heading" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border);">
@@ -405,14 +472,14 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" id="contact" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Ready to secure your organisation?</h2>
+        <h2 class="cta-banner-title" id="cta-heading">Start for free. Build as you grow.</h2>
         <p class="cta-banner-desc">
-          Get in touch with the LiveIntel team to schedule a demo, start a free trial,
-          or discuss an enterprise deployment.
+          LiveIntel is free to use today. Explore the tools, run your first simulation,
+          and join the platform early — before the full intelligence layer goes live.
         </p>
         <div class="cta-banner-actions">
-          <a href="mailto:hello@liveintel.com" class="btn btn-primary btn-lg">Contact Us</a>
-          <a href="#products" class="btn btn-outline btn-lg">View Products</a>
+          <a href="#products" class="btn btn-primary btn-lg">Explore Free Tools</a>
+          <a href="mailto:hello@liveintel.com" class="btn btn-outline btn-lg">Get in Touch</a>
         </div>
       </div>
     </div>

@@ -579,6 +579,57 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
 }
 
+/* ---------- Platform Direction Section ----------------- */
+.platform-direction-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.platform-step {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  height: 100%;
+}
+
+.platform-step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-heading);
+  margin: 0;
+}
+
+.platform-step-desc {
+  font-size: .92rem;
+  color: var(--clr-text-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.platform-step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-muted);
+  padding-top: 2rem;
+  flex-shrink: 0;
+}
+
 /* ---------- CTA Banner --------------------------------- */
 .cta-banner {
   background: linear-gradient(135deg, rgba(0,194,255,.06), rgba(124,58,237,.06));
@@ -687,6 +738,16 @@ a:hover { text-decoration: underline; }
   }
 
   .stat-item { padding: 2rem 1rem; }
+
+  .platform-direction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-step-arrow {
+    padding-top: 0;
+    transform: rotate(90deg);
+    justify-self: center;
+  }
 }
 
 @media (max-width: 680px) {
