@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
 $pageTitle = "LiveIntel | Security Intelligence Platform";
-$pageDescription = "LiveIntel — Security Intelligence Platform designed to analyze, simulate, and understand security threats and human behavior across modern digital environments.";
+$pageDescription = "LiveIntel — Security Intelligence Platform designed to analyze, simulate, monitor, and respond to security threats and human behavior across modern digital environments.";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -27,8 +27,8 @@ require_once __DIR__ . '/includes/header.php';
           <p class="hero-desc">
             LiveIntel is a platform designed to analyze, simulate, and understand
             security threats and human behavior across modern digital environments.
-            It integrates threat analysis, behavioral simulation, and security analytics
-            into a cohesive intelligence system.
+            It integrates threat analysis, behavioral simulation, security analytics,
+            and centralized monitoring and response into a cohesive intelligence system.
           </p>
 
           <div class="hero-actions">
@@ -57,6 +57,9 @@ require_once __DIR__ . '/includes/header.php';
               <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">liveinsight report --period 30d</span></div>
               <div class="terminal-line"><span class="t-out t-ok">✔ Risk posture:         improving</span></div>
               <div class="terminal-line"><span class="t-out t-ok">✔ Report delivered to 4 stakeholders</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">livesentinel incidents --active</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ Active incidents:     2 correlated events</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Response workflow:    engaged</span></div>
             </div>
           </div>
         </div>
@@ -72,11 +75,11 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">3</div>
+          <div class="stat-number">4</div>
           <div class="stat-label">Platform Layers</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">7</div>
+          <div class="stat-number">8</div>
           <div class="stat-label">Products &amp; Services</div>
         </div>
         <div class="stat-item">
@@ -102,9 +105,10 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <h2 class="section-title fade-in" id="products-heading">LiveIntel Platform</h2>
       <p class="section-subtitle fade-in">
-        Three integrated layers — intelligence services, behavioral simulation, and
-        analytics — forming a continuous security intelligence cycle:
-        <strong style="color:var(--clr-text)">analyze → simulate → measure → improve</strong>.
+        Four integrated layers — intelligence services, behavioral simulation,
+        analytics, and centralized response — forming a continuous security
+        intelligence cycle:
+        <strong style="color:var(--clr-text)">analyze → simulate → monitor → respond → improve</strong>.
       </p>
 
       <div class="products-grid">
@@ -284,6 +288,37 @@ require_once __DIR__ . '/includes/header.php';
           </a>
         </article>
 
+        <!-- ── LAYER 4: Monitoring & Response ─────────────────────── -->
+        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
+          <span class="badge badge-red" style="margin-bottom:.5rem;display:inline-block;">Monitoring &amp; Response</span>
+          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveSentinel — Centralized Oversight &amp; Response</h3>
+          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
+            Oversees multiple LiveIntel services from a central control layer, correlating
+            telemetry, surfacing operational incidents, and coordinating response workflows.
+          </p>
+        </div>
+
+        <!-- LiveSentinel -->
+        <article class="product-card fade-in" aria-labelledby="ls-name">
+          <div class="product-card-icon icon-red" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+          </div>
+          <span class="badge badge-red">Monitoring &amp; Response</span>
+          <h3 class="product-card-name" id="ls-name">LiveSentinel</h3>
+          <p class="product-card-purpose">Centralized monitoring and response</p>
+          <p class="product-card-desc">Monitor certificate exposure, phishing simulation activity, and key-management events from one coordinated response layer.</p>
+          <ul class="func-list" aria-label="Features">
+            <li class="func-tag">cross-service monitoring</li>
+            <li class="func-tag">incident correlation</li>
+            <li class="func-tag">response workflows</li>
+            <li class="func-tag">certificate oversight</li>
+            <li class="func-tag">key management visibility</li>
+          </ul>
+          <a href="products/livesentinel/" class="product-card-link" aria-label="Learn more about LiveSentinel">
+            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
       </div>
     </div>
   </section>
@@ -296,7 +331,7 @@ require_once __DIR__ . '/includes/header.php';
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
         <div>
           <span class="badge badge-blue" style="margin-bottom:1rem;display:inline-block;">Platform Architecture</span>
-          <h2 class="section-title fade-in" id="about-heading">Three layers. One intelligence cycle.</h2>
+          <h2 class="section-title fade-in" id="about-heading">Four layers. One intelligence cycle.</h2>
           <p style="color:var(--clr-text-muted); margin-bottom:1.25rem;">
             Rather than offering isolated utilities, LiveIntel integrates multiple capabilities
             into a cohesive intelligence system that helps organizations identify threats,
@@ -328,6 +363,14 @@ require_once __DIR__ . '/includes/header.php';
                 and organizational security posture insights.
               </p>
             </div>
+            <div>
+              <span class="badge badge-red" style="margin-bottom:.4rem;display:inline-block;">Monitoring &amp; Response</span>
+              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
+                <strong style="color:var(--clr-text)">LiveSentinel</strong> acts as the centralized
+                oversight layer, monitoring certificate systems, phishing simulation activity,
+                and key management services while coordinating response actions from one place.
+              </p>
+            </div>
           </div>
 
           <p style="color:var(--clr-text-muted); font-size:.9rem; font-style:italic; border-left:3px solid var(--clr-primary); padding-left:.85rem; margin:0;">
@@ -345,7 +388,8 @@ require_once __DIR__ . '/includes/header.php';
             <div class="spec-row"><span class="spec-key">Layer 1</span><span class="spec-val">LiveIntel — Intelligence Services</span></div>
             <div class="spec-row"><span class="spec-key">Layer 2</span><span class="spec-val">PhishSim — Behavioral Simulation</span></div>
             <div class="spec-row"><span class="spec-key">Layer 3</span><span class="spec-val">LiveInsight — Analytics &amp; Intelligence</span></div>
-            <div class="spec-row"><span class="spec-key">Intelligence cycle</span><span class="spec-val">analyze → simulate → measure → improve</span></div>
+            <div class="spec-row"><span class="spec-key">Layer 4</span><span class="spec-val">LiveSentinel — Monitoring &amp; Response</span></div>
+            <div class="spec-row"><span class="spec-key">Intelligence cycle</span><span class="spec-val">analyze → simulate → monitor → respond → improve</span></div>
             <div class="spec-row"><span class="spec-key">API standard</span><span class="spec-val">REST + JSON</span></div>
             <div class="spec-row"><span class="spec-key">Encryption</span><span class="spec-val">AES-256-GCM at rest &amp; in transit</span></div>
           </div>
