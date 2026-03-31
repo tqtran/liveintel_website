@@ -1,5 +1,5 @@
 <?php
-$basePath = "../";
+$basePath = "../../";
 $pageTitle = "PassMeter | LiveIntel";
 $pageDescription = "LiveIntel PassMeter — Password strength and crack-time analysis with entropy scoring, dictionary detection, pattern weakness detection, and breach exposure checks.";
 $pageStyles = '<style>
@@ -31,7 +31,7 @@ $pageStyles = '<style>
   .fill-good   { width: 75%; background: var(--clr-primary); }
   .fill-strong { width: 100%; background: var(--clr-accent-2); }
 </style>';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/header.php';
 ?>
 
 <main>
@@ -41,7 +41,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../index.php#products" class="product-hero-back">
+          <a href="../../index.php#products" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Products
           </a>
@@ -53,7 +53,7 @@ require_once __DIR__ . '/../includes/header.php';
             structural patterns, breach exposure, and estimated crack time in one API call.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../index.php#contact" class="btn btn-primary">Request Demo</a>
+            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
             <a href="#features" class="btn btn-outline">See Features</a>
           </div>
         </div>
@@ -199,8 +199,8 @@ require_once __DIR__ . '/../includes/header.php';
           with a single REST endpoint — no new infrastructure required.
         </p>
         <div class="cta-banner-actions">
-          <a href="../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>
     </div>
@@ -208,4 +208,4 @@ require_once __DIR__ . '/../includes/header.php';
 
 </main>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../includes/footer.php'; ?>

@@ -1,8 +1,8 @@
 <?php
-$basePath = "../";
+$basePath = "../../";
 $pageTitle = "PassForge | LiveIntel";
 $pageDescription = "LiveIntel PassForge — Secure password and passphrase generation engine with policy-driven rules and human-memorable passphrase support.";
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/header.php';
 ?>
 
 <main>
@@ -12,7 +12,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../index.php#products" class="product-hero-back">
+          <a href="../../index.php#products" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Products
           </a>
@@ -24,7 +24,7 @@ require_once __DIR__ . '/../includes/header.php';
             that are both strong and human-memorable.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../index.php#contact" class="btn btn-primary">Request Demo</a>
+            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
             <a href="#features" class="btn btn-outline">See Features</a>
           </div>
         </div>
@@ -154,8 +154,8 @@ require_once __DIR__ . '/../includes/header.php';
           via the intuitive web UI.
         </p>
         <div class="cta-banner-actions">
-          <a href="../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>
     </div>
@@ -163,4 +163,4 @@ require_once __DIR__ . '/../includes/header.php';
 
 </main>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../includes/footer.php'; ?>

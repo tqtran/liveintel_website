@@ -17,13 +17,13 @@
       <nav aria-label="Products footer links">
         <h3 class="footer-col-title">Products</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>products/phishcheck.php">PhishCheck</a></li>
-          <li><a href="<?php echo $basePath; ?>products/phishsim.php">PhishSim</a></li>
-          <li><a href="<?php echo $basePath; ?>products/safelink.php">SafeLink</a></li>
-          <li><a href="<?php echo $basePath; ?>products/passforge.php">PassForge</a></li>
-          <li><a href="<?php echo $basePath; ?>products/passmeter.php">PassMeter</a></li>
-          <li><a href="<?php echo $basePath; ?>products/vault.php">Vault</a></li>
-          <li><a href="<?php echo $basePath; ?>products/liveinsight.php">LiveInsight</a></li>
+          <li><a href="<?php echo $basePath; ?>products/phishcheck/">PhishCheck</a></li>
+          <li><a href="<?php echo $basePath; ?>products/phishsim/">PhishSim</a></li>
+          <li><a href="<?php echo $basePath; ?>products/safelink/">SafeLink</a></li>
+          <li><a href="<?php echo $basePath; ?>products/passforge/">PassForge</a></li>
+          <li><a href="<?php echo $basePath; ?>products/passmeter/">PassMeter</a></li>
+          <li><a href="<?php echo $basePath; ?>products/vault/">Vault</a></li>
+          <li><a href="<?php echo $basePath; ?>products/liveinsight/">LiveInsight</a></li>
         </ul>
       </nav>
       <nav aria-label="Company footer links">

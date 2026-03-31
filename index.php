@@ -135,7 +135,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">attachment risk scoring</li>
             <li class="func-tag">domain intelligence</li>
           </ul>
-          <a href="products/phishcheck.php" class="product-card-link" aria-label="Learn more about PhishCheck">
+          <a href="products/phishcheck/" class="product-card-link" aria-label="Learn more about PhishCheck">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -156,7 +156,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">malware URL detection</li>
             <li class="func-tag">link preview</li>
           </ul>
-          <a href="products/safelink.php" class="product-card-link" aria-label="Learn more about SafeLink">
+          <a href="products/safelink/" class="product-card-link" aria-label="Learn more about SafeLink">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -176,7 +176,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">policy-driven rules</li>
             <li class="func-tag">human-memorable</li>
           </ul>
-          <a href="products/passforge.php" class="product-card-link" aria-label="Learn more about PassForge">
+          <a href="products/passforge/" class="product-card-link" aria-label="Learn more about PassForge">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -196,7 +196,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">pattern weakness</li>
             <li class="func-tag">breach exposure</li>
           </ul>
-          <a href="products/passmeter.php" class="product-card-link" aria-label="Learn more about PassMeter">
+          <a href="products/passmeter/" class="product-card-link" aria-label="Learn more about PassMeter">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -217,7 +217,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">zero-knowledge</li>
             <li class="func-tag">brute force detection</li>
           </ul>
-          <a href="products/vault.php" class="product-card-link" aria-label="Learn more about Vault">
+          <a href="products/vault/" class="product-card-link" aria-label="Learn more about Vault">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -248,7 +248,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">reporting activity</li>
             <li class="func-tag">automated training</li>
           </ul>
-          <a href="products/phishsim.php" class="product-card-link" aria-label="Learn more about PhishSim">
+          <a href="products/phishsim/" class="product-card-link" aria-label="Learn more about PhishSim">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
@@ -279,7 +279,7 @@ require_once __DIR__ . '/includes/header.php';
             <li class="func-tag">scheduled reports</li>
             <li class="func-tag">executive summaries</li>
           </ul>
-          <a href="products/liveinsight.php" class="product-card-link" aria-label="Learn more about LiveInsight">
+          <a href="products/liveinsight/" class="product-card-link" aria-label="Learn more about LiveInsight">
             Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
