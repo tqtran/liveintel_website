@@ -1,6 +1,6 @@
 # LiveIntel
 
-LiveIntel is a platform for practical security intelligence and analysis, providing services that help analyze phishing threats, evaluate credential strength, manage secrets, and coordinate centralized monitoring and response across the ecosystem.
+LiveIntel is a platform for practical security intelligence and analysis, providing services that help analyze phishing threats, evaluate credential strength, manage secrets, and stay ahead of visible service issues across the ecosystem.
 
 ## Products
 
@@ -13,4 +13,4 @@ LiveIntel is a platform for practical security intelligence and analysis, provid
 | **PassMeter** | Password strength and crack-time analysis |
 | **Vault** | Secure key-value secret storage |
 | **LiveInsight** | Intelligence, analytics, and reporting platform |
-| **LiveSentinel** | Centralized monitoring and response layer |
+| **LiveSentinel** | Lightweight early warning for uptime and certificate issues |
