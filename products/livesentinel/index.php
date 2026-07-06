@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "LiveSentinel | LiveIntel";
-$pageDescription = "LiveSentinel — Lightweight early-warning checks for uptime, certificate health, and public-facing service confidence.";
+$pageTitle = "LiveSentinel | Uptime & Certificate Monitoring | LiveIntel";
+$pageDescription = "LiveSentinel is a lightweight monitoring tool from LiveIntel that watches uptime and certificate expiry for public-facing services.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -12,20 +12,19 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../tools/" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            All Tools
           </a>
-          <span class="badge badge-red">External Checks</span>
+          <span class="badge badge-red">Free Tool · External Checks</span>
           <h1 class="product-hero-title" id="ls-title">LiveSentinel</h1>
           <p class="product-hero-desc">
-            LiveSentinel helps you catch public-facing issues before customers do.
-            It keeps an eye on service availability, certificate health, and other
-            outward signs of reliability so your team gets an earlier chance to act.
+            LiveSentinel watches your public-facing services for downtime and
+            certificate expiry, so you find out from a check, not a customer.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="#features" class="btn btn-primary">See Features</a>
+            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
           </div>
         </div>
 
@@ -141,15 +140,23 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- CTA -->
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Catch the small warning signs before they become big interruptions</h2>
+      <div class="utility-banner fade-in">
+        <p class="utility-banner-text">
+          <strong>LiveSentinel watches your infrastructure.</strong> LiveInsight
+          watches your phishing and human-risk numbers the same way.
+        </p>
+        <a href="../../products/liveinsight/" class="btn btn-outline">See LiveInsight</a>
+      </div>
+
+      <div class="cta-banner fade-in" style="margin-top:2rem;">
+        <h2 class="cta-banner-title" id="cta-heading">Catch small warning signs before they become incidents</h2>
         <p class="cta-banner-desc">
-          LiveSentinel gives your team a lightweight way to stay ahead of visible
-          service issues without adding another heavy system to manage.
+          Use LiveSentinel on its own, or ask us how it fits alongside the
+          rest of the LiveIntel platform.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
         </div>
       </div>
     </div>

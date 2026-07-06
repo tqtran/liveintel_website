@@ -77,6 +77,26 @@ require_once __DIR__ . '/../includes/header.php';
           <li>Rate limiting and brute-force detection are applied to all authentication endpoints.</li>
         </ul>
 
+        <h2 class="fade-in">Phishing Simulation Safety</h2>
+        <p class="fade-in">
+          PhishSim runs controlled phishing simulations against your own organization.
+          Because that involves sending realistic-looking phishing emails to real people,
+          we hold it to specific rules beyond our general security practices.
+        </p>
+        <ul class="fade-in">
+          <li><strong>No real credentials.</strong> Simulated login pages record that a
+            field was submitted. The value typed into it is never captured, transmitted,
+            or stored.</li>
+          <li><strong>Data minimization.</strong> We collect what's needed to report on
+            campaign behavior (opens, clicks, reports) and nothing beyond that.</li>
+          <li><strong>Role-based access.</strong> Individual-level results are visible to
+            the admins an organization designates, not by default to everyone with a login.</li>
+          <li><strong>Training, not surveillance.</strong> Campaign design and reporting are
+            built around improving awareness, not building a case against individual employees.</li>
+          <li><strong>Audit-friendly records.</strong> Every campaign is logged with who
+            configured it, who it targeted, and what template was used.</li>
+        </ul>
+
         <h2 class="fade-in">Access Control</h2>
         <ul class="fade-in">
           <li>Role-based access control (RBAC) is enforced at every API endpoint.</li>

@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "PassMeter | LiveIntel";
-$pageDescription = "LiveIntel PassMeter — Password strength and crack-time analysis with entropy scoring, dictionary detection, pattern weakness detection, and breach exposure checks.";
+$pageTitle = "PassMeter | Free Password Strength Checker | LiveIntel";
+$pageDescription = "PassMeter is a free tool from LiveIntel that checks password strength, estimated crack time, dictionary matches, and breach exposure.";
 $pageStyles = '<style>
   /* Score meter */
   .score-meter {
@@ -41,20 +41,20 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../tools/" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            All Tools
           </a>
-          <span class="badge badge-yellow">Strength &amp; Crack-Time Analysis</span>
-          <h1 class="product-hero-title" id="pc-title">LiveIntel PassMeter</h1>
+          <span class="badge badge-yellow">Free Tool · Strength Analysis</span>
+          <h1 class="product-hero-title" id="pc-title">PassMeter</h1>
           <p class="product-hero-desc">
-            Password strength and crack-time analysis engine. PassMeter goes beyond
-            naive length checks — exposing entropy weakness, dictionary presence,
-            structural patterns, breach exposure, and estimated crack time in one API call.
+            Check how strong a password really is. PassMeter looks past simple
+            length rules and checks for dictionary words, common patterns,
+            and known breach exposure.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="#features" class="btn btn-primary">See Features</a>
+            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
           </div>
         </div>
 
@@ -97,8 +97,8 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
       <p class="section-subtitle fade-in">
-        PassMeter combines statistical analysis, linguistic heuristics, and live
-        breach data to give you the most accurate strength assessment available.
+        PassMeter checks entropy, dictionary matches, structural patterns, and
+        breach exposure, then gives you a score you can explain to a user.
       </p>
 
       <div class="features-grid">
@@ -192,15 +192,23 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- CTA -->
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Stop users choosing weak passwords at the source</h2>
+      <div class="utility-banner fade-in">
+        <p class="utility-banner-text">
+          <strong>Weak passwords are one risk.</strong> Phishing is how most of
+          them get stolen in the first place. See how PhishSim tests that directly.
+        </p>
+        <a href="../../products/phishsim/" class="btn btn-outline">See PhishSim</a>
+      </div>
+
+      <div class="cta-banner fade-in" style="margin-top:2rem;">
+        <h2 class="cta-banner-title" id="cta-heading">Stop weak passwords at the source</h2>
         <p class="cta-banner-desc">
-          Integrate PassMeter into your registration and password-change flows
-          with a single REST endpoint — no new infrastructure required.
+          Use PassMeter on its own, or ask us about the full phishing and
+          human-risk platform.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
         </div>
       </div>
     </div>

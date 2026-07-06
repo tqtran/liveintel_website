@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "LiveInsight | LiveIntel";
-$pageDescription = "LiveInsight — Intelligence, analytics, and reporting platform that sits above LiveIntel services and converts security activity into meaningful operational insight.";
+$pageTitle = "LiveInsight | Phishing Analytics | LiveIntel";
+$pageDescription = "LiveInsight turns PhishCheck and PhishSim activity into dashboards, trends, department comparisons, and executive summaries.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -12,26 +12,22 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../index.php#platform" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            Platform
           </a>
-          <span class="badge badge-blue">Analytics &amp; Reporting</span>
+          <span class="badge badge-blue">Core Platform · Analytics</span>
           <h1 class="product-hero-title" id="li-title">LiveInsight</h1>
           <p class="product-hero-desc">
-            The intelligence, analytics, and reporting platform that sits above all
-            LiveIntel services. LiveInsight converts raw security activity —
-            phishing events, URL verdicts, campaign results, credential scores, and
-            secret access logs — into the dashboards and trends that managers,
-            directors, and clients actually consume.
+            LiveInsight turns PhishCheck analysis and PhishSim campaign results
+            into dashboards, trends, and reports leadership can actually read.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="../../contact.php" class="btn btn-primary">Request Demo</a>
+            <a href="#dashboards" class="btn btn-outline">See Dashboards</a>
           </div>
         </div>
 
-        <!-- Mini spec card -->
         <div class="spec-box fade-in">
           <div class="spec-box-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -39,108 +35,170 @@ require_once __DIR__ . '/../../includes/header.php';
           </div>
           <div class="spec-box-body">
             <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">LiveInsight</span></div>
-            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Intelligence, analytics &amp; reporting</span></div>
-            <div class="spec-row"><span class="spec-key">Data sources</span><span class="spec-val">All LiveIntel services</span></div>
-            <div class="spec-row"><span class="spec-key">Output</span><span class="spec-val">Dashboards, reports, alerts</span></div>
-            <div class="spec-row"><span class="spec-key">Delivery</span><span class="spec-val">Web UI + REST API + Scheduled PDF</span></div>
+            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Phishing &amp; human-risk analytics</span></div>
+            <div class="spec-row"><span class="spec-key">Data sources</span><span class="spec-val">PhishCheck, PhishSim</span></div>
+            <div class="spec-row"><span class="spec-key">Output</span><span class="spec-val">Dashboards, trends, scheduled reports</span></div>
+            <div class="spec-row"><span class="spec-key">Audience</span><span class="spec-val">Analysts, managers, and leadership</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section" id="features" aria-labelledby="features-heading">
+  <!-- DASHBOARDS -->
+  <section class="section" id="dashboards" aria-labelledby="dash-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
+      <h2 class="section-title fade-in" id="dash-heading">Dashboards</h2>
       <p class="section-subtitle fade-in">
-        LiveInsight aggregates activity from every LiveIntel service and surfaces
-        the operational insight that turns raw security data into decisions.
+        One view across every phishing report and every simulation campaign.
+        <br /><span style="font-size:.82rem; opacity:.75;">Figures below are sample data for illustration.</span>
       </p>
 
-      <div class="features-grid">
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📊</div>
-          <h3 class="feature-title">Unified Security Dashboard</h3>
-          <p class="feature-desc">
-            A single pane of glass across PhishCheck, SafeLink, PhishSim,
-            PassMeter, and Vault. See live threat counters, click rates,
-            credential risk scores, and secret access events without switching tools.
-          </p>
+      <div class="analytics-grid">
+        <div class="metric-card fade-in">
+          <div class="metric-label">Report rate</div>
+          <div class="metric-value"><span data-count="58" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▲ 6% this quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,32 20,28 40,24 60,18 80,12 100,8" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
         </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📈</div>
-          <h3 class="feature-title">Trend Analysis</h3>
-          <p class="feature-desc">
-            Time-series charts expose rising phishing volumes, worsening
-            click-through rates, credential entropy drift, and vault access
-            anomalies — so you can act on trends rather than individual events.
-          </p>
+        <div class="metric-card fade-in">
+          <div class="metric-label">Click rate</div>
+          <div class="metric-value"><span data-count="11" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▼ 4% this quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,10 20,14 40,18 60,22 80,26 100,30" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
         </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🗂️</div>
-          <h3 class="feature-title">Campaign Reporting</h3>
-          <p class="feature-desc">
-            End-to-end PhishSim campaign summaries with per-user click rates,
-            credential submission counts, training completion status, and
-            comparative benchmarks across departments and time periods.
-          </p>
+        <div class="metric-card fade-in">
+          <div class="metric-label">Time to report</div>
+          <div class="metric-value"><span data-count="18" data-suffix=" min">0 min</span></div>
+          <span class="metric-trend trend-up">▼ 5 min this quarter</span>
         </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🕑</div>
-          <h3 class="feature-title">Threat Timeline</h3>
-          <p class="feature-desc">
-            Chronological event feed that correlates activity across all services —
-            a phishing email received, its embedded URL scanned by SafeLink, and
-            the affected user's credential strength checked by PassMeter, all in one view.
-          </p>
+        <div class="metric-card fade-in">
+          <div class="metric-label">High-risk emails flagged</div>
+          <div class="metric-value"><span data-count="212">0</span></div>
+          <span class="metric-trend trend-flat">steady month over month</span>
         </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📬</div>
-          <h3 class="feature-title">Scheduled Reports</h3>
-          <p class="feature-desc">
-            Automated PDF and CSV report generation delivered on a daily, weekly,
-            or monthly schedule. Reports can be scoped by service, team, or time
-            window and sent directly to stakeholder inboxes.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🏢</div>
-          <h3 class="feature-title">Executive Summary View</h3>
-          <p class="feature-desc">
-            High-level KPI cards designed for managers, directors, and clients.
-            Risk scores, improvement trends, and compliance-ready snapshots
-            — no technical knowledge required to understand the picture.
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="how-heading">
+  <!-- TRENDS & COMPARISON -->
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="trend-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="how-heading">How LiveInsight Works</h2>
-      <p class="section-subtitle fade-in">Security activity flows through a five-stage pipeline and surfaces as actionable insight in seconds.</p>
+      <h2 class="section-title fade-in" id="trend-heading">Trends and campaign comparison</h2>
+      <p class="section-subtitle fade-in">See whether a training push actually changed behavior, or just felt like it did.</p>
 
-      <div class="spec-box fade-in" style="max-width:720px;">
+      <div class="analytics-grid">
+        <div class="metric-card span-2 fade-in">
+          <div class="metric-label" style="margin-bottom:1rem;">Click rate across three campaigns</div>
+          <div class="dept-bars">
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q1</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="19" style="width:0%"></div></div>
+              <span class="dept-bar-value">19%</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q2</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="15" style="width:0%"></div></div>
+              <span class="dept-bar-value">15%</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q3</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="11" style="width:0%"></div></div>
+              <span class="dept-bar-value">11%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-card span-2 fade-in">
+          <div class="metric-label" style="margin-bottom:1rem;">Department risk</div>
+          <div class="dept-bars">
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Finance</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="72" style="width:0%"></div></div>
+              <span class="dept-bar-value">72</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Support</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="63" style="width:0%"></div></div>
+              <span class="dept-bar-value">63</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Sales</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="54" style="width:0%"></div></div>
+              <span class="dept-bar-value">54</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Engineering</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="31" style="width:0%"></div></div>
+              <span class="dept-bar-value">31</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE SUMMARIES -->
+  <section class="section" aria-labelledby="exec-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="exec-heading">Executive summaries</h2>
+      <p class="section-subtitle fade-in">
+        A short, plain-English summary leadership can read without a
+        walkthrough from the security team.
+      </p>
+
+      <div class="spec-box fade-in" style="max-width:680px;">
         <div class="spec-box-header">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          insight-pipeline
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          quarterly-summary
         </div>
         <div class="spec-box-body">
-          <div class="spec-row"><span class="spec-key">Stage 1</span><span class="spec-val">Event ingestion from all LiveIntel services via streaming API</span></div>
-          <div class="spec-row"><span class="spec-key">Stage 2</span><span class="spec-val">Normalisation, deduplication &amp; enrichment</span></div>
-          <div class="spec-row"><span class="spec-key">Stage 3</span><span class="spec-val">Trend calculation, risk scoring &amp; anomaly detection</span></div>
-          <div class="spec-row"><span class="spec-key">Stage 4</span><span class="spec-val">Dashboard rendering with real-time WebSocket updates</span></div>
-          <div class="spec-row"><span class="spec-key">Stage 5</span><span class="spec-val">Scheduled report generation &amp; delivery (PDF / CSV / API)</span></div>
+          <p style="color:var(--clr-text); font-size:.92rem; margin-bottom:.75rem;">
+            Click rate dropped from 19% to 11% over two campaign cycles.
+            Report rate is up in every department. Finance and Support still
+            click more than the rest of the company and are the next
+            training priority.
+          </p>
+          <p style="color:var(--clr-text-muted); font-size:.85rem;">Delivered automatically. No manual slide-building required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHAVIOR OVER TIME -->
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="behavior-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="behavior-heading">User behavior over time</h2>
+      <p class="section-subtitle fade-in">
+        Individual results stay role-restricted. What everyone sees is the
+        pattern, not the person.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <h3 class="feature-title">Repeat clicker tracking</h3>
+          <p class="feature-desc">
+            Flag the small group that clicks on more than one simulation, so
+            targeted coaching goes where it matters.
+          </p>
+        </div>
+        <div class="feature-card fade-in">
+          <h3 class="feature-title">Improvement curves</h3>
+          <p class="feature-desc">
+            Track a department's click rate campaign over campaign instead of
+            judging one result in isolation.
+          </p>
+        </div>
+        <div class="feature-card fade-in">
+          <h3 class="feature-title">Scheduled delivery</h3>
+          <p class="feature-desc">
+            Send a report to stakeholders on a schedule, scoped to their
+            team or the whole organization.
+          </p>
         </div>
       </div>
     </div>
@@ -150,14 +208,14 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Turn security data into operational insight</h2>
+        <h2 class="cta-banner-title" id="cta-heading">Turn phishing activity into a report leadership reads</h2>
         <p class="cta-banner-desc">
-          Connect LiveInsight to your existing LiveIntel services in minutes and
-          give your team the dashboards and reports they need to make informed decisions.
+          Connect LiveInsight to PhishCheck and PhishSim and see your first
+          dashboard the same week.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../index.php#platform" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>
     </div>

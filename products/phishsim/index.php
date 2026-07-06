@@ -1,31 +1,31 @@
 <?php
 $basePath = "../../";
-$pageTitle = "PhishSim | LiveIntel";
-$pageDescription = "LiveIntel PhishSim — Security awareness testing through realistic phishing simulations covering campaigns, click tracking, credential tracking, and reporting.";
+$pageTitle = "PhishSim | Phishing Simulation | LiveIntel";
+$pageDescription = "PhishSim runs controlled phishing simulations, measures who reports and who clicks, and improves awareness without collecting real passwords.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
 <main>
 
   <!-- PRODUCT HERO -->
-  <section class="product-hero" aria-labelledby="ps-title" style="--hero-accent: rgba(124,58,237,.08);">
+  <section class="product-hero" aria-labelledby="ps-title">
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../index.php#platform" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            Platform
           </a>
-          <span class="badge badge-purple">Security Awareness</span>
-          <h1 class="product-hero-title" id="ps-title">LiveIntel PhishSim</h1>
+          <span class="badge badge-purple">Core Platform · Phishing Simulation</span>
+          <h1 class="product-hero-title" id="ps-title">PhishSim</h1>
           <p class="product-hero-desc">
-            Simulate real-world phishing attacks against your own organisation to
-            identify at-risk employees, measure awareness levels, and drive targeted
-            security training — all from a single platform.
+            Run phishing simulations against your own organization. See who
+            reports, who clicks, and who repeats mistakes, without collecting
+            or storing a single real password.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="../../contact.php" class="btn btn-primary">Request Demo</a>
+            <a href="#safety" class="btn btn-outline">Safety &amp; Privacy</a>
           </div>
         </div>
 
@@ -35,123 +35,199 @@ require_once __DIR__ . '/../../includes/header.php';
             phishsim — product spec
           </div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">LiveIntel PhishSim</span></div>
-            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Simulated phishing campaigns</span></div>
-            <div class="spec-row"><span class="spec-key">Templates</span><span class="spec-val">500+ realistic lure templates</span></div>
-            <div class="spec-row"><span class="spec-key">Tracking</span><span class="spec-val">Open / Click / Credential submission</span></div>
-            <div class="spec-row"><span class="spec-key">Training</span><span class="spec-val">Auto-triggered micro-learning</span></div>
+            <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">PhishSim</span></div>
+            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Controlled phishing simulation</span></div>
+            <div class="spec-row"><span class="spec-key">Tracks</span><span class="spec-val">Opens, clicks, reports, submission events</span></div>
+            <div class="spec-row"><span class="spec-key">Credentials</span><span class="spec-val">Never collected or stored</span></div>
+            <div class="spec-row"><span class="spec-key">Connects to</span><span class="spec-val">PhishCheck &amp; LiveInsight</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section" id="features" aria-labelledby="features-heading">
+  <!-- CAMPAIGN BUILDER -->
+  <section class="section" id="features" aria-labelledby="builder-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
+      <h2 class="section-title fade-in" id="builder-heading">Campaign builder</h2>
       <p class="section-subtitle fade-in">
-        PhishSim provides end-to-end campaign management, from template selection
-        to post-campaign analytics and automated training delivery.
+        Put together a campaign in a few steps and target it by department,
+        role, or a group that reported real phishing recently.
       </p>
 
       <div class="features-grid">
-
         <div class="feature-card fade-in">
           <div class="feature-icon" aria-hidden="true">🎯</div>
-          <h3 class="feature-title">Phishing Simulation Campaigns</h3>
+          <h3 class="feature-title">Targeted sending</h3>
           <p class="feature-desc">
-            Design and schedule targeted campaigns using industry-standard lure
-            templates or build custom ones with a drag-and-drop editor. Segment
-            targeting by department, role, or risk tier.
+            Segment by department, role, or risk tier. Send to a pilot group
+            before rolling out company-wide.
           </p>
         </div>
-
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🧠</div>
-          <h3 class="feature-title">User Awareness Testing</h3>
+          <div class="feature-icon" aria-hidden="true">🗓️</div>
+          <h3 class="feature-title">Scheduling</h3>
           <p class="feature-desc">
-            Benchmark employee susceptibility scores over time with standardised
-            difficulty tiers. Track improvement between campaign cycles automatically.
+            Send once or set up a recurring cadence so awareness testing
+            doesn't depend on someone remembering to run it.
           </p>
         </div>
-
         <div class="feature-card fade-in">
           <div class="feature-icon" aria-hidden="true">🖱️</div>
-          <h3 class="feature-title">Click Tracking</h3>
+          <h3 class="feature-title">Click &amp; open tracking</h3>
           <p class="feature-desc">
-            Pixel-accurate link tracking logs every click with timestamp, device,
-            geolocation (where permitted), and user agent data for full campaign
-            visibility.
+            Every open, click, and report is logged with a timestamp, so you
+            can measure how fast people react, not just whether they did.
           </p>
         </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🔑</div>
-          <h3 class="feature-title">Credential Submission Tracking</h3>
-          <p class="feature-desc">
-            Safely capture simulated credential submissions (no real data stored)
-            to identify employees who reach the highest-risk stage of a phishing attack.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📈</div>
-          <h3 class="feature-title">Reporting &amp; Training Triggers</h3>
-          <p class="feature-desc">
-            Automated reports delivered to managers after each campaign cycle.
-            Employees who click are instantly enrolled in targeted micro-learning
-            modules without admin intervention.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🔄</div>
-          <h3 class="feature-title">Continuous Programme Management</h3>
-          <p class="feature-desc">
-            Schedule recurring campaigns to maintain awareness momentum. Risk-based
-            scheduling increases frequency for high-risk users automatically.
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CAMPAIGN LIFECYCLE -->
-  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="lifecycle-heading">
+  <!-- TEMPLATES -->
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="templates-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="lifecycle-heading">Campaign Lifecycle</h2>
-      <p class="section-subtitle fade-in">Run a complete awareness campaign in five steps.</p>
+      <h2 class="section-title fade-in" id="templates-heading">Templates</h2>
+      <p class="section-subtitle fade-in">
+        Use ready-made lures based on real reported phishing themes, or build
+        your own to match a threat you've actually seen.
+      </p>
 
-      <div class="spec-box fade-in" style="max-width:720px;">
-        <div class="spec-box-header">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          campaign-lifecycle
+      <div class="theme-tags fade-in" style="max-width:640px;">
+        <span class="theme-tag">Invoice / payment request</span>
+        <span class="theme-tag">IT helpdesk / password reset</span>
+        <span class="theme-tag">Package delivery notice</span>
+        <span class="theme-tag">Executive request</span>
+        <span class="theme-tag">Benefits / HR notice</span>
+        <span class="theme-tag">Custom template</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- USER BEHAVIOR METRICS -->
+  <section class="section" aria-labelledby="metrics-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="metrics-heading">User behavior metrics</h2>
+      <p class="section-subtitle fade-in">What a completed campaign tells you, in numbers you can compare over time.</p>
+
+      <div class="analytics-grid">
+        <div class="metric-card fade-in">
+          <div class="metric-label">Report rate</div>
+          <div class="metric-value"><span data-count="58" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▲ 6% vs last campaign</span>
         </div>
-        <div class="spec-box-body">
-          <div class="spec-row"><span class="spec-key">Step 1</span><span class="spec-val">Select lure template &amp; landing page</span></div>
-          <div class="spec-row"><span class="spec-key">Step 2</span><span class="spec-val">Configure target group &amp; schedule delivery</span></div>
-          <div class="spec-row"><span class="spec-key">Step 3</span><span class="spec-val">PhishSim delivers personalised simulated phishing emails</span></div>
-          <div class="spec-row"><span class="spec-key">Step 4</span><span class="spec-val">Events logged: opens, clicks, credential submissions</span></div>
-          <div class="spec-row"><span class="spec-key">Step 5</span><span class="spec-val">Auto-trigger training + generate management report</span></div>
+        <div class="metric-card fade-in">
+          <div class="metric-label">Click rate</div>
+          <div class="metric-value"><span data-count="11" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▼ 4% vs last campaign</span>
+        </div>
+        <div class="metric-card fade-in">
+          <div class="metric-label">Credential-page reach</div>
+          <div class="metric-value"><span data-count="3" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▼ 2% vs last campaign</span>
+        </div>
+        <div class="metric-card fade-in">
+          <div class="metric-label">Repeat clickers</div>
+          <div class="metric-value"><span data-count="4">0</span></div>
+          <span class="metric-trend trend-up">▼ 2 vs last campaign</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY & PRIVACY -->
+  <section class="section" id="safety" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="safety-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="safety-heading">Safety and privacy</h2>
+      <p class="section-subtitle fade-in">A phishing simulation only works if people trust it isn't a trap.</p>
+
+      <div class="safety-banner fade-in">
+        <div class="safety-banner-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <div class="safety-banner-text">No real passwords are collected, stored, or transmitted during simulations.</div>
+          <div class="safety-banner-sub">A simulated login page records that a field was submitted. It does not read or keep what was typed.</div>
+        </div>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">No real credential collection</div>
+            <div class="trust-item-desc">Simulated credential fields never transmit or store the value a user types.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Training, not surveillance</div>
+            <div class="trust-item-desc">Results are used to target training, not to flag individuals for discipline.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Role-based visibility</div>
+            <div class="trust-item-desc">Individual-level results are visible to admins you designate, not the whole company.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Audit-friendly records</div>
+            <div class="trust-item-desc">Every campaign is logged with who ran it, who it targeted, and what it sent.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTING & IMPROVEMENT -->
+  <section class="section" aria-labelledby="reporting-heading">
+    <div class="container">
+      <h2 class="section-title fade-in" id="reporting-heading">Reporting and improvement over time</h2>
+      <p class="section-subtitle fade-in">
+        One campaign is a snapshot. A series of them, tracked in LiveInsight,
+        is a trend.
+      </p>
+
+      <div class="metric-card span-2 fade-in" style="max-width:640px;">
+        <div class="metric-label" style="margin-bottom:1rem;">Click rate across three campaigns</div>
+        <div class="dept-bars">
+          <div class="dept-bar-row">
+            <span class="dept-bar-name">Q1</span>
+            <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="19" style="width:0%"></div></div>
+            <span class="dept-bar-value">19%</span>
+          </div>
+          <div class="dept-bar-row">
+            <span class="dept-bar-name">Q2</span>
+            <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="15" style="width:0%"></div></div>
+            <span class="dept-bar-value">15%</span>
+          </div>
+          <div class="dept-bar-row">
+            <span class="dept-bar-name">Q3</span>
+            <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="11" style="width:0%"></div></div>
+            <span class="dept-bar-value">11%</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section" aria-labelledby="cta-heading">
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Know who your weakest links are — before attackers do</h2>
+        <h2 class="cta-banner-title" id="cta-heading">Run your first campaign the right way</h2>
         <p class="cta-banner-desc">
-          Launch your first simulated phishing campaign in under 30 minutes with
-          PhishSim's guided campaign wizard.
+          We'll help you pick a template, set a target group, and read the
+          results without turning it into a witch hunt.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Start Free Trial</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../index.php#platform" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>
     </div>

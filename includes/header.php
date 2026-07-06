@@ -33,12 +33,14 @@
       </button>
 
       <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="<?php echo $basePath; ?>index.php#products">Products</a></li>
-        <li><a href="<?php echo $basePath; ?>index.php#about">About</a></li>
-        <li><a href="<?php echo $basePath; ?>index.php#contact">Contact</a></li>
+        <li><a href="<?php echo $basePath; ?>index.php#platform">Platform</a></li>
+        <li><a href="<?php echo $basePath; ?>index.php#analytics">Analytics</a></li>
+        <li><a href="<?php echo $basePath; ?>tools/">Tools</a></li>
+        <li><a href="<?php echo $basePath; ?>legal/security.php">Security</a></li>
+        <li><a href="<?php echo $basePath; ?>about.php">About</a></li>
       </ul>
 
-      <a href="<?php echo $basePath; ?>index.php#contact" class="btn btn-primary nav-cta">Get Started</a>
+      <a href="<?php echo $basePath; ?>contact.php" class="btn btn-primary nav-cta">Request Demo</a>
     </nav>
   </div>
 </header>

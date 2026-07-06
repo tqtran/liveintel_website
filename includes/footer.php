@@ -12,34 +12,34 @@
           </svg>
           Live<span>Intel</span>
         </a>
-        <p>Analyze threats, simulate behavior, and understand risk — a continuous security intelligence cycle.</p>
+        <p>Phishing analysis, simulation, and analytics in one platform.</p>
       </div>
-      <nav aria-label="Products footer links">
-        <h3 class="footer-col-title">Products</h3>
+      <nav aria-label="Platform footer links">
+        <h3 class="footer-col-title">Platform</h3>
         <ul class="footer-links" role="list">
           <li><a href="<?php echo $basePath; ?>products/phishcheck/">PhishCheck</a></li>
           <li><a href="<?php echo $basePath; ?>products/phishsim/">PhishSim</a></li>
+          <li><a href="<?php echo $basePath; ?>products/liveinsight/">LiveInsight</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Tools footer links">
+        <h3 class="footer-col-title">Free Tools</h3>
+        <ul class="footer-links" role="list">
           <li><a href="<?php echo $basePath; ?>products/safelink/">SafeLink</a></li>
           <li><a href="<?php echo $basePath; ?>products/passforge/">PassForge</a></li>
           <li><a href="<?php echo $basePath; ?>products/passmeter/">PassMeter</a></li>
           <li><a href="<?php echo $basePath; ?>products/vault/">Vault</a></li>
-          <li><a href="<?php echo $basePath; ?>products/liveinsight/">LiveInsight</a></li>
           <li><a href="<?php echo $basePath; ?>products/livesentinel/">LiveSentinel</a></li>
         </ul>
       </nav>
       <nav aria-label="Company footer links">
         <h3 class="footer-col-title">Company</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>index.php#about">About</a></li>
-          <li><a href="<?php echo $basePath; ?>index.php#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Legal footer links">
-        <h3 class="footer-col-title">Legal</h3>
-        <ul class="footer-links" role="list">
+          <li><a href="<?php echo $basePath; ?>about.php">About</a></li>
+          <li><a href="<?php echo $basePath; ?>contact.php">Contact</a></li>
+          <li><a href="<?php echo $basePath; ?>legal/security.php">Security</a></li>
           <li><a href="<?php echo $basePath; ?>legal/privacy-policy.php">Privacy Policy</a></li>
           <li><a href="<?php echo $basePath; ?>legal/terms-of-service.php">Terms of Service</a></li>
-          <li><a href="<?php echo $basePath; ?>legal/security.php">Security</a></li>
         </ul>
       </nav>
     </div>

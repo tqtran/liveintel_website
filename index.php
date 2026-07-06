@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
-$pageTitle = "LiveIntel | Security Intelligence Platform";
-$pageDescription = "LiveIntel — Security Intelligence Platform designed to analyze, simulate, monitor, and validate security threats, application status, and human behavior across modern digital environments.";
+$pageTitle = "LiveIntel | Phishing Intelligence and Analytics Platform";
+$pageDescription = "LiveIntel helps security teams analyze phishing emails, run controlled phishing simulations, and turn user behavior into measurable security analytics.";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -17,50 +17,53 @@ require_once __DIR__ . '/includes/header.php';
         <div>
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span class="badge badge-blue">Security Intelligence Platform</span>
+            <span class="badge badge-blue">Phishing Intelligence Platform</span>
           </div>
 
           <h1 class="hero-title" id="hero-heading">
-            Security<br /><span>Intelligence</span> Platform
+            Phishing intelligence<br />and <span>analytics</span> for modern security teams.
           </h1>
 
           <p class="hero-desc">
-            LiveIntel is a platform designed to analyze, simulate, and understand
-            security threats and human behavior across modern digital environments.
-            It integrates threat analysis, behavioral simulation, security analytics,
-            and external status checks into a cohesive intelligence system that helps
-            teams catch issues earlier and operate with more confidence.
+            LiveIntel helps teams analyze suspicious emails, run controlled phishing
+            simulations, and turn user behavior into measurable security intelligence.
           </p>
 
           <div class="hero-actions">
-            <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
-            <a href="#about"    class="btn btn-outline btn-lg">Learn More</a>
+            <a href="contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+            <a href="#platform" class="btn btn-outline btn-lg">Explore Platform</a>
           </div>
         </div>
 
-        <!-- Terminal visual -->
-        <div class="hero-visual">
-          <div class="hero-terminal" role="img" aria-label="LiveIntel terminal demo">
+        <!-- Terminal + dashboard hybrid visual -->
+        <div class="hero-visual" style="position:relative;">
+          <span class="ioc-chip chip-danger" style="top:-14px; left:-10px;" aria-hidden="true">hxxp://login-secure-update.ru</span>
+          <span class="ioc-chip chip-warn chip-2" style="top:38%; right:-24px;" aria-hidden="true">SPF: fail</span>
+          <span class="ioc-chip chip-warn chip-3" style="bottom:-16px; left:8%;" aria-hidden="true">macro: enabled</span>
+
+          <div class="hero-terminal" role="img" aria-label="PhishCheck analyzing a suspicious email, followed by PhishSim and LiveInsight summaries">
             <div class="terminal-bar">
               <span class="terminal-dot dot-red"    aria-hidden="true"></span>
               <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
               <span class="terminal-dot dot-green"  aria-hidden="true"></span>
-              <span class="terminal-title">liveintel — threat-cli v2.0</span>
+              <span class="terminal-title">phishcheck — analysis session</span>
             </div>
             <div class="terminal-body" aria-hidden="true">
-              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishcheck analyze --email suspicious.eml</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Header analysis       PASS</span></div>
-              <div class="terminal-line"><span class="t-out t-warn">⚠ Phishing link         DETECTED (3)</span></div>
-              <div class="terminal-line"><span class="t-out t-err">✖ Domain intelligence   FLAGGED</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">phishsim campaign --report q1</span></div>
-              <div class="terminal-line"><span class="t-out t-warn">⚠ Click rate:           18.4% (+3.1%)</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Training completion:  91%</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">liveinsight report --period 30d</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Risk posture:         improving</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Report delivered to 4 stakeholders</span></div>
-              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">livesentinel check --target api.liveintel.com</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Customer-facing app:  healthy</span></div>
-              <div class="terminal-line"><span class="t-out t-warn">⚠ Renewal window:       certificate needs attention soon</span></div>
+              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishcheck analyze invoice-overdue.eml</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Header checks complete (SPF, DKIM, DMARC)</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ 2 lookalike domains found</span></div>
+              <div class="terminal-line"><span class="t-out t-err">✖ Credential-harvesting link detected</span></div>
+
+              <div class="risk-meter" style="margin:.85rem 0 1rem;">
+                <div class="risk-meter-track"><div class="risk-meter-fill" data-fill="82" style="width:0%"></div></div>
+                <div class="risk-meter-labels"><span>risk score</span><span>82 / 100 — high</span></div>
+              </div>
+
+              <div class="terminal-line t-info"><span class="t-prompt">❯</span><span class="t-cmd">phishsim campaign report --q3</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Report rate: 58% (+6%)</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Click rate: 11% (-4%)</span></div>
+              <div class="terminal-line t-info" style="margin-top:.5rem"><span class="t-prompt">❯</span><span class="t-cmd">liveinsight trend --30d</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ Risk trend: improving across 4 of 5 departments</span></div>
             </div>
           </div>
         </div>
@@ -70,253 +73,104 @@ require_once __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ============================================================
-       STATS STRIP
+       PROBLEM
   ============================================================ -->
-  <div class="stats-strip" aria-label="LiveIntel at a glance">
+  <section class="section" aria-labelledby="problem-heading">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Platform Layers</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">8</div>
-          <div class="stat-label">Products &amp; Services</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">99.8%</div>
-          <div class="stat-label">Phish Detection Rate</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">0-Trust</div>
-          <div class="stat-label">Vault Architecture</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">256-bit</div>
-          <div class="stat-label">Encryption at Rest</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       PRODUCTS SECTION
-  ============================================================ -->
-  <section class="section" id="products" aria-labelledby="products-heading">
-    <div class="container">
-      <h2 class="section-title fade-in" id="products-heading">LiveIntel Platform</h2>
-      <p class="section-subtitle fade-in">
-        Four integrated layers — intelligence services, behavioral simulation,
-        analytics, and external checks — forming a continuous security
-        intelligence cycle:
-        <strong style="color:var(--clr-text)">analyze → simulate → measure → check → improve</strong>.
-      </p>
-
-      <div class="products-grid">
-
-        <!-- ── LAYER 1: Intelligence Services ────────────────────── -->
-        <div style="grid-column:1/-1; padding:1.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:.5rem;" class="fade-in">
-          <span class="badge badge-blue" style="margin-bottom:.5rem;display:inline-block;">Intelligence Services</span>
-          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveIntel — Threat &amp; Signal Analysis</h3>
-          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
-            Analysis engines that evaluate suspicious content, examine potentially
-            malicious links, and assess credential strength to identify threats and weaknesses.
+      <div class="problem-grid">
+        <div class="problem-copy">
+          <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>The problem</div>
+          <h2 class="section-title fade-in" id="problem-heading">Phishing defense usually lives in five different places.</h2>
+          <p class="fade-in">
+            A user reports a suspicious email. Someone triages it by hand. A different
+            tool runs the phishing simulation. Results end up in a spreadsheet. Someone
+            builds a slide deck for leadership once a quarter.
+          </p>
+          <p class="fade-in">
+            Every handoff loses context, and nobody can answer a simple question:
+            is phishing risk actually going down? LiveIntel connects those signals
+            into one phishing intelligence workflow, so the answer is always current.
           </p>
         </div>
 
-        <!-- PhishCheck -->
-        <article class="product-card fade-in" aria-labelledby="pg-name">
+        <div class="glass-panel scatter-diagram fade-in">
+          <div class="scatter-row">
+            <span class="scatter-chip">inbox reports</span>
+            <span class="scatter-chip">manual triage</span>
+          </div>
+          <div class="scatter-row">
+            <span class="scatter-chip">simulation tool</span>
+            <span class="scatter-chip">spreadsheet</span>
+          </div>
+          <div class="scatter-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            becomes one workflow
+          </div>
+          <span class="scatter-result">LiveIntel — analyze, simulate, measure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLATFORM PILLARS
+  ============================================================ -->
+  <section class="section" id="platform" aria-labelledby="platform-heading" style="background:var(--clr-surface); border-block:1px solid var(--clr-border);">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>The platform</div>
+      <h2 class="section-title fade-in" id="platform-heading">Three products. One phishing intelligence workflow.</h2>
+      <p class="section-subtitle fade-in">
+        PhishCheck, PhishSim, and LiveInsight work together, so every signal your
+        team collects feeds the same picture of risk.
+      </p>
+
+      <div class="pillar-grid">
+
+        <article class="pillar-card fade-in">
+          <span class="pillar-step">Step 01</span>
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <span class="badge badge-blue">Threat Detection</span>
-          <h3 class="product-card-name" id="pg-name">PhishCheck</h3>
-          <p class="product-card-purpose">Phishing email analysis</p>
-          <p class="product-card-desc">Analyze phishing emails across headers, links, attachments, and sender reputation.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">email header analysis</li>
-            <li class="func-tag">phishing link detection</li>
-            <li class="func-tag">impersonation detection</li>
-            <li class="func-tag">attachment risk scoring</li>
-            <li class="func-tag">domain intelligence</li>
-          </ul>
-          <a href="products/phishcheck/" class="product-card-link" aria-label="Learn more about PhishCheck">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- SafeLink -->
-        <article class="product-card fade-in" aria-labelledby="sl-name">
-          <div class="product-card-icon icon-blue" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <span class="badge badge-blue">URL Safety</span>
-          <h3 class="product-card-name" id="sl-name">SafeLink</h3>
-          <p class="product-card-purpose">Suspicious URL analysis</p>
-          <p class="product-card-desc">Analyze suspicious URLs for phishing, malware, and drive-by threats in real time.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">URL reputation check</li>
-            <li class="func-tag">real-time link scanning</li>
-            <li class="func-tag">phishing site detection</li>
-            <li class="func-tag">malware URL detection</li>
-            <li class="func-tag">link preview</li>
-          </ul>
-          <a href="products/safelink/" class="product-card-link" aria-label="Learn more about SafeLink">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- PassForge -->
-        <article class="product-card fade-in" aria-labelledby="pf-name">
-          <div class="product-card-icon icon-green" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <span class="badge badge-green">Password Security</span>
-          <h3 class="product-card-name" id="pf-name">PassForge</h3>
-          <p class="product-card-purpose">Password / passphrase generator</p>
-          <p class="product-card-desc">Secure password and passphrase generation engine.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">password generation</li>
-            <li class="func-tag">passphrase generation</li>
-            <li class="func-tag">policy-driven rules</li>
-            <li class="func-tag">human-memorable</li>
-          </ul>
-          <a href="products/passforge/" class="product-card-link" aria-label="Learn more about PassForge">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- PassMeter -->
-        <article class="product-card fade-in" aria-labelledby="pc-name">
-          <div class="product-card-icon icon-yellow" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <span class="badge badge-yellow">Strength Analysis</span>
-          <h3 class="product-card-name" id="pc-name">PassMeter</h3>
-          <p class="product-card-purpose">Password strength and crack-time analysis</p>
-          <p class="product-card-desc">Evaluate password strength, crack-time estimates, breach exposure, and entropy.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">entropy scoring</li>
-            <li class="func-tag">dictionary detection</li>
-            <li class="func-tag">pattern weakness</li>
-            <li class="func-tag">breach exposure</li>
-          </ul>
-          <a href="products/passmeter/" class="product-card-link" aria-label="Learn more about PassMeter">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- Vault -->
-        <article class="product-card fade-in" aria-labelledby="vt-name">
-          <div class="product-card-icon icon-red" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 12h2M15 12h2"/></svg>
-          </div>
-          <span class="badge badge-red">Secret Storage</span>
-          <h3 class="product-card-name" id="vt-name">Vault</h3>
-          <p class="product-card-purpose">Secure key-value secret storage</p>
-          <p class="product-card-desc">Store and retrieve API keys, tokens, and credentials in a zero-knowledge vault.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">key ID retrieval</li>
-            <li class="func-tag">bearer token auth</li>
-            <li class="func-tag">IP allowlists</li>
-            <li class="func-tag">zero-knowledge</li>
-            <li class="func-tag">brute force detection</li>
-          </ul>
-          <a href="products/vault/" class="product-card-link" aria-label="Learn more about Vault">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- ── LAYER 2: Behavioral Simulation ─────────────────────── -->
-        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
-          <span class="badge badge-purple" style="margin-bottom:.5rem;display:inline-block;">Behavioral Simulation</span>
-          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">PhishSim — Security Behavior Simulation</h3>
-          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
-            Introduces a human behavioral layer by simulating real-world phishing scenarios
-            to measure user awareness, identify behavioral risk patterns, and reinforce training.
+          <h3 class="pillar-name">Analyze phishing threats</h3>
+          <p class="pillar-product">PhishCheck</p>
+          <p class="pillar-desc">
+            Analyze suspicious emails, links, headers, attachments, and sender
+            signals to support faster triage and consistent phishing review.
           </p>
-        </div>
+          <a href="products/phishcheck/" class="pillar-link">See how PhishCheck works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
 
-        <!-- PhishSim -->
-        <article class="product-card fade-in" aria-labelledby="ps-name">
+        <article class="pillar-card fade-in">
+          <span class="pillar-step">Step 02</span>
           <div class="product-card-icon icon-purple" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <span class="badge badge-purple">Behavioral Simulation</span>
-          <h3 class="product-card-name" id="ps-name">PhishSim</h3>
-          <p class="product-card-purpose">Security behavior simulation</p>
-          <p class="product-card-desc">Conduct controlled phishing campaigns that generate structured behavioral telemetry and drive targeted training.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">simulation campaigns</li>
-            <li class="func-tag">click &amp; open tracking</li>
-            <li class="func-tag">credential telemetry</li>
-            <li class="func-tag">reporting activity</li>
-            <li class="func-tag">automated training</li>
-          </ul>
-          <a href="products/phishsim/" class="product-card-link" aria-label="Learn more about PhishSim">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <h3 class="pillar-name">Simulate real-world attacks</h3>
+          <p class="pillar-product">PhishSim</p>
+          <p class="pillar-desc">
+            Run controlled phishing campaigns, measure user behavior, and improve
+            awareness without collecting or storing real passwords.
+          </p>
+          <a href="products/phishsim/" class="pillar-link">See how PhishSim works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
 
-        <!-- ── LAYER 3: Analytics & Intelligence ───────────────────── -->
-        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
-          <span class="badge badge-blue" style="margin-bottom:.5rem;display:inline-block;">Analytics &amp; Intelligence</span>
-          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveInsight — Organizational Intelligence</h3>
-          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
-            Aggregates telemetry from all platform services and converts security activity
-            into dashboards, trend analysis, and strategic visibility for security teams and leadership.
-          </p>
-        </div>
-
-        <!-- LiveInsight -->
-        <article class="product-card fade-in" aria-labelledby="li-name">
+        <article class="pillar-card fade-in">
+          <span class="pillar-step">Step 03</span>
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
-          <span class="badge badge-blue">Analytics &amp; Reporting</span>
-          <h3 class="product-card-name" id="li-name">LiveInsight</h3>
-          <p class="product-card-purpose">Intelligence, analytics and reporting</p>
-          <p class="product-card-desc">Unified dashboard and reporting platform that converts LiveIntel security activity into operational insight.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">unified dashboard</li>
-            <li class="func-tag">trend analysis</li>
-            <li class="func-tag">campaign reporting</li>
-            <li class="func-tag">scheduled reports</li>
-            <li class="func-tag">executive summaries</li>
-          </ul>
-          <a href="products/liveinsight/" class="product-card-link" aria-label="Learn more about LiveInsight">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <!-- ── LAYER 4: External Checks ───────────────────────────── -->
-        <div style="grid-column:1/-1; padding:2.5rem 0 .75rem; border-top:1px solid var(--clr-border); margin-top:1rem;" class="fade-in">
-          <span class="badge badge-red" style="margin-bottom:.5rem;display:inline-block;">External Checks</span>
-          <h3 style="font-size:1.05rem; color:var(--clr-heading); margin:0; font-weight:600;">LiveSentinel — Early Warning For Internet-Facing Services</h3>
-          <p style="color:var(--clr-text-muted); font-size:.9rem; margin-top:.35rem; max-width:640px;">
-            Helps teams spot quiet failures, expiring certificates, and public-facing
-            service issues before they turn into visible customer problems.
+          <h3 class="pillar-name">Measure human risk</h3>
+          <p class="pillar-product">LiveInsight</p>
+          <p class="pillar-desc">
+            Turn phishing reports and simulation results into dashboards, trends,
+            executive summaries, and analytics your team can act on.
           </p>
-        </div>
-
-        <!-- LiveSentinel -->
-        <article class="product-card fade-in" aria-labelledby="ls-name">
-          <div class="product-card-icon icon-red" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
-          </div>
-          <span class="badge badge-red">External Checks</span>
-          <h3 class="product-card-name" id="ls-name">LiveSentinel</h3>
-          <p class="product-card-purpose">Early warning for uptime and trust issues</p>
-          <p class="product-card-desc">Catch outages, expiring certificates, and avoidable surprises early with lightweight checks that keep public-facing services reassuringly dependable.</p>
-          <ul class="func-list" aria-label="Features">
-            <li class="func-tag">catch downtime early</li>
-            <li class="func-tag">protect customer trust</li>
-            <li class="func-tag">stay ahead of expiry</li>
-            <li class="func-tag">reduce manual checking</li>
-            <li class="func-tag">lightweight peace of mind</li>
-          </ul>
-          <a href="products/livesentinel/" class="product-card-link" aria-label="Learn more about LiveSentinel">
-            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="products/liveinsight/" class="pillar-link">See how LiveInsight works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </article>
 
@@ -325,74 +179,248 @@ require_once __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ============================================================
-       ABOUT
+       INTELLIGENCE WORKFLOW
   ============================================================ -->
-  <section class="section" id="about" aria-labelledby="about-heading" style="background: var(--clr-surface); border-top: 1px solid var(--clr-border);">
+  <section class="section" aria-labelledby="workflow-heading">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
-        <div>
-          <span class="badge badge-blue" style="margin-bottom:1rem;display:inline-block;">Platform Architecture</span>
-          <h2 class="section-title fade-in" id="about-heading">Four layers. One intelligence cycle.</h2>
-          <p style="color:var(--clr-text-muted); margin-bottom:1.25rem;">
-            Rather than offering isolated utilities, LiveIntel integrates multiple capabilities
-            into a cohesive intelligence system that helps organizations identify threats,
-            measure risk, and improve security awareness.
-          </p>
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>How it fits together</div>
+      <h2 class="section-title fade-in" id="workflow-heading">From a reported email to measurable risk</h2>
+      <p class="section-subtitle fade-in">One workflow, five steps, no manual handoffs between tools.</p>
 
-          <div style="display:flex; flex-direction:column; gap:1.25rem; margin-bottom:1.5rem;">
-            <div>
-              <span class="badge badge-blue" style="margin-bottom:.4rem;display:inline-block;">Intelligence Services</span>
-              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
-                <strong style="color:var(--clr-text)">LiveIntel</strong> provides the analysis engines —
-                PhishCheck, SafeLink, PassForge, PassMeter, and Vault — that evaluate security
-                signals and technical indicators.
-              </p>
-            </div>
-            <div>
-              <span class="badge badge-purple" style="margin-bottom:.4rem;display:inline-block;">Behavioral Simulation</span>
-              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
-                <strong style="color:var(--clr-text)">PhishSim</strong> introduces a human behavioral layer,
-                generating structured telemetry — click events, credential submissions, reporting
-                activity — that becomes the primary source of behavioral security insight.
-              </p>
-            </div>
-            <div>
-              <span class="badge badge-blue" style="margin-bottom:.4rem;display:inline-block;">Analytics &amp; Intelligence</span>
-              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
-                <strong style="color:var(--clr-text)">LiveInsight</strong> aggregates telemetry from all
-                platform services and transforms it into behavioral risk metrics, trend visualizations,
-                and organizational security posture insights.
-              </p>
-            </div>
-            <div>
-              <span class="badge badge-red" style="margin-bottom:.4rem;display:inline-block;">External Checks</span>
-              <p style="color:var(--clr-text-muted); font-size:.95rem; margin:0;">
-                <strong style="color:var(--clr-text)">LiveSentinel</strong> gives teams an early
-                warning layer for customer-facing services, helping them catch small
-                issues before they become visible disruptions.
-              </p>
-            </div>
+      <div class="workflow fade-in">
+        <div class="workflow-node">
+          <div class="workflow-node-dot" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>
           </div>
+          <div class="workflow-node-label">User reports</div>
+          <div class="workflow-node-desc">A suspicious email gets flagged</div>
+        </div>
+        <div class="workflow-node">
+          <div class="workflow-node-dot" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="workflow-node-label">PhishCheck analyzes</div>
+          <div class="workflow-node-desc">Headers, links, attachments, sender signals</div>
+        </div>
+        <div class="workflow-node">
+          <div class="workflow-node-dot" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="workflow-node-label">PhishSim tests behavior</div>
+          <div class="workflow-node-desc">Controlled campaigns measure response</div>
+        </div>
+        <div class="workflow-node">
+          <div class="workflow-node-dot" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="workflow-node-label">LiveInsight measures</div>
+          <div class="workflow-node-desc">Risk, trends, and improvement over time</div>
+        </div>
+        <div class="workflow-node">
+          <div class="workflow-node-dot" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="workflow-node-label">Team adjusts</div>
+          <div class="workflow-node-desc">Training, policy, and controls improve</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <p style="color:var(--clr-text-muted); font-size:.9rem; font-style:italic; border-left:3px solid var(--clr-primary); padding-left:.85rem; margin:0;">
-            "Security decisions should be driven by intelligence derived from real signals and real
-            behavior, not isolated technical checks."
-          </p>
+  <!-- ============================================================
+       ANALYTICS
+  ============================================================ -->
+  <section class="section" id="analytics" aria-labelledby="analytics-heading" style="background:var(--clr-surface); border-block:1px solid var(--clr-border);">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Analytics</div>
+      <h2 class="section-title fade-in" id="analytics-heading">Analytics that turn phishing activity into security decisions.</h2>
+      <p class="section-subtitle fade-in">
+        LiveInsight helps security teams move beyond one-off campaigns. Track
+        behavior over time, identify weak points, compare departments, and show
+        leadership whether risk is improving.
+        <br /><span style="font-size:.82rem; opacity:.75;">Figures below are sample data for illustration.</span>
+      </p>
+
+      <div class="analytics-grid">
+
+        <div class="metric-card fade-in">
+          <div class="metric-label">Report rate</div>
+          <div class="metric-value"><span data-count="58" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▲ 6% vs last quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,32 20,28 40,24 60,18 80,12 100,8" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
         </div>
 
-        <div class="spec-box fade-in">
+        <div class="metric-card fade-in">
+          <div class="metric-label">Click rate</div>
+          <div class="metric-value"><span data-count="11" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">▼ 4% vs last quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,10 20,14 40,18 60,22 80,26 100,30" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <div class="metric-card fade-in">
+          <div class="metric-label">Repeat clickers</div>
+          <div class="metric-value"><span data-count="4">0</span></div>
+          <span class="metric-trend trend-up">▼ 2 vs last quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,8 20,12 40,16 60,20 80,26 100,30" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <div class="metric-card fade-in">
+          <div class="metric-label">Time to report</div>
+          <div class="metric-value"><span data-count="18" data-suffix=" min">0 min</span></div>
+          <span class="metric-trend trend-up">▼ 5 min vs last quarter</span>
+          <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,6 20,10 40,16 60,20 80,24 100,28" fill="none" stroke="#10b981" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <div class="metric-card span-2 fade-in">
+          <div class="metric-label" style="margin-bottom:1rem;">Department risk</div>
+          <div class="dept-bars">
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Finance</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="72" style="width:0%"></div></div>
+              <span class="dept-bar-value">72</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Support</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="63" style="width:0%"></div></div>
+              <span class="dept-bar-value">63</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Sales</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="54" style="width:0%"></div></div>
+              <span class="dept-bar-value">54</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">HR</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="45" style="width:0%"></div></div>
+              <span class="dept-bar-value">45</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Engineering</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="31" style="width:0%"></div></div>
+              <span class="dept-bar-value">31</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-card span-2 fade-in">
+          <div class="metric-label" style="margin-bottom:1rem;">Top phishing themes reported this quarter</div>
+          <div class="theme-tags">
+            <span class="theme-tag">Invoice / payment request <span class="theme-tag-count">34%</span></span>
+            <span class="theme-tag">IT helpdesk / password reset <span class="theme-tag-count">22%</span></span>
+            <span class="theme-tag">Package delivery <span class="theme-tag-count">18%</span></span>
+            <span class="theme-tag">Executive request <span class="theme-tag-count">14%</span></span>
+            <span class="theme-tag">Benefits / HR notice <span class="theme-tag-count">12%</span></span>
+          </div>
+        </div>
+
+        <div class="metric-card span-2 fade-in">
+          <div class="metric-label" style="margin-bottom:1rem;">Campaign comparison — click rate</div>
+          <div class="dept-bars">
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q1 campaign</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill risk-high" data-fill="19" style="width:0%"></div></div>
+              <span class="dept-bar-value">19%</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q2 campaign</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="15" style="width:0%"></div></div>
+              <span class="dept-bar-value">15%</span>
+            </div>
+            <div class="dept-bar-row">
+              <span class="dept-bar-name">Q3 campaign</span>
+              <div class="dept-bar-track"><div class="dept-bar-fill" data-fill="11" style="width:0%"></div></div>
+              <span class="dept-bar-value">11%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-box span-2 fade-in">
           <div class="spec-box-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            platform-architecture
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            executive-summary
           </div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Layer 1</span><span class="spec-val">LiveIntel — Intelligence Services</span></div>
-            <div class="spec-row"><span class="spec-key">Layer 2</span><span class="spec-val">PhishSim — Behavioral Simulation</span></div>
-            <div class="spec-row"><span class="spec-key">Layer 3</span><span class="spec-val">LiveInsight — Analytics &amp; Intelligence</span></div>
-            <div class="spec-row"><span class="spec-key">Layer 4</span><span class="spec-val">LiveSentinel — External Checks</span></div>
-            <div class="spec-row"><span class="spec-key">Intelligence cycle</span><span class="spec-val">analyze → simulate → measure → check → improve</span></div>
-            <div class="spec-row"><span class="spec-key">API standard</span><span class="spec-val">REST + JSON</span></div>
-            <div class="spec-row"><span class="spec-key">Encryption</span><span class="spec-val">AES-256-GCM at rest &amp; in transit</span></div>
+            <p style="color:var(--clr-text); font-size:.92rem; margin-bottom:.75rem;">
+              Click rate dropped from 19% to 11% over two campaign cycles. Report rate
+              is up in every department. Finance and Support still click more than the
+              rest of the company and are the next training priority.
+            </p>
+            <p style="color:var(--clr-text-muted); font-size:.85rem;">Generated by LiveInsight from PhishCheck and PhishSim activity.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SIMULATION SAFETY & PRIVACY
+  ============================================================ -->
+  <section class="section" aria-labelledby="safety-heading">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Simulation safety</div>
+      <h2 class="section-title fade-in" id="safety-heading">Testing behavior, not surveilling people.</h2>
+      <p class="section-subtitle fade-in">PhishSim is built around one hard rule.</p>
+
+      <div class="safety-banner fade-in">
+        <div class="safety-banner-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <div class="safety-banner-text">No real passwords are collected, stored, or transmitted during simulations.</div>
+          <div class="safety-banner-sub">PhishSim records that a credential field was submitted. It never captures what was typed into it.</div>
+        </div>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Safe credential simulation</div>
+            <div class="trust-item-desc">Login pages in a campaign log a submission event, never the value entered.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Data minimization</div>
+            <div class="trust-item-desc">We collect what's needed to measure behavior and report on it. Nothing more.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Role-based access</div>
+            <div class="trust-item-desc">Campaign and analysis results are visible based on role, not open to the whole company.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Audit-friendly records</div>
+            <div class="trust-item-desc">Every campaign, scan, and report is logged so you can show your work later.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Privacy-conscious reporting</div>
+            <div class="trust-item-desc">Dashboards show trends and department patterns, not a public list of who clicked.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Clear boundaries</div>
+            <div class="trust-item-desc">Simulations exist to train and measure, not to monitor or punish individual employees.</div>
           </div>
         </div>
       </div>
@@ -400,19 +428,149 @@ require_once __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ============================================================
-       CTA
+       TOOLS / HOOKS
   ============================================================ -->
-  <section class="section" id="contact" aria-labelledby="cta-heading">
+  <section class="section tools-hook-band" aria-labelledby="tools-heading">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Free tools</div>
+      <h2 class="section-title fade-in" id="tools-heading">Start with useful security tools.</h2>
+      <p class="section-subtitle fade-in">
+        Free tools that introduce your team to the LiveIntel workflow, before you
+        need the full platform.
+      </p>
+
+      <div class="tool-grid-mini">
+        <a href="products/safelink/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <div class="tool-card-mini-name">SafeLink</div>
+          <p class="tool-card-mini-desc">Inspect or safely preview a suspicious link.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
+        <a href="products/passforge/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="tool-card-mini-name">PassForge</div>
+          <p class="tool-card-mini-desc">Generate a strong password or passphrase.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
+        <a href="products/passmeter/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="tool-card-mini-name">PassMeter</div>
+          <p class="tool-card-mini-desc">Check how strong a password really is.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
+        <a href="products/vault/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 12h2M15 12h2"/></svg></div>
+          <div class="tool-card-mini-name">Vault</div>
+          <p class="tool-card-mini-desc">Store API keys and tokens securely.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
+        <a href="products/livesentinel/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div>
+          <div class="tool-card-mini-name">LiveSentinel</div>
+          <p class="tool-card-mini-desc">Watch for downtime and expiring certificates.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
+      </div>
+
+      <p class="tools-connect-note fade-in">
+        These tools are useful on their own. LiveIntel's real value comes from
+        connecting phishing signals, simulations, and analytics into one
+        measurable intelligence cycle. <a href="tools/">See all tools →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHO IT'S FOR
+  ============================================================ -->
+  <section class="section" aria-labelledby="audience-heading">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Who it's for</div>
+      <h2 class="section-title fade-in" id="audience-heading">Built for teams that own phishing risk.</h2>
+
+      <div class="audience-grid">
+        <div class="audience-card fade-in">
+          <div class="audience-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="audience-name">Security teams</div>
+        </div>
+        <div class="audience-card fade-in">
+          <div class="audience-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg></div>
+          <div class="audience-name">Schools &amp; colleges</div>
+        </div>
+        <div class="audience-card fade-in">
+          <div class="audience-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9v.01M9 13v.01M9 17v.01M15 9v.01M15 13v.01M15 17v.01"/></svg></div>
+          <div class="audience-name">Public agencies</div>
+        </div>
+        <div class="audience-card fade-in">
+          <div class="audience-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M17 11a4 4 0 1 0-4-4"/><path d="M1 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/><path d="M17 15a4 4 0 0 1 4 4v2"/></svg></div>
+          <div class="audience-name">MSPs</div>
+        </div>
+        <div class="audience-card fade-in">
+          <div class="audience-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="audience-name">Awareness programs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST
+  ============================================================ -->
+  <section class="section" aria-labelledby="trust-heading" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);">
+    <div class="container">
+      <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Trust</div>
+      <h2 class="section-title fade-in" id="trust-heading">Built with security teams in mind, from the inside out.</h2>
+
+      <div class="trust-grid">
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">No real credentials in simulations</div>
+            <div class="trust-item-desc">Covered in detail above and on our security page.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Access controls</div>
+            <div class="trust-item-desc">Role-based access enforced across every service.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Audit logging</div>
+            <div class="trust-item-desc">Platform activity is logged for review and compliance.</div>
+          </div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div>
+            <div class="trust-item-title">Responsible disclosure</div>
+            <div class="trust-item-desc">We work with researchers who report issues in good faith.</div>
+          </div>
+        </div>
+      </div>
+      <p class="fade-in" style="margin-top:1.5rem; color:var(--clr-text-muted); font-size:.9rem;">
+        Read the full picture on our <a href="legal/security.php">security page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+  ============================================================ -->
+  <section class="section" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Ready to secure your organisation?</h2>
+        <h2 class="cta-banner-title" id="cta-heading">Ready to measure and improve phishing resilience?</h2>
         <p class="cta-banner-desc">
-          Get in touch with the LiveIntel team to schedule a demo, start a free trial,
-          or discuss an enterprise deployment.
+          Talk to us about your current phishing reporting process. We'll show you
+          what it looks like connected end to end.
         </p>
         <div class="cta-banner-actions">
-          <a href="mailto:hello@liveintel.com" class="btn btn-primary btn-lg">Contact Us</a>
-          <a href="#products" class="btn btn-outline btn-lg">View Products</a>
+          <a href="contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="products/phishcheck/" class="btn btn-outline btn-lg">View PhishCheck</a>
         </div>
       </div>
     </div>

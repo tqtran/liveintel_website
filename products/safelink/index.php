@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "SafeLink | LiveIntel";
-$pageDescription = "LiveIntel SafeLink — Suspicious URL analysis covering URL reputation checks, real-time link scanning, phishing site detection, malware URL detection, and link previews.";
+$pageTitle = "SafeLink | Free Link Checker | LiveIntel";
+$pageDescription = "SafeLink is a free tool from LiveIntel that checks a suspicious link for phishing and malware before you click it.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -12,20 +12,20 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../tools/" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            All Tools
           </a>
-          <span class="badge badge-blue">Suspicious URL Analysis</span>
-          <h1 class="product-hero-title" id="sl-title">LiveIntel SafeLink</h1>
+          <span class="badge badge-blue">Free Tool · URL Safety</span>
+          <h1 class="product-hero-title" id="sl-title">SafeLink</h1>
           <p class="product-hero-desc">
-            Suspicious URL analysis service that evaluates every link against live
-            threat intelligence to detect phishing pages, malware delivery, and
-            drive-by downloads before a user's browser loads the page.
+            Paste a suspicious link and check it before anyone clicks. SafeLink
+            evaluates the URL against threat intelligence to flag phishing pages
+            and malware delivery.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="#features" class="btn btn-primary">See Features</a>
+            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
           </div>
         </div>
 
@@ -53,9 +53,8 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
       <p class="section-subtitle fade-in">
-        SafeLink combines multi-source threat intelligence, sandbox analysis, and
-        machine-learning classifiers to give every URL a definitive safety verdict
-        in milliseconds.
+        SafeLink checks a URL against threat intelligence and page behavior to
+        return a safety verdict before you open it.
       </p>
 
       <div class="features-grid">
@@ -149,15 +148,23 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- CTA -->
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Make every link safe before anyone clicks it</h2>
+      <div class="utility-banner fade-in">
+        <p class="utility-banner-text">
+          <strong>SafeLink checks one link at a time.</strong> PhishCheck analyzes
+          the whole email it came from, and LiveInsight tracks whether your team
+          is getting better at spotting these.
+        </p>
+        <a href="../../products/phishcheck/" class="btn btn-outline">See PhishCheck</a>
+      </div>
+
+      <div class="cta-banner fade-in" style="margin-top:2rem;">
+        <h2 class="cta-banner-title" id="cta-heading">Want link checking built into your phishing workflow?</h2>
         <p class="cta-banner-desc">
-          Integrate SafeLink into your email gateway, browser environment, or
-          application in minutes via a single REST endpoint.
+          Talk to us about connecting SafeLink to full phishing analysis and simulation.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
         </div>
       </div>
     </div>

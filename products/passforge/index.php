@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "PassForge | LiveIntel";
-$pageDescription = "LiveIntel PassForge — Secure password and passphrase generation engine with policy-driven rules and human-memorable passphrase support.";
+$pageTitle = "PassForge | Free Password Generator | LiveIntel";
+$pageDescription = "PassForge is a free password and passphrase generator from LiveIntel, with policy-driven rules and memorable passphrase options.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -12,20 +12,19 @@ require_once __DIR__ . '/../../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <a href="../../index.php#products" class="product-hero-back">
+          <a href="../../tools/" class="product-hero-back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            All Products
+            All Tools
           </a>
-          <span class="badge badge-green">Password Security</span>
-          <h1 class="product-hero-title" id="pf-title">LiveIntel PassForge</h1>
+          <span class="badge badge-green">Free Tool · Password Security</span>
+          <h1 class="product-hero-title" id="pf-title">PassForge</h1>
           <p class="product-hero-desc">
-            Cryptographically secure password and passphrase generation engine.
-            Enforce organisational password policies while producing credentials
-            that are both strong and human-memorable.
+            Generate a strong password or a memorable passphrase. Set your own
+            rules for length and character requirements, or use a policy preset.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../index.php#contact" class="btn btn-primary">Request Demo</a>
-            <a href="#features" class="btn btn-outline">See Features</a>
+            <a href="#features" class="btn btn-primary">See Features</a>
+            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
           </div>
         </div>
 
@@ -92,9 +91,8 @@ require_once __DIR__ . '/../../includes/header.php';
           <div class="feature-icon" aria-hidden="true">🧩</div>
           <h3 class="feature-title">Human-Memorable Passphrases</h3>
           <p class="feature-desc">
-            Leverage cognitive-load research to generate passphrases that are
-            both mathematically strong (≥ 77 bits of entropy) and easy for users
-            to recall without writing them down.
+            Passphrases are built to be strong and still easy to recall, so
+            people don't end up writing them on a sticky note.
           </p>
         </div>
 
@@ -147,15 +145,23 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- CTA -->
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Generate credentials your users will actually use</h2>
+      <div class="utility-banner fade-in">
+        <p class="utility-banner-text">
+          <strong>A strong password helps.</strong> It doesn't stop a phishing
+          email from reaching an inbox. That's what PhishCheck and PhishSim are for.
+        </p>
+        <a href="../../index.php#platform" class="btn btn-outline">See the Platform</a>
+      </div>
+
+      <div class="cta-banner fade-in" style="margin-top:2rem;">
+        <h2 class="cta-banner-title" id="cta-heading">Generate credentials your team will actually use</h2>
         <p class="cta-banner-desc">
-          Embed PassForge into your identity pipeline or use it standalone
-          via the intuitive web UI.
+          Use PassForge on its own, or ask us how it fits into a broader
+          phishing and human-risk program.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../index.php#contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#products" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
         </div>
       </div>
     </div>

@@ -36,6 +36,8 @@ require_once __DIR__ . '/../includes/header.php';
           <li><strong>Technical data</strong> — IP address, browser type, operating system, and device identifiers.</li>
           <li><strong>Communications</strong> — messages you send to our support team or via contact forms.</li>
           <li><strong>Payment data</strong> — processed by our payment processor; we never store raw card details.</li>
+          <li><strong>Phishing simulation activity</strong> — for organizations using PhishSim, we record opens, clicks, reports, and whether a credential field was submitted. The value typed into a simulated field is never captured.</li>
+          <li><strong>Submitted email content</strong> — for organizations using PhishCheck, the email and its headers, links, and attachments are processed to produce an analysis, and retained per that organization's configuration.</li>
         </ul>
 
         <h2 class="fade-in">2. How We Use Your Information</h2>
