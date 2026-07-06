@@ -1129,7 +1129,7 @@ a:hover { text-decoration: underline; }
 
 .tool-grid-mini {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -1298,7 +1298,6 @@ a:hover { text-decoration: underline; }
   .analytics-grid { grid-template-columns: repeat(2, 1fr); }
   .analytics-grid .span-2 { grid-column: span 2; }
   .audience-grid { grid-template-columns: repeat(3, 1fr); }
-  .tool-grid-mini { grid-template-columns: repeat(3, 1fr); }
   .trust-grid { grid-template-columns: 1fr; }
 }
 

@@ -1,16 +1,22 @@
 # LiveIntel
 
-LiveIntel is a platform for practical security intelligence and analysis, providing services that help analyze phishing threats, evaluate credential strength, manage secrets, and stay ahead of visible service issues across the ecosystem.
+LiveIntel is a phishing intelligence and analytics platform. PhishCheck, PhishSim, and LiveInsight form the core platform; the rest are free tools that feed into it.
 
-## Products
+## Platform
 
 | Product | Description |
 |---|---|
-| **PhishCheck** | Phishing email analysis |
-| **PhishSim** | Simulated phishing campaigns |
+| **PhishCheck** | Phishing email analysis and triage |
+| **PhishSim** | Controlled phishing simulation and behavior measurement |
+| **LiveInsight** | Phishing and human-risk analytics |
+
+## Free tools
+
+| Tool | Description |
+|---|---|
 | **SafeLink** | Suspicious URL analysis |
 | **PassForge** | Password and passphrase generator |
 | **PassMeter** | Password strength and crack-time analysis |
 | **Vault** | Secure key-value secret storage |
-| **LiveInsight** | Intelligence, analytics, and reporting platform |
 | **LiveSentinel** | Lightweight early warning for uptime and certificate issues |
+| **SPF Flattener** | Flattens SPF records to stay under the 10 DNS lookup limit |

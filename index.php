@@ -470,6 +470,12 @@ require_once __DIR__ . '/includes/header.php';
           <p class="tool-card-mini-desc">Watch for downtime and expiring certificates.</p>
           <span class="tool-card-mini-link">Try it →</span>
         </a>
+        <a href="products/spf-flattener/" class="tool-card-mini fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 15h6"/></svg></div>
+          <div class="tool-card-mini-name">SPF Flattener</div>
+          <p class="tool-card-mini-desc">Keep your SPF record under the 10-lookup limit.</p>
+          <span class="tool-card-mini-link">Try it →</span>
+        </a>
       </div>
 
       <p class="tools-connect-note fade-in">

@@ -95,6 +95,18 @@ require_once __DIR__ . '/../includes/header.php';
           </a>
         </div>
 
+        <div class="feature-card fade-in">
+          <div class="tool-card-mini-icon" aria-hidden="true" style="margin-bottom:.85rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 15h6"/></svg></div>
+          <h3 class="feature-title">SPF Flattener</h3>
+          <p class="feature-desc">
+            Resolve nested SPF includes into a flat record so you stay
+            under the 10 DNS lookup limit.
+          </p>
+          <a href="../products/spf-flattener/" class="product-card-link" style="margin-top:1rem;">Open SPF Flattener
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>

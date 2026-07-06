@@ -30,6 +30,7 @@
           <li><a href="<?php echo $basePath; ?>products/passmeter/">PassMeter</a></li>
           <li><a href="<?php echo $basePath; ?>products/vault/">Vault</a></li>
           <li><a href="<?php echo $basePath; ?>products/livesentinel/">LiveSentinel</a></li>
+          <li><a href="<?php echo $basePath; ?>products/spf-flattener/">SPF Flattener</a></li>
         </ul>
       </nav>
       <nav aria-label="Company footer links">
