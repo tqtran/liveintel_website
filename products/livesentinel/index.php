@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "LiveSentinel | Uptime & Certificate Monitoring | LiveIntel";
-$pageDescription = "LiveSentinel is a lightweight monitoring tool from LiveIntel that watches uptime and certificate expiry for public-facing services.";
+$pageTitle = "LiveSentinel (Coming Soon) | Uptime & Certificate Monitoring | LiveIntel";
+$pageDescription = "LiveSentinel is an upcoming lightweight monitoring tool from LiveIntel that watches uptime and certificate expiry for public-facing services.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -16,15 +16,16 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Tools
           </a>
-          <span class="badge badge-red">Free Tool · External Checks</span>
+          <span class="badge badge-yellow">Coming Soon · External Checks</span>
           <h1 class="product-hero-title" id="ls-title">LiveSentinel</h1>
           <p class="product-hero-desc">
             LiveSentinel watches your public-facing services for downtime and
             certificate expiry, so you find out from a check, not a customer.
+            <strong style="color:var(--clr-text);">LiveSentinel is under development and not available yet.</strong>
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="#features" class="btn btn-primary">See Features</a>
-            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
+            <a href="#features" class="btn btn-primary">See What's Coming</a>
+            <a href="../../tools/" class="btn btn-outline">Try the Live Tools</a>
           </div>
         </div>
 
@@ -49,7 +50,7 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- FEATURES -->
   <section class="section" id="features" aria-labelledby="features-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
+      <h2 class="section-title fade-in" id="features-heading">What's Coming</h2>
       <p class="section-subtitle fade-in">
         LiveSentinel is built for teams that want fast reassurance when things are
         healthy and an earlier heads-up when something starts drifting the wrong way.
@@ -151,12 +152,12 @@ require_once __DIR__ . '/../../includes/header.php';
       <div class="cta-banner fade-in" style="margin-top:2rem;">
         <h2 class="cta-banner-title" id="cta-heading">Catch small warning signs before they become incidents</h2>
         <p class="cta-banner-desc">
-          Use LiveSentinel on its own, or ask us how it fits alongside the
-          rest of the LiveIntel platform.
+          LiveSentinel isn't available yet. Tell us you're interested and
+          we'll let you know when it launches.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Get Notified at Launch</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Try the Live Tools</a>
         </div>
       </div>
     </div>

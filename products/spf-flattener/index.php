@@ -42,7 +42,14 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="tool-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="tool-heading">Check an SPF record.</h2>
-      <p class="section-subtitle fade-in">SPF allows 10 DNS lookups. This tool shows where your record stands.</p>
+      <div class="tool-intro fade-in">
+        SPF has a rule almost nobody remembers until mail starts bouncing:
+        receiving servers stop after <strong>10 DNS lookups</strong> (RFC 7208),
+        and every <code>include:</code> — plus every include hiding inside
+        it — burns one. Records grow one "just add us to your DNS" at a time
+        until they quietly cross the line. This tool walks the whole tree,
+        counts the damage, and hands back a flattened record that fits.
+      </div>
 
       <div class="tool-panel fade-in">
         <div class="tool-panel-body">
@@ -53,9 +60,15 @@ require_once __DIR__ . '/../../includes/header.php';
 
           <form id="spf-form">
             <div id="spf-panel-domain" role="tabpanel" aria-labelledby="spf-tab-domain">
-              <div class="tool-field">
+              <div class="tool-field" style="margin-bottom:0;">
                 <label for="spf-domain">Domain</label>
                 <input class="tool-input" id="spf-domain" name="domain" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="example.com" />
+              </div>
+              <div class="spf-examples" aria-label="Example domains">
+                try:
+                <button type="button" class="spf-example">gmail.com</button>
+                <button type="button" class="spf-example">github.com</button>
+                <button type="button" class="spf-example">microsoft.com</button>
               </div>
             </div>
 
@@ -66,24 +79,55 @@ require_once __DIR__ . '/../../includes/header.php';
               </div>
             </div>
 
-            <div class="tool-actions">
-              <button class="btn btn-primary" id="spf-submit" type="submit">Check SPF Record</button>
+            <div class="tool-actions" style="margin-top:1.25rem;">
+              <button class="btn btn-primary" id="spf-submit" type="submit">Check &amp; Flatten</button>
               <button class="btn btn-outline" id="spf-reset" type="button">Reset</button>
             </div>
           </form>
 
           <div class="tool-status" id="spf-status" aria-live="polite">Ready. No account needed.</div>
 
+          <div class="tool-terminal" id="spf-terminal" hidden>
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red" aria-hidden="true"></span>
+              <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
+              <span class="terminal-dot dot-green" aria-hidden="true"></span>
+              <span class="terminal-title">spf-flattener — resolver trace</span>
+            </div>
+            <div class="terminal-body" id="spf-log" aria-live="polite" aria-label="SPF resolver trace"></div>
+          </div>
+
           <div class="tool-result-block" id="spf-results" hidden>
-            <div class="tool-stats">
-              <span class="tool-stat" id="spf-stat-original">lookups <strong>-</strong></span>
-              <span class="tool-stat" id="spf-stat-kept">kept lookups <strong>-</strong></span>
-              <span class="tool-stat" id="spf-stat-ip4">ip4 <strong>-</strong></span>
-              <span class="tool-stat" id="spf-stat-ip6">ip6 <strong>-</strong></span>
+            <div class="spf-verdict" id="spf-verdict">
+              <div class="spf-verdict-icon" id="spf-verdict-icon" aria-hidden="true"></div>
+              <div>
+                <div class="spf-verdict-title" id="spf-verdict-title"></div>
+                <div class="spf-verdict-text" id="spf-verdict-text"></div>
+              </div>
             </div>
 
-            <div class="tool-result-title">Plain-English result</div>
-            <p class="tool-note" id="spf-summary" style="margin-top:0;"></p>
+            <div class="spf-compare">
+              <div class="spf-compare-cell">
+                <div class="spf-compare-label">Current record</div>
+                <div class="spf-compare-value" id="spf-before">-</div>
+                <div class="spf-gauge" id="spf-gauge-before" aria-hidden="true"></div>
+              </div>
+              <div class="spf-compare-arrow" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="spf-compare-cell">
+                <div class="spf-compare-label">Flattened record</div>
+                <div class="spf-compare-value" id="spf-after">-</div>
+                <div class="spf-gauge" id="spf-gauge-after" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="tool-stats" aria-label="Flattening summary">
+              <span class="tool-stat" id="spf-stat-ip4">ip4 <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-ip6">ip6 <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-kept">kept lookups <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-chars">record size <strong>-</strong></span>
+            </div>
 
             <div class="tool-result-title">Current record</div>
             <div class="tool-record" id="spf-original"></div>
@@ -91,12 +135,21 @@ require_once __DIR__ . '/../../includes/header.php';
             <div class="tool-result-title" style="margin-top:1rem;">Flattened record</div>
             <div class="tool-record" id="spf-flat"></div>
             <div class="tool-actions" style="margin-top:.75rem;">
-              <button class="btn btn-outline btn-sm" id="spf-copy" type="button">Copy Flattened Record</button>
+              <button class="btn btn-primary btn-sm" id="spf-copy" type="button">Copy Flattened Record</button>
+              <button class="btn btn-outline btn-sm" id="spf-copy-split" type="button" hidden>Copy as Split Strings</button>
             </div>
 
-            <div class="tool-result-title" style="margin-top:1rem;">Warnings and trace</div>
+            <div id="spf-chunks-wrap" hidden>
+              <div class="tool-result-title" style="margin-top:1.25rem;">Split for publishing</div>
+              <p class="tool-note" style="margin-top:0; margin-bottom:.6rem;">
+                DNS TXT strings max out at 255 characters. Publish these as one
+                record with multiple strings — resolvers join them back together.
+              </p>
+              <div class="spf-chunks" id="spf-chunks"></div>
+            </div>
+
+            <div class="tool-result-title" style="margin-top:1.25rem;">Warnings</div>
             <ul class="tool-findings" id="spf-warnings"></ul>
-            <div class="tool-log" id="spf-log" aria-label="SPF resolver trace"></div>
           </div>
         </div>
       </div>

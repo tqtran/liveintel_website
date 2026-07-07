@@ -42,7 +42,15 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="tool-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="tool-heading">Start with a quick check.</h2>
-      <p class="section-subtitle fade-in">Type a password below. Nothing is sent to LiveIntel.</p>
+      <div class="tool-intro fade-in">
+        Every signup form has an opinion about your password, and most of them
+        are lying to you — "must contain a symbol" will happily wave
+        <code>P@ssw0rd1</code> through. PassMeter gives you the
+        <strong>attacker's-eye view</strong> instead: how big the real search
+        space is, which shortcuts (dictionary words, keyboard walks, that birth
+        year) shrink it, and how long a cracking rig would actually chew on it.
+        All of it runs in your browser — the password never leaves this page.
+      </div>
 
       <div class="tool-panel fade-in">
         <div class="tool-panel-body">
@@ -52,6 +60,19 @@ require_once __DIR__ . '/../../includes/header.php';
               <input class="tool-input" id="pm-input" type="password" autocomplete="off" spellcheck="false" placeholder="Type or paste a password" />
               <button class="btn btn-outline btn-sm" id="pm-toggle" type="button">show</button>
             </div>
+          </div>
+
+          <div class="tool-field">
+            <label>Assumed character space
+              <span class="tool-rate-note" style="display:inline; margin-left:.35rem;">what an attacker has to search — anything you actually typed is counted regardless</span>
+            </label>
+            <div class="tool-checks">
+              <label class="tool-check"><input id="pm-upper" type="checkbox" checked /> Uppercase</label>
+              <label class="tool-check"><input id="pm-lower" type="checkbox" checked /> Lowercase</label>
+              <label class="tool-check"><input id="pm-digits" type="checkbox" checked /> Numbers</label>
+              <label class="tool-check"><input id="pm-symbols" type="checkbox" checked /> Symbols</label>
+            </div>
+            <div class="tool-record" id="pm-charset" style="margin-top:.6rem; font-size:.78rem;" aria-live="polite"></div>
           </div>
 
           <div class="tool-meter" aria-label="Password strength score">
@@ -67,15 +88,21 @@ require_once __DIR__ . '/../../includes/header.php';
 
           <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-top:1rem;">
             <div class="feature-card">
-              <h3 class="feature-title" style="font-size:1rem;">Online attack</h3>
+              <h3 class="feature-title" style="font-size:1rem;">Online attack
+                <span class="tool-rate-note">100 guesses/sec — rate-limited login form</span>
+              </h3>
               <p class="feature-desc" id="pm-time-online">-</p>
             </div>
             <div class="feature-card">
-              <h3 class="feature-title" style="font-size:1rem;">Offline bcrypt</h3>
+              <h3 class="feature-title" style="font-size:1rem;">Offline bcrypt
+                <span class="tool-rate-note">100k guesses/sec — stolen hash database</span>
+              </h3>
               <p class="feature-desc" id="pm-time-bcrypt">-</p>
             </div>
             <div class="feature-card">
-              <h3 class="feature-title" style="font-size:1rem;">Fast hash GPU</h3>
+              <h3 class="feature-title" style="font-size:1rem;">Fast hash GPU
+                <span class="tool-rate-note">100 billion guesses/sec — GPU rig vs MD5</span>
+              </h3>
               <p class="feature-desc" id="pm-time-gpu">-</p>
             </div>
           </div>
@@ -84,7 +111,6 @@ require_once __DIR__ . '/../../includes/header.php';
 
           <div class="tool-actions">
             <button class="btn btn-outline" id="pm-breach-btn" type="button" disabled>Check Known Breaches</button>
-            <a href="../passforge/" class="btn btn-primary">Generate a Stronger Password</a>
           </div>
           <div class="tool-status" id="pm-breach-result" aria-live="polite"></div>
           <p class="tool-note">

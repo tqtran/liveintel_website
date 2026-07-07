@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  /* ---- Wordlist for passphrases (log2(384) ≈ 8.6 bits/word) ---- */
+  /* ---- Wordlist for passphrases (600 words ≈ 9.2 bits/word) ---- */
   var WORDS = [
     'acorn','actor','adobe','agent','alarm','album','alert','alley','amber','anchor','ankle','antler','anvil','apple','apron','arch','arena','argon','armor','arrow',
     'aspen','atlas','attic','audio','autumn','avocado','awning','axis','bacon','badge','badger','bagel','baker','bamboo','banjo','barge','barley','basil','basket','baton',
@@ -132,11 +132,15 @@
   }
 
   /* ---- Scramble-reveal animation ------------------------------ */
+  var currentValue = ''; // the real generated value; Copy uses this, not the
+                         // on-screen text, which may be mid-scramble
+
   function showResult(result) {
     var out = $('pf-output');
     if (scrambleTimer) { clearInterval(scrambleTimer); scrambleTimer = null; }
 
     if (result.error) {
+      currentValue = '';
       out.textContent = result.error;
       out.style.color = 'var(--clr-warning)';
       $('pf-meter-fill').style.width = '0%';
@@ -144,6 +148,7 @@
       $('pf-meter-text').textContent = '';
       return;
     }
+    currentValue = result.value;
     out.style.color = '';
     updateMeter(result.bits);
 
@@ -173,7 +178,7 @@
 
   /* ---- Copy ---------------------------------------------------- */
   function copyOutput() {
-    var text = $('pf-output').textContent;
+    var text = currentValue;
     if (!text) return;
     var done = function () {
       var btn = $('pf-copy');
@@ -221,9 +226,10 @@
       $('pf-words-value').textContent = this.value;
       generate();
     });
+    $('pf-separator').addEventListener('input', generate);
 
     ['pf-upper', 'pf-lower', 'pf-digits', 'pf-symbols', 'pf-ambiguous',
-     'pf-separator', 'pf-capitalize', 'pf-number'].forEach(function (id) {
+     'pf-capitalize', 'pf-number'].forEach(function (id) {
       $(id).addEventListener('change', generate);
     });
 

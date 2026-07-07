@@ -18,6 +18,9 @@ Options -Indexes
   RewriteEngine On
   RewriteBase /
 
+  # Generate the public sitemap from the canonical route manifest.
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
   # ── Block access to non-public server directories ──────────
   # Returns 403 Forbidden for any request that begins with one
   # of these directory names.

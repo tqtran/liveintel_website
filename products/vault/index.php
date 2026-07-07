@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
-$pageTitle = "Vault | Secure Secret Storage | LiveIntel";
-$pageDescription = "Vault is a secret storage tool from LiveIntel for API keys, tokens, and credentials, with bearer token auth and zero-knowledge encryption.";
+$pageTitle = "Vault (Coming Soon) | Secure Secret Storage | LiveIntel";
+$pageDescription = "Vault is an upcoming secret storage tool from LiveIntel for API keys, tokens, and credentials, with bearer token auth and zero-knowledge encryption.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -16,16 +16,17 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Tools
           </a>
-          <span class="badge badge-red">Free Tool · Secret Storage</span>
+          <span class="badge badge-yellow">Coming Soon · Secret Storage</span>
           <h1 class="product-hero-title" id="vt-title">Vault</h1>
           <p class="product-hero-desc">
             Store API keys, database credentials, and tokens somewhere safer
             than a shared spreadsheet or a Slack message. Vault encrypts
             secrets client-side, so it never sees the plaintext.
+            <strong style="color:var(--clr-text);">Vault is under development and not available yet.</strong>
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="#features" class="btn btn-primary">See Features</a>
-            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
+            <a href="#features" class="btn btn-primary">See What's Coming</a>
+            <a href="../../tools/" class="btn btn-outline">Try the Live Tools</a>
           </div>
         </div>
 
@@ -59,7 +60,7 @@ require_once __DIR__ . '/../../includes/header.php';
   <!-- FEATURES -->
   <section class="section" id="features" aria-labelledby="features-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
+      <h2 class="section-title fade-in" id="features-heading">What's Coming</h2>
       <p class="section-subtitle fade-in">
         Vault is engineered around the principle that the service itself should
         never be able to read your secrets — even at the infrastructure level.
@@ -168,11 +169,12 @@ require_once __DIR__ . '/../../includes/header.php';
       <div class="cta-banner fade-in" style="margin-top:2rem;">
         <h2 class="cta-banner-title" id="cta-heading">Get secrets out of spreadsheets and chat</h2>
         <p class="cta-banner-desc">
-          Replace scattered environment files and ad-hoc secret sharing with Vault.
+          Vault isn't available yet. Tell us you're interested and we'll let
+          you know when it launches.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
+          <a href="../../contact.php" class="btn btn-primary btn-lg">Get Notified at Launch</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Try the Live Tools</a>
         </div>
       </div>
     </div>

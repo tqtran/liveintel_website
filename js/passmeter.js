@@ -42,7 +42,38 @@
 
   var LEET = { '0':'o', '1':'i', '3':'e', '4':'a', '5':'s', '6':'g', '7':'t', '8':'b', '9':'g', '@':'a', '$':'s', '!':'i', '+':'t', '(':'c' };
   var KEYBOARD_ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm', '1234567890', '0987654321'];
-  var SYMBOLS_POOL = 33; // printable ASCII symbols + space
+
+  /* character classes an attacker has to search; toggled in the UI */
+  var CLASSES = [
+    { id: 'pm-upper',   size: 26, re: /[A-Z]/,        label: 'uppercase', chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
+    { id: 'pm-lower',   size: 26, re: /[a-z]/,        label: 'lowercase', chars: 'abcdefghijklmnopqrstuvwxyz' },
+    { id: 'pm-digits',  size: 10, re: /[0-9]/,        label: 'number',    chars: '0123456789' },
+    { id: 'pm-symbols', size: 33, re: /[^a-zA-Z0-9]/, label: 'symbol',    chars: '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ + space' }
+  ];
+
+  /* pool = union of toggled classes, force-including anything actually
+     typed (an attacker can't search a smaller space than the password uses) */
+  function poolInfo(pw) {
+    var pool = 0;
+    var autoAdded = [];
+    var parts = [];
+    CLASSES.forEach(function (c) {
+      var selected = $(c.id).checked;
+      var present = pw ? c.re.test(pw) : false;
+      if (selected || present) {
+        pool += c.size;
+        parts.push(c.chars);
+      }
+      if (present && !selected) autoAdded.push(c.label);
+    });
+    return { pool: pool, autoAdded: autoAdded, parts: parts };
+  }
+
+  function renderCharset(info) {
+    $('pm-charset').textContent = info.parts.length
+      ? info.parts.join('  ')
+      : '(nothing selected — toggle a set or start typing)';
+  }
 
   var RATES = [
     { id: 'pm-time-online', rate: 1e2 },   // throttled online attack
@@ -102,22 +133,25 @@
     var findings = [];
     var len = pw.length;
 
-    var pool = 0;
-    if (/[a-z]/.test(pw)) pool += 26;
-    if (/[A-Z]/.test(pw)) pool += 26;
-    if (/[0-9]/.test(pw)) pool += 10;
-    if (/[^a-zA-Z0-9]/.test(pw)) pool += SYMBOLS_POOL;
+    var info = poolInfo(pw);
+    var pool = info.pool;
+    info.autoAdded.forEach(function (label) {
+      findings.push({ cls: 'f-warn', text: 'Uses ' + label + ' characters even though that set is toggled off - counted anyway.' });
+    });
 
     var baseBits = len * Math.log2(pool || 1);
     var eff = baseBits;
 
-    var normalized = normalizeLeet(pw);
+    var lower = pw.toLowerCase();
+    var normalized = normalizeLeet(lower);
     var stripped = normalized.replace(/[^a-z]+$/, '').replace(/^[^a-z]+/, '');
+    // strip trailing digits/symbols BEFORE leet-mapping, so "P@ssw0rd123"
+    // reduces to "p@ssw0rd" → "password" instead of mangling the suffix
+    var rawBase = lower.replace(/[^a-z]+$/, '');
 
-    /* common password (exact or with padding stripped) */
-    var isCommon = COMMON.indexOf(pw.toLowerCase()) !== -1 ||
-                   COMMON.indexOf(normalized) !== -1 ||
-                   (stripped.length >= 4 && COMMON.indexOf(stripped) !== -1);
+    /* common password (exact, leet-normalized, or with padding stripped) */
+    var isCommon = [lower, normalized, stripped, rawBase, normalizeLeet(rawBase)]
+      .some(function (c) { return c.length >= 3 && COMMON.indexOf(c) !== -1; });
     if (isCommon) {
       eff = 4;
       findings.push({ cls: 'f-err', text: 'This is one of the most common passwords on the internet. Attackers try it first.' });
@@ -125,10 +159,26 @@
 
     /* dictionary matches (leet-speak normalized) */
     var dictHits = isCommon ? [] : findDictWords(normalized);
-    dictHits.forEach(function (w) {
-      eff -= w.length * 3.5;
-      findings.push({ cls: 'f-warn', text: 'Contains the dictionary word "' + w + '" - wordlist attacks see through symbol swaps.' });
-    });
+    var matchedLen = 0;
+    dictHits.forEach(function (w) { matchedLen += w.length; });
+    var dictCoverage = len ? Math.min(1, matchedLen / len) : 0;
+
+    /* 3+ words and decent length = deliberate passphrase, not a weakness */
+    var isPassphrase = dictHits.length >= 3 && len >= 15;
+    if (isPassphrase) {
+      // score by word count, not raw character entropy
+      eff = Math.min(eff, dictHits.length * 11 + 15);
+      findings.push({ cls: 'f-ok', text: 'Looks like a multi-word passphrase - length does the heavy lifting here, which is exactly right.' });
+    } else {
+      dictHits.forEach(function (w) {
+        eff -= w.length * 3.5;
+        findings.push({ cls: 'f-warn', text: 'Contains the dictionary word "' + w + '" - wordlist attacks see through symbol swaps.' });
+      });
+      if (!isCommon && dictCoverage >= 0.6) {
+        eff = Math.min(eff, 24);
+        findings.push({ cls: 'f-err', text: 'Most of this password is a dictionary word plus padding - that\'s the first pattern cracking rigs try.' });
+      }
+    }
 
     /* structural patterns */
     var patternCount = 0;
@@ -159,7 +209,7 @@
     } else if (len >= 16) {
       findings.push({ cls: 'f-ok', text: 'Good length (' + len + ' chars) - length is the easiest way to add entropy.' });
     }
-    if (pool <= 10 && len > 0) {
+    if (/^[0-9]+$/.test(pw)) {
       findings.push({ cls: 'f-warn', text: 'Only digits - add letters or symbols if this is not a PIN.' });
     }
     if (!isCommon && dictHits.length === 0 && len >= 8) {
@@ -173,29 +223,35 @@
 
     /* composite score: entropy 40 / dictionary 25 / patterns 20 / breach 15 */
     var entropyPts = Math.min(40, (eff / 70) * 40);
-    var dictPts    = isCommon ? 0 : Math.max(0, 25 - dictHits.length * 10);
+    var dictPts    = isCommon ? 0 : (isPassphrase ? 25 : Math.max(0, 25 - dictHits.length * 10));
     var patternPts = Math.max(0, 20 - patternCount * 7);
     var breachPts  = 15; // granted until a breach check says otherwise
 
     var score = Math.round(entropyPts + dictPts + patternPts + breachPts);
     if (isCommon) score = Math.min(score, 8);
+    else if (!isPassphrase && dictCoverage >= 0.6) score = Math.min(score, 40);
 
     return { score: score, eff: eff, len: len, pool: pool, isCommon: isCommon, findings: findings };
   }
 
   /* ---- Crack-time formatting ------------------------------------ */
+  /* returns { v: duration, cmp: something relatable to compare it to } */
   function fmtTime(seconds) {
-    if (seconds < 1) return 'instantly';
-    if (seconds < 60) return Math.round(seconds) + ' seconds';
-    if (seconds < 3600) return Math.round(seconds / 60) + ' minutes';
-    if (seconds < 86400) return Math.round(seconds / 3600) + ' hours';
-    if (seconds < 31557600) return Math.round(seconds / 86400) + ' days';
+    if (seconds < 1)        return { v: 'instantly',                              cmp: 'gone before you finish blinking' };
+    if (seconds < 60)       return { v: Math.round(seconds) + ' seconds',         cmp: 'shorter than a red light' };
+    if (seconds < 3600)     return { v: Math.round(seconds / 60) + ' minutes',    cmp: 'about a coffee break' };
+    if (seconds < 86400)    return { v: Math.round(seconds / 3600) + ' hours',    cmp: 'an overnight cracking run' };
+    if (seconds < 604800)   return { v: Math.round(seconds / 86400) + ' days',    cmp: 'a long weekend for an attacker' };
+    if (seconds < 2629800)  return { v: Math.round(seconds / 604800) + ' weeks',  cmp: 'a determined attacker might wait this out' };
+    if (seconds < 31557600) return { v: Math.round(seconds / 2629800) + ' months', cmp: 'longer than most attackers bother' };
     var years = seconds / 31557600;
-    if (years < 1e3) return Math.round(years) + ' years';
-    if (years < 1e6) return Math.round(years / 1e3) + ' thousand years';
-    if (years < 1e9) return Math.round(years / 1e6) + ' million years';
-    if (years < 1e12) return Math.round(years / 1e9) + ' billion years';
-    return 'effectively unguessable with this model';
+    if (years < 10)     return { v: Math.round(years) + ' years',                 cmp: 'outlives the laptop cracking it' };
+    if (years < 100)    return { v: Math.round(years) + ' years',                 cmp: 'roughly a human lifetime' };
+    if (years < 1e3)    return { v: Math.round(years) + ' years',                 cmp: 'older than the printing press' };
+    if (years < 1e6)    return { v: Math.round(years / 1e3) + ' thousand years',  cmp: 'longer than all of recorded history' };
+    if (years < 1e9)    return { v: Math.round(years / 1e6) + ' million years',   cmp: 'the dinosaurs are closer in time' };
+    if (years < 13.8e9) return { v: Math.round(years / 1e9) + ' billion years',   cmp: 'approaching the age of the universe' };
+    return { v: 'trillions of years', cmp: 'the universe ends before the crack finishes' };
   }
 
   function scoreLevel(score) {
@@ -217,17 +273,20 @@
     breachBtn.disabled = pw.length === 0;
 
     if (!pw) {
+      var emptyInfo = poolInfo('');
+      renderCharset(emptyInfo);
       $('pm-score-fill').style.width = '0%';
       $('pm-score-text').textContent = 'score: - / 100';
       $('pm-score-label').textContent = 'start typing to analyze';
       $('pm-stat-length').innerHTML = 'length <strong>0</strong>';
-      $('pm-stat-pool').innerHTML = 'charset <strong>-</strong>';
+      $('pm-stat-pool').innerHTML = 'charset <strong>' + (emptyInfo.pool || '-') + '</strong>';
       $('pm-stat-bits').innerHTML = 'entropy <strong>-</strong>';
       RATES.forEach(function (r) { $(r.id).textContent = '-'; });
       findingsEl.innerHTML = '';
       return;
     }
 
+    renderCharset(poolInfo(pw));
     var res = analyze(pw);
     var level = scoreLevel(res.score);
 
@@ -242,7 +301,19 @@
     $('pm-stat-bits').innerHTML = 'entropy <strong>~' + Math.round(res.eff) + ' bits</strong>';
 
     var guesses = Math.pow(2, res.eff - 1); // average case
-    RATES.forEach(function (r) { $(r.id).textContent = fmtTime(guesses / r.rate); });
+    RATES.forEach(function (r) {
+      var t = fmtTime(guesses / r.rate);
+      var el = $(r.id);
+      el.innerHTML = '';
+      var v = document.createElement('span');
+      v.className = 'tool-time-value';
+      v.textContent = t.v;
+      var c = document.createElement('span');
+      c.className = 'tool-time-cmp';
+      c.textContent = t.cmp;
+      el.appendChild(v);
+      el.appendChild(c);
+    });
 
     findingsEl.innerHTML = '';
     res.findings.forEach(function (f) {
@@ -323,6 +394,13 @@
       var masked = input.type === 'password';
       input.type = masked ? 'text' : 'password';
       this.textContent = masked ? 'hide' : 'show';
+    });
+
+    CLASSES.forEach(function (c) {
+      $(c.id).addEventListener('change', function () {
+        lastAnalyzed = input.value;
+        render(input.value);
+      });
     });
 
     $('pm-breach-btn').addEventListener('click', checkBreach);

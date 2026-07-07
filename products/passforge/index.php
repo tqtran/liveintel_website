@@ -42,7 +42,15 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="tool-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="tool-heading">Generate a strong password.</h2>
-      <p class="section-subtitle fade-in">Everything runs locally in your browser.</p>
+      <div class="tool-intro fade-in">
+        Humans are famously bad at random — our "random" passwords have a
+        favorite word, a lucky number, and an exclamation point at the end.
+        PassForge hands the job to your browser's <strong>cryptographic random
+        generator</strong> (<code>crypto.getRandomValues</code>), which has no
+        favorites and no birthday. Set the rules, get a credential with honest,
+        measurable entropy. Everything happens locally — nothing is ever sent
+        anywhere.
+      </div>
 
       <div class="tool-panel fade-in">
         <div class="tool-panel-body">
@@ -77,13 +85,8 @@ require_once __DIR__ . '/../../includes/header.php';
               </div>
             </div>
             <div class="tool-field">
-              <label for="pf-separator">Separator</label>
-              <select class="tool-select" id="pf-separator">
-                <option value="-">Hyphen</option>
-                <option value=".">Period</option>
-                <option value="_">Underscore</option>
-                <option value="">None</option>
-              </select>
+              <label for="pf-separator">Separator <span class="tool-rate-note" style="display:inline; margin-left:.35rem;">any character(s) you like — leave empty for none</span></label>
+              <input class="tool-input" id="pf-separator" type="text" value="-" maxlength="3" autocomplete="off" spellcheck="false" style="max-width:120px;" />
             </div>
             <div class="tool-checks">
               <label class="tool-check"><input id="pf-capitalize" type="checkbox" checked /> Capitalize words</label>
@@ -103,7 +106,6 @@ require_once __DIR__ . '/../../includes/header.php';
 
           <div class="tool-actions">
             <button class="btn btn-primary" id="pf-generate" type="button">Generate</button>
-            <a href="../passmeter/" class="btn btn-outline">Check a Password</a>
           </div>
           <p class="tool-note">
             PassForge uses secure browser randomness. Nothing generated here is sent to LiveIntel.
