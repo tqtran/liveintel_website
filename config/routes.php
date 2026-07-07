@@ -30,7 +30,7 @@ $route = static function (
 };
 
 return [
-    $route('/', 'LiveIntel | Phishing Simulation and Analytics Platform', 'weekly', '1.0', 'index.php'),
+    $route('/', 'LiveIntel | Privacy-Conscious Phishing Simulation Platform', 'weekly', '1.0', 'index.php'),
     $route('/products/phishsim/', 'PhishSim | Phishing Simulation | LiveIntel', 'monthly', '0.9', 'products/phishsim/index.php'),
     $route('/products/liveinsight/', 'LiveInsight | Phishing Analytics | LiveIntel', 'monthly', '0.9', 'products/liveinsight/index.php'),
     $route('/tools/', 'Free Security Tools | LiveIntel', 'monthly', '0.8', 'tools/index.php'),
@@ -38,6 +38,7 @@ return [
     $route('/products/passforge/', 'PassForge | Free Password Generator | LiveIntel', 'monthly', '0.8', 'products/passforge/index.php'),
     $route('/products/spf-flattener/', 'SPF Flattener | Free SPF Record Tool | LiveIntel', 'monthly', '0.8', 'products/spf-flattener/index.php'),
     $route('/about', 'About | LiveIntel', 'monthly', '0.6', 'about.php'),
+    $route('/start', 'Start Free | LiveIntel', 'monthly', '0.7', 'start.php'),
     $route('/security', 'Security | LiveIntel', 'monthly', '0.6', 'legal/security.php'),
     $route('/getting-started', 'Getting Started | LiveIntel', 'monthly', '0.6', 'getting-started.php'),
     $route('/contact', 'Contact | LiveIntel', 'monthly', '0.6', 'contact.php'),

@@ -36,12 +36,12 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Main navigation">
-      <a href="<?php echo $basePath; ?>index.php" class="nav-logo" aria-label="LiveIntel home">
+      <a href="<?php echo $basePath; ?>index.php" class="brand-lockup" aria-label="LiveIntel home">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#00c2ff" fill-opacity=".12"/>
           <path d="M7 14h14M14 7l7 7-7 7" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Live<span>Intel</span>
+        <span class="brand-wordmark">LiveIntel</span>
       </a>
 
       <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +57,7 @@
         <li><a href="<?php echo $basePath; ?>about">About</a></li>
       </ul>
 
-      <a href="<?php echo $basePath; ?>contact" class="btn btn-primary nav-cta">Start Free</a>
+      <a href="<?php echo $basePath; ?>start" class="btn btn-primary nav-cta">Start Free</a>
     </nav>
   </div>
 </header>

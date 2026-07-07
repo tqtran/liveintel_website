@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
 $pageTitle = "PhishSim | Phishing Simulation | LiveIntel";
-$pageDescription = "PhishSim runs controlled phishing simulations, measures who reports and who clicks, and improves awareness without collecting real passwords.";
+$pageDescription = "PhishSim runs controlled phishing simulations, measures reports, clicks, and repeat behavior, and improves awareness without collecting real passwords.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -16,11 +16,11 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Platform
           </a>
-          <span class="badge badge-purple">Core Platform · Phishing Simulation</span>
+          <span class="badge badge-purple">Core Platform - Phishing Simulation</span>
           <h1 class="product-hero-title" id="ps-title">PhishSim</h1>
           <p class="product-hero-desc">
-            Run phishing simulations against your own organization. See who
-            reports, who clicks, and who repeats mistakes, without collecting
+            Run phishing simulations for your own organization. See who
+            reports, who clicks, and which patterns repeat, without collecting
             or storing a single real password.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
@@ -32,7 +32,7 @@ require_once __DIR__ . '/../../includes/header.php';
         <div class="spec-box fade-in">
           <div class="spec-box-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            phishsim — product spec
+            phishsim - product spec
           </div>
           <div class="spec-box-body">
             <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">PhishSim</span></div>
@@ -52,12 +52,12 @@ require_once __DIR__ . '/../../includes/header.php';
       <h2 class="section-title fade-in" id="builder-heading">Campaign builder</h2>
       <p class="section-subtitle fade-in">
         Put together a campaign in a few steps and target it by department,
-        role, or a group that reported real phishing recently.
+        role, or a group that has seen real phishing recently.
       </p>
 
       <div class="features-grid">
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <div class="feature-icon" aria-hidden="true">01</div>
           <h3 class="feature-title">Targeted sending</h3>
           <p class="feature-desc">
             Segment by department, role, or risk tier. Send to a pilot group
@@ -65,7 +65,7 @@ require_once __DIR__ . '/../../includes/header.php';
           </p>
         </div>
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🗓️</div>
+          <div class="feature-icon" aria-hidden="true">02</div>
           <h3 class="feature-title">Scheduling</h3>
           <p class="feature-desc">
             Send once or set up a recurring cadence so awareness testing
@@ -73,11 +73,11 @@ require_once __DIR__ . '/../../includes/header.php';
           </p>
         </div>
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🖱️</div>
+          <div class="feature-icon" aria-hidden="true">03</div>
           <h3 class="feature-title">Click &amp; open tracking</h3>
           <p class="feature-desc">
             Every open, click, and report is logged with a timestamp, so you
-            can measure how fast people react, not just whether they did.
+            can measure response patterns, not just final counts.
           </p>
         </div>
       </div>
@@ -90,7 +90,7 @@ require_once __DIR__ . '/../../includes/header.php';
       <h2 class="section-title fade-in" id="templates-heading">Templates</h2>
       <p class="section-subtitle fade-in">
         Use ready-made lures based on real reported phishing themes, or build
-        your own to match a threat you've actually seen.
+        your own to match a threat your team has actually seen.
       </p>
 
       <div class="theme-tags fade-in" style="max-width:640px;">
@@ -119,17 +119,17 @@ require_once __DIR__ . '/../../includes/header.php';
         <div class="metric-card fade-in">
           <div class="metric-label">Click rate</div>
           <div class="metric-value"><span data-count="11" data-suffix="%">0%</span></div>
-          <span class="metric-trend trend-up">▼ 4% vs last campaign</span>
+          <span class="metric-trend trend-up">Down 4% vs last campaign</span>
         </div>
         <div class="metric-card fade-in">
           <div class="metric-label">Credential-page reach</div>
           <div class="metric-value"><span data-count="3" data-suffix="%">0%</span></div>
-          <span class="metric-trend trend-up">▼ 2% vs last campaign</span>
+          <span class="metric-trend trend-up">Down 2% vs last campaign</span>
         </div>
         <div class="metric-card fade-in">
           <div class="metric-label">Repeat clickers</div>
           <div class="metric-value"><span data-count="4">0</span></div>
-          <span class="metric-trend trend-up">▼ 2 vs last campaign</span>
+          <span class="metric-trend trend-up">Down 2 vs last campaign</span>
         </div>
       </div>
     </div>
@@ -139,7 +139,7 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" id="safety" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="safety-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="safety-heading">Safety and privacy</h2>
-      <p class="section-subtitle fade-in">A phishing simulation only works if people trust it isn't a trap.</p>
+      <p class="section-subtitle fade-in">A phishing simulation works best when people trust the boundaries.</p>
 
       <div class="safety-banner fade-in">
         <div class="safety-banner-icon" aria-hidden="true">
@@ -190,7 +190,7 @@ require_once __DIR__ . '/../../includes/header.php';
       <h2 class="section-title fade-in" id="reporting-heading">Reporting and improvement over time</h2>
       <p class="section-subtitle fade-in">
         One campaign is a snapshot. A series of them, tracked in LiveInsight,
-        is a trend.
+        shows whether things are improving.
       </p>
 
       <div class="metric-card span-2 fade-in" style="max-width:640px;">
@@ -220,10 +220,10 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Run your first campaign the right way</h2>
+        <h2 class="cta-banner-title" id="cta-heading">Run your first campaign with clear boundaries</h2>
         <p class="cta-banner-desc">
           We'll help you pick a template, set a target group, and read the
-          results without turning it into a witch hunt.
+          results without turning awareness into blame.
         </p>
         <div class="cta-banner-actions">
           <a href="../../contact" class="btn btn-primary btn-lg">Request Demo</a>

@@ -23,6 +23,7 @@ Options -Indexes
 
   # Clean public trust and verification routes.
   RewriteRule ^about/?$ about.php [L]
+  RewriteRule ^start/?$ start.php [L]
   RewriteRule ^security/?$ legal/security.php [L]
   RewriteRule ^getting-started/?$ getting-started.php [L]
   RewriteRule ^contact/?$ contact.php [L]

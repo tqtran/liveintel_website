@@ -28,7 +28,7 @@ require_once __DIR__ . '/../includes/header.php';
 
         <h2 class="fade-in">Use of Service</h2>
         <p class="fade-in">
-          LiveIntel provides phishing simulation, campaign coordination, awareness measurement, reporting, and related security tools. You may use the service only for lawful, authorized purposes and in accordance with these Terms and any applicable agreement with LiveIntel.
+          LiveIntel provides phishing simulation, campaign coordination, awareness measurement, result review, and related security tools. You may use the service only for lawful, authorized purposes and in accordance with these Terms and any applicable agreement with LiveIntel.
         </p>
 
         <h2 class="fade-in">Accounts</h2>

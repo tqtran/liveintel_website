@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
 $pageTitle = "Contact | LiveIntel";
-$pageDescription = "Contact LiveIntel for general questions, support, security reports, or business inquiries.";
+$pageDescription = "Contact LiveIntel for questions, support, security reports, or anything that needs a human reply.";
 $pageCanonicalPath = "/contact";
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
         <span class="badge badge-blue">Contact</span>
         <h1 class="product-hero-title" id="contact-title">Reach LiveIntel.</h1>
         <p class="product-hero-desc" style="max-width:620px;">
-          Use the channel that best matches your question. Keep sensitive vulnerability details out of public channels and send them directly to the security contact.
+          Questions, support, security reports, or something weird? Send it our way. Keep sensitive vulnerability details out of public channels and send them directly to security.
         </p>
       </div>
     </div>
@@ -23,12 +23,12 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" aria-labelledby="channels-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="channels-heading">Contact channels</h2>
-      <p class="section-subtitle fade-in">Simple inboxes, clear purpose. Include enough context for a useful reply.</p>
+      <p class="section-subtitle fade-in">Simple inboxes, clear purpose. A little context helps us give you a useful reply.</p>
 
       <div class="features-grid">
         <div class="feature-card fade-in">
           <h3 class="feature-title">General contact</h3>
-          <p class="feature-desc">Product questions, company questions, and anything that does not fit another channel.</p>
+          <p class="feature-desc">Product questions, company questions, and anything that does not fit neatly in another inbox.</p>
           <p style="margin-top:.85rem;"><a href="mailto:hello@liveintel.com">hello@liveintel.com</a></p>
         </div>
 
@@ -46,7 +46,7 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="feature-card fade-in">
           <h3 class="feature-title">Business inquiries</h3>
-          <p class="feature-desc">Partnership, purchasing, or organizational evaluation questions.</p>
+          <p class="feature-desc">Partnership, purchasing, or evaluation questions for your organization.</p>
           <p style="margin-top:.85rem;"><a href="mailto:hello@liveintel.com">hello@liveintel.com</a></p>
         </div>
       </div>

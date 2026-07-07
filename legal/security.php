@@ -1,7 +1,7 @@
 <?php
 $basePath = "../";
 $pageTitle = "Security | LiveIntel";
-$pageDescription = "How LiveIntel approaches deployment, data minimization, encryption, retention, and responsible disclosure.";
+$pageDescription = "How LiveIntel approaches deployment, data minimization, simulation boundaries, encryption, retention, and responsible disclosure.";
 $pageCanonicalPath = "/security";
 $pageStyles = '<style>
   .legal-section { max-width: 820px; margin: 0 auto; }
@@ -22,7 +22,7 @@ require_once __DIR__ . '/../includes/header.php';
           <span class="badge badge-blue">Security</span>
           <h1 class="product-hero-title" id="security-heading">LiveIntel security and privacy model</h1>
           <p class="product-hero-desc">
-            This page explains how LiveIntel is intended to operate, what data is needed to run the service, and where the boundaries are. It is written to be precise rather than absolute.
+            This page explains how LiveIntel operates, what data is needed to run the service, and where the simulation boundaries are. Security claims should be clear, specific, and reviewable.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="mailto:security@liveintel.com" class="btn btn-primary">Report a Vulnerability</a>
@@ -33,7 +33,7 @@ require_once __DIR__ . '/../includes/header.php';
           <div class="spec-box-header">security-overview</div>
           <div class="spec-box-body">
             <div class="spec-row"><span class="spec-key">Deployment</span><span class="spec-val">Local agent with cloud coordination</span></div>
-            <div class="spec-row"><span class="spec-key">Data approach</span><span class="spec-val">Minimized campaign metadata and reporting metrics</span></div>
+            <div class="spec-row"><span class="spec-key">Data approach</span><span class="spec-val">Minimized campaign metadata and simulation results</span></div>
             <div class="spec-row"><span class="spec-key">Simulation boundary</span><span class="spec-val">No real credential collection in simulated forms</span></div>
             <div class="spec-row"><span class="spec-key">Security contact</span><span class="spec-val">security@liveintel.com</span></div>
           </div>
@@ -47,12 +47,12 @@ require_once __DIR__ . '/../includes/header.php';
       <div class="legal-section">
         <h2 class="section-title fade-in" id="details-heading" style="text-align:left;">Security Overview</h2>
         <p class="fade-in">
-          LiveIntel is a phishing simulation and awareness measurement platform. The security model is built around customer-controlled execution, privacy-conscious collection, and reporting focused on campaign outcomes.
+          LiveIntel is a phishing simulation and awareness measurement platform. The security model is built around customer-controlled execution, limited data collection, and measurement focused on campaign outcomes.
         </p>
 
         <h2 class="fade-in">Deployment Model</h2>
         <p class="fade-in">
-          LiveIntel uses a lightweight local agent to execute phishing simulations from the customer environment. The cloud platform provides campaign management, coordination, and reporting.
+          LiveIntel uses a lightweight local agent to execute phishing simulations from the customer environment. The cloud platform provides campaign management, coordination, and campaign results.
         </p>
 
         <h2 class="fade-in">What Stays Local</h2>
@@ -64,25 +64,26 @@ require_once __DIR__ . '/../includes/header.php';
 
         <h2 class="fade-in">What LiveIntel Collects</h2>
         <p class="fade-in">
-          LiveIntel minimizes data collection and focuses on the campaign metadata and reporting metrics needed to operate the service. Depending on configuration, this may include:
+          LiveIntel limits collection to the campaign metadata, account details, operational logs, and simulation results needed to operate the service. Depending on configuration, this may include:
         </p>
         <ul class="fade-in">
           <li>Account and administrator contact details.</li>
           <li>Campaign configuration, template selection, launch timing, and target group metadata.</li>
-          <li>Reporting events such as delivery status, opens, clicks, reports, and simulated form submission events.</li>
-          <li>Operational logs needed to troubleshoot the agent, platform, and reporting workflow.</li>
+          <li>Simulation events such as delivery status, opens, clicks, remote content exposure, and simulated form submission events.</li>
+          <li>Report events, if configured, such as user-submitted phishing reports and related timestamps.</li>
+          <li>Operational logs needed to troubleshoot the agent, platform, and result review workflow.</li>
         </ul>
 
         <h2 class="fade-in">What LiveIntel Does Not Collect</h2>
         <ul class="fade-in">
           <li>LiveIntel does not intentionally collect real passwords or real credential values through phishing simulations.</li>
-          <li>LiveIntel does not need mailbox contents to provide campaign reporting.</li>
+          <li>LiveIntel does not need mailbox contents to provide campaign results.</li>
           <li>LiveIntel does not sell customer data.</li>
         </ul>
 
         <h2 class="fade-in">Data Retention</h2>
         <p class="fade-in">
-          Campaign and reporting data is retained for as long as needed to provide the service, support customer review, meet legal obligations, and maintain operational integrity. Customers can contact LiveIntel to request data deletion or retention details for their account.
+          Campaign and simulation result data is retained for as long as needed to provide the service, support customer review, meet legal obligations, and maintain operational integrity. Customers can contact LiveIntel to request deletion or retention details for their account.
         </p>
 
         <h2 class="fade-in">Encryption</h2>

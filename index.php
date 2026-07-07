@@ -1,7 +1,8 @@
 <?php
 $basePath = "";
 $pageTitle = "LiveIntel | Privacy-Conscious Phishing Simulation Platform";
-$pageDescription = "LiveIntel helps teams create phishing simulation campaigns, launch them from their own environment, measure behavior, and improve awareness over time.";
+$pageDescription = "LiveIntel helps teams run phishing simulations from their own environment, measure behavior clearly, and improve awareness without turning it into a second job.";
+$pageCanonicalPath = "/";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -20,15 +21,15 @@ require_once __DIR__ . '/includes/header.php';
           </div>
 
           <h1 class="hero-title" id="hero-heading">
-            Privacy-conscious phishing simulations from your own environment.
+            Run phishing simulations without turning awareness training into a second job.
           </h1>
 
           <p class="hero-desc">
-            Create realistic campaigns, launch simulations, and measure clicks, exposure, and improvement over time.
+            Create the campaign, send it from your environment, see what happened, and make the next one better.
           </p>
 
           <div class="hero-actions">
-            <a href="contact" class="btn btn-primary btn-lg">Start Free</a>
+            <a href="start" class="btn btn-primary btn-lg">Start Free</a>
             <a href="#workflow" class="btn btn-outline btn-lg">See How It Works</a>
           </div>
         </div>
@@ -75,9 +76,9 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" id="workflow" aria-labelledby="workflow-heading">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>How it works</div>
-      <h2 class="section-title fade-in" id="workflow-heading">One phishing behavior workflow.</h2>
+      <h2 class="section-title fade-in" id="workflow-heading">How LiveIntel works</h2>
       <p class="section-subtitle fade-in">
-        From campaign planning to measurable improvement, LiveIntel keeps the process simple.
+        Here is the basic path: plan a campaign, run it safely, read the results, and improve from there.
       </p>
 
       <div class="workflow fade-in">
@@ -86,8 +87,8 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
           </div>
           <div>
-            <div class="workflow-node-label">Team plans</div>
-            <div class="workflow-node-desc">Choose audience, scenario, and learning goal.</div>
+            <div class="workflow-node-label">Plan the campaign</div>
+            <div class="workflow-node-desc">Choose the audience, scenario, and what you want to learn.</div>
           </div>
         </div>
         <div class="workflow-node">
@@ -95,8 +96,8 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
           </div>
           <div>
-            <div class="workflow-node-label">LiveIntel simulates</div>
-            <div class="workflow-node-desc">Run controlled campaigns and measure behavior.</div>
+            <div class="workflow-node-label">Run the simulation</div>
+            <div class="workflow-node-desc">Send a controlled campaign from your own environment.</div>
           </div>
         </div>
         <div class="workflow-node">
@@ -104,8 +105,8 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
           </div>
           <div>
-            <div class="workflow-node-label">LiveIntel measures</div>
-            <div class="workflow-node-desc">Track clicks, exposure, repeat failures, and improvement over time.</div>
+            <div class="workflow-node-label">Measure the signals</div>
+            <div class="workflow-node-desc">Track clicks, exposure, repeat failures, and trends.</div>
           </div>
         </div>
         <div class="workflow-node">
@@ -113,27 +114,27 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
           <div>
-            <div class="workflow-node-label">Team improves</div>
-            <div class="workflow-node-desc">Use results to adjust awareness, policy, and controls.</div>
+            <div class="workflow-node-label">Improve the next one</div>
+            <div class="workflow-node-desc">Use the results to tune training, policy, and controls.</div>
           </div>
         </div>
       </div>
 
       <p class="tools-connect-note fade-in">
-        Build a realistic phishing simulation, send it from your environment, and track the signals that matter: clicks, remote content exposure, repeat failures, and improvement over time.
+        Build a realistic phishing simulation, send it from your environment, and track the signals that matter: who clicked, what loaded, and whether things are getting better.
       </p>
     </div>
   </section>
 
   <!-- ============================================================
-       WHY LIVEINTEL
+       WHY LiveIntel
   ============================================================ -->
   <section class="section" id="platform" aria-labelledby="platform-heading" style="background:var(--clr-surface); border-block:1px solid var(--clr-border);">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>The platform</div>
-      <h2 class="section-title fade-in" id="platform-heading">One platform. One phishing behavior workflow.</h2>
+      <h2 class="section-title fade-in" id="platform-heading">One place to run the phishing awareness loop.</h2>
       <p class="section-subtitle fade-in">
-        Campaign creation, simulation delivery, analytics, and reporting work together so teams can understand phishing behavior without stitching together separate tools.
+        Create the campaign, send it, measure the results, and improve the next one without stitching together separate tools.
       </p>
 
       <div class="pillar-grid pillar-grid-five">
@@ -152,7 +153,7 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
           <h3 class="pillar-name">Lightweight adoption</h3>
-          <p class="pillar-desc">Start without a heavy enterprise rollout or analyst-heavy workflow.</p>
+          <p class="pillar-desc">Start without a heavy rollout or a dashboard someone has to babysit.</p>
         </article>
 
         <article class="pillar-card fade-in">
@@ -170,7 +171,7 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3 class="pillar-name">Built for practical teams</h3>
-          <p class="pillar-desc">Designed for organizations that need phishing awareness without complex administration.</p>
+          <p class="pillar-desc">Designed for teams that need useful phishing awareness work without hiring a process to run the process.</p>
         </article>
 
         <article class="pillar-card fade-in">
@@ -178,8 +179,8 @@ require_once __DIR__ . '/includes/header.php';
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg>
           </div>
-          <h3 class="pillar-name">One platform experience</h3>
-          <p class="pillar-desc">Campaign creation, simulation delivery, and reporting work together as one workflow.</p>
+          <h3 class="pillar-name">One connected workflow</h3>
+          <p class="pillar-desc">Campaign creation, delivery, and results stay in one clear path.</p>
         </article>
       </div>
     </div>
@@ -193,9 +194,9 @@ require_once __DIR__ . '/includes/header.php';
       <div class="problem-grid">
         <div class="problem-copy">
           <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Deployment</div>
-          <h2 class="section-title fade-in" id="deployment-heading">Simple deployment. Customer-controlled execution.</h2>
+          <h2 class="section-title fade-in" id="deployment-heading">Run from your environment, with less plumbing.</h2>
           <p class="fade-in">
-            LiveIntel uses a lightweight local agent to execute phishing simulations from the customer's environment. The cloud platform provides campaign management, coordination, and reporting while the agent handles local execution.
+            LiveIntel uses a lightweight local agent to execute phishing simulations from the customer's environment. The cloud platform handles campaign management, coordination, and results while the agent handles local execution.
           </p>
         </div>
 
@@ -223,7 +224,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Simulation safety</div>
       <h2 class="section-title fade-in" id="safety-heading">Testing behavior, not surveilling people.</h2>
-      <p class="section-subtitle fade-in">LiveIntel is built around clear simulation boundaries.</p>
+      <p class="section-subtitle fade-in">LiveIntel is built around clear boundaries, because trust is part of the program.</p>
 
       <div class="safety-banner fade-in">
         <div class="safety-banner-icon" aria-hidden="true">
@@ -247,7 +248,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div>
             <div class="trust-item-title">Data minimization</div>
-            <div class="trust-item-desc">Collect the signals needed to measure behavior and report on improvement.</div>
+            <div class="trust-item-desc">Collect the signals needed to measure behavior and review improvement over time.</div>
           </div>
         </div>
         <div class="trust-item fade-in">
@@ -271,11 +272,15 @@ require_once __DIR__ . '/includes/header.php';
       <p class="section-subtitle fade-in">
         LiveIntel focuses on practical indicators that help teams understand phishing resilience without requiring a dedicated analyst workflow.
       </p>
+      <p class="section-subtitle fade-in" style="font-size:.92rem; margin-top:-1rem;">
+        Metrics appear as simulation activity is recorded. No crystal ball, just clean signals.
+      </p>
 
       <div class="analytics-grid analytics-grid-four">
         <div class="metric-card fade-in">
           <div class="metric-label">Click rate</div>
           <div class="metric-value"><span data-count="11" data-suffix="%">0%</span></div>
+          <p class="feature-desc">Tracks risky interaction during a simulation.</p>
           <span class="metric-trend trend-up">Lower is better over time</span>
           <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,10 20,14 40,18 60,22 80,26 100,30" fill="none" stroke="#10b981" stroke-width="2"/>
@@ -285,6 +290,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="metric-card fade-in">
           <div class="metric-label">Remote content exposure</div>
           <div class="metric-value"><span data-count="28" data-suffix="%">0%</span></div>
+          <p class="feature-desc">Shows when remote content loads during a campaign.</p>
           <span class="metric-trend trend-up">Signal captured during simulation</span>
           <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,30 20,24 40,28 60,20 80,18 100,14" fill="none" stroke="#00c2ff" stroke-width="2"/>
@@ -294,6 +300,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="metric-card fade-in">
           <div class="metric-label">Repeat failures</div>
           <div class="metric-value"><span data-count="4">0</span></div>
+          <p class="feature-desc">Highlights repeated risky behavior across campaigns.</p>
           <span class="metric-trend trend-up">Down from the prior campaign</span>
           <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,8 20,12 40,16 60,20 80,26 100,30" fill="none" stroke="#10b981" stroke-width="2"/>
@@ -303,6 +310,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="metric-card fade-in">
           <div class="metric-label">Improvement over time</div>
           <div class="metric-value"><span data-count="3" data-suffix=" cycles">0 cycles</span></div>
+          <p class="feature-desc">Measures change from one campaign cycle to the next.</p>
           <span class="metric-trend trend-up">Measured across campaigns</span>
           <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,32 20,28 40,24 60,18 80,12 100,8" fill="none" stroke="#10b981" stroke-width="2"/>
@@ -332,7 +340,7 @@ require_once __DIR__ . '/includes/header.php';
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Free tools</div>
       <h2 class="section-title fade-in" id="tools-heading">Useful security tools, available anytime.</h2>
       <p class="section-subtitle fade-in">
-        LiveIntel also provides standalone utilities for quick checks and investigations. Use them when you need a quick answer. Use the platform when you need repeatable phishing simulations, trends, and reporting over time.
+        LiveIntel also provides standalone utilities for quick checks and investigations. Use them when you need a fast answer. Use the platform when you need repeatable phishing simulations, trends, and campaign results over time.
       </p>
 
       <div class="tool-grid-mini">
@@ -370,10 +378,10 @@ require_once __DIR__ . '/includes/header.php';
       <div class="cta-banner fade-in">
         <h2 class="cta-banner-title" id="cta-heading">Start your first phishing simulation.</h2>
         <p class="cta-banner-desc">
-          Create a campaign, launch it from your environment, and measure behavior over time.
+          Start with one campaign. You can get fancy later.
         </p>
         <div class="cta-banner-actions">
-          <a href="contact" class="btn btn-primary btn-lg">Start Free</a>
+          <a href="start" class="btn btn-primary btn-lg">Start Free</a>
           <a href="#workflow" class="btn btn-outline btn-lg">See How It Works</a>
         </div>
       </div>

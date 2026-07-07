@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
 $pageTitle = "Getting Started | LiveIntel";
-$pageDescription = "A beginner-friendly guide to setting up LiveIntel, connecting the local agent, launching a phishing simulation, and reviewing results.";
+$pageDescription = "A guided path for setting up LiveIntel, connecting the local agent, launching a first phishing simulation, and reviewing results.";
 $pageCanonicalPath = "/getting-started";
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -12,9 +12,9 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <div style="max-width:720px;">
         <span class="badge badge-blue">Getting Started</span>
-        <h1 class="product-hero-title" id="getting-started-title">Start with a local agent, a small campaign, and a clear report.</h1>
+        <h1 class="product-hero-title" id="getting-started-title">Start with the local agent, one small campaign, and clear results.</h1>
         <p class="product-hero-desc" style="max-width:680px;">
-          This guide explains the normal LiveIntel setup flow at a high level. Any commands shown here are examples until your organization receives its actual agent package and connection details.
+          LiveIntel provides the agent package and connection details as part of the free setup flow. Here is the basic path.
         </p>
       </div>
     </div>
@@ -27,10 +27,10 @@ require_once __DIR__ . '/includes/header.php';
           <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Overview</div>
           <h2 class="section-title fade-in" id="overview-heading">How LiveIntel is deployed</h2>
           <p style="color:var(--clr-text-muted); margin-bottom:1rem;">
-            LiveIntel uses a lightweight local agent to execute phishing simulations from the customer environment. The cloud platform provides campaign management, coordination, and reporting.
+            LiveIntel uses a lightweight local agent to execute phishing simulations from the customer environment. The cloud platform provides campaign management, coordination, and campaign results.
           </p>
           <p style="color:var(--clr-text-muted);">
-            A typical first rollout starts with a small internal test group, confirms mail flow and tracking behavior, then expands to the intended audience.
+            Start with a small internal test group. Confirm mail flow and tracking behavior. Expand when the results look sane.
           </p>
         </div>
         <div class="spec-box fade-in">
@@ -50,12 +50,12 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="steps-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="steps-heading">Setup steps</h2>
-      <p class="section-subtitle fade-in">Use these steps as a checklist for a first LiveIntel deployment.</p>
+      <p class="section-subtitle fade-in">Use these steps as a checklist for your first LiveIntel deployment.</p>
 
       <div class="features-grid">
         <div class="feature-card fade-in">
           <h3 class="feature-title">Requirements</h3>
-          <p class="feature-desc">Confirm an approved sending environment, DNS/mail permissions if needed, an admin account, and a small pilot audience.</p>
+          <p class="feature-desc">Confirm an approved sending environment, any DNS or mail permissions you need, an admin account, and a small pilot audience.</p>
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Install the LiveIntel agent</h3>
@@ -63,19 +63,19 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Connect the agent</h3>
-          <p class="feature-desc">Use your organization-specific enrollment token or connection string to register the agent with the LiveIntel cloud platform.</p>
+          <p class="feature-desc">Use the setup details from your LiveIntel email to register the agent with the cloud platform.</p>
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Create your first campaign</h3>
-          <p class="feature-desc">Choose a small audience, select a simulation template, set timing, and define what metrics you want to review.</p>
+          <p class="feature-desc">Choose a small audience, select a simulation template, set timing, and decide what you want to measure.</p>
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Launch a simulation</h3>
-          <p class="feature-desc">Start with a pilot campaign. Confirm delivery, tracking, and reporting before expanding to a larger group.</p>
+          <p class="feature-desc">Start with one campaign. Confirm delivery, tracking, and result collection before expanding to a larger group. You can get fancy later.</p>
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Review results</h3>
-          <p class="feature-desc">Look at click rate, exposure, repeat failures, and patterns that should guide follow-up training.</p>
+          <p class="feature-desc">Look at click rate, exposure, repeat failures, and patterns that should guide the next training decision.</p>
         </div>
       </div>
     </div>
@@ -85,19 +85,19 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="two-col">
         <div>
-          <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Example Only</div>
-          <h2 class="section-title fade-in" id="commands-heading">Placeholder command pattern</h2>
+          <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Setup Pattern</div>
+          <h2 class="section-title fade-in" id="commands-heading">Example command pattern</h2>
           <p style="color:var(--clr-text-muted); margin-bottom:1rem;">
-            Actual install commands are not available in this website repository. The commands below are placeholders showing the kind of flow an agent install may follow.
+            The commands below show the expected setup pattern. Use the agent package and connection details from your LiveIntel setup email.
           </p>
           <p style="color:var(--clr-text-muted);">
-            Do not run placeholder commands in production. Use the agent package and instructions provided for your LiveIntel account.
+            Your setup email includes the package, enrollment details, and environment-specific instructions for your account.
           </p>
         </div>
         <div class="spec-box fade-in">
-          <div class="spec-box-header">placeholder-example</div>
+          <div class="spec-box-header">setup-example</div>
           <div class="spec-box-body">
-            <pre class="tool-record"># Example only. Replace with real LiveIntel instructions.
+            <pre class="tool-record"># Example setup pattern.
 liveintel-agent install
 liveintel-agent enroll --token EXAMPLE_TOKEN
 liveintel-agent status</pre>
@@ -117,10 +117,10 @@ liveintel-agent status</pre>
         </div>
         <div class="feature-card fade-in">
           <h3 class="feature-title">Messages are not delivered</h3>
-          <p class="feature-desc">Review mail routing, allowlists, sending domain configuration, and any internal filtering rules.</p>
+          <p class="feature-desc">Review mail routing, allowlists, sending domain configuration, and any internal filtering rules that may be getting involved.</p>
         </div>
         <div class="feature-card fade-in">
-          <h3 class="feature-title">Reports look incomplete</h3>
+          <h3 class="feature-title">Results look incomplete</h3>
           <p class="feature-desc">Confirm tracking settings, campaign timing, pilot audience membership, and whether events are still processing.</p>
         </div>
       </div>
@@ -134,7 +134,7 @@ liveintel-agent status</pre>
         <div class="spec-box-header">common-questions</div>
         <div class="spec-box-body">
           <div class="spec-row"><span class="spec-key">Where do simulations run?</span><span class="spec-val">From the customer environment through the LiveIntel local agent.</span></div>
-          <div class="spec-row"><span class="spec-key">What does the cloud do?</span><span class="spec-val">Campaign management, coordination, reporting, and service operation.</span></div>
+          <div class="spec-row"><span class="spec-key">What does the cloud do?</span><span class="spec-val">Campaign management, coordination, result review, and service operation.</span></div>
           <div class="spec-row"><span class="spec-key">Should we pilot first?</span><span class="spec-val">Yes. Start with a small authorized group before launching broadly.</span></div>
           <div class="spec-row"><span class="spec-key">Who can help?</span><span class="spec-val">Contact support@liveintel.com with setup questions.</span></div>
         </div>

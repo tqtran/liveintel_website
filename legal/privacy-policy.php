@@ -30,21 +30,22 @@ require_once __DIR__ . '/../includes/header.php';
           <li>Account information, such as name, email address, organization, role, and authentication-related records.</li>
           <li>Contact and support communications you send to LiveIntel.</li>
           <li>Campaign metadata, such as campaign names, template choices, target group metadata, timing, and configuration.</li>
-          <li>Reporting metrics, such as delivery status, opens, clicks, reports, time to report, and simulated form submission events.</li>
+          <li>Simulation metrics, such as delivery status, opens, clicks, remote content exposure, repeat patterns, improvement over time, and simulated form submission events.</li>
+          <li>Report events, if configured, such as user-submitted phishing reports and related timestamps.</li>
           <li>Technical and operational data, such as IP address, browser or device information, logs, diagnostic events, and security events needed to operate the service.</li>
         </ul>
 
         <h2 class="fade-in">Information Not Intentionally Collected</h2>
         <ul class="fade-in">
           <li>LiveIntel does not intentionally collect real passwords or credential values through simulated phishing forms.</li>
-          <li>LiveIntel does not require mailbox contents to produce campaign reports.</li>
+          <li>LiveIntel does not require mailbox contents to produce campaign results.</li>
           <li>LiveIntel does not intentionally collect sensitive personal information unless a customer or user includes it in a communication, campaign name, uploaded data, or support request.</li>
         </ul>
 
         <h2 class="fade-in">How Information Is Used</h2>
         <ul class="fade-in">
           <li>Provide, operate, secure, and improve the LiveIntel service.</li>
-          <li>Create, coordinate, execute, and report on phishing simulation campaigns.</li>
+          <li>Create, coordinate, execute, and review phishing simulation campaigns.</li>
           <li>Respond to support, security, and business inquiries.</li>
           <li>Detect, investigate, and prevent misuse, abuse, or unauthorized access.</li>
           <li>Meet legal, contractual, accounting, or compliance obligations.</li>
@@ -52,7 +53,7 @@ require_once __DIR__ . '/../includes/header.php';
 
         <h2 class="fade-in">Data Retention</h2>
         <p class="fade-in">
-          LiveIntel retains information for as long as needed to provide the service, maintain reports requested by customers, resolve support issues, meet legal obligations, and protect the integrity of the platform. Customers may contact LiveIntel to request deletion or retention details for their account.
+          LiveIntel retains information for as long as needed to provide the service, maintain results requested by customers, resolve support issues, meet legal obligations, and protect the integrity of the platform. Customers may contact LiveIntel to request deletion or retention details for their account.
         </p>
 
         <h2 class="fade-in">Security Measures</h2>
