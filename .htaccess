@@ -21,6 +21,14 @@ Options -Indexes
   # Generate the public sitemap from the canonical route manifest.
   RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
+  # Clean public trust and verification routes.
+  RewriteRule ^about/?$ about.php [L]
+  RewriteRule ^security/?$ legal/security.php [L]
+  RewriteRule ^getting-started/?$ getting-started.php [L]
+  RewriteRule ^contact/?$ contact.php [L]
+  RewriteRule ^privacy/?$ legal/privacy-policy.php [L]
+  RewriteRule ^terms/?$ legal/terms-of-service.php [L]
+
   # ── Block access to non-public server directories ──────────
   # Returns 403 Forbidden for any request that begins with one
   # of these directory names.

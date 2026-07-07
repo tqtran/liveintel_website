@@ -1,163 +1,104 @@
 <?php
 $basePath = "../";
 $pageTitle = "Security | LiveIntel";
-$pageDescription = "LiveIntel Security: our security practices, vulnerability disclosure program, and how we protect your data.";
+$pageDescription = "How LiveIntel approaches deployment, data minimization, encryption, retention, and responsible disclosure.";
+$pageCanonicalPath = "/security";
 $pageStyles = '<style>
-  .legal-section { max-width: 760px; margin: 0 auto; }
+  .legal-section { max-width: 820px; margin: 0 auto; }
   .legal-section h2 { font-size: 1.25rem; color: var(--clr-text); margin: 2rem 0 .75rem; }
   .legal-section p, .legal-section ul { color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1rem; }
   .legal-section ul { padding-left: 1.5rem; }
   .legal-section ul li { margin-bottom: .4rem; }
-  .legal-meta { font-size: .85rem; color: var(--clr-text-muted); margin-bottom: 2.5rem; }
 </style>';
 require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main>
 
-  <!-- PAGE HERO -->
-  <section class="product-hero" aria-labelledby="sec-heading">
+  <section class="product-hero" aria-labelledby="security-heading">
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <span class="badge badge-blue">Security Practices</span>
-          <h1 class="product-hero-title" id="sec-heading">Security at LiveIntel</h1>
+          <span class="badge badge-blue">Security</span>
+          <h1 class="product-hero-title" id="security-heading">LiveIntel security and privacy model</h1>
           <p class="product-hero-desc">
-            Security is not a feature we add on top. It is the foundation everything else is built
-            on. This page describes how we protect our platform, your data, and how to report
-            vulnerabilities responsibly.
+            This page explains how LiveIntel is intended to operate, what data is needed to run the service, and where the boundaries are. It is written to be precise rather than absolute.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="mailto:security@liveintel.com" class="btn btn-primary">Report a Vulnerability</a>
-            <a href="#practices" class="btn btn-outline">Our Practices</a>
+            <a href="../getting-started" class="btn btn-outline">Getting Started</a>
           </div>
         </div>
-
-        <!-- Security spec card -->
         <div class="spec-box fade-in">
-          <div class="spec-box-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            security-overview
-          </div>
+          <div class="spec-box-header">security-overview</div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Encryption in transit</span><span class="spec-val">TLS 1.3</span></div>
-            <div class="spec-row"><span class="spec-key">Encryption at rest</span><span class="spec-val">AES-256-GCM</span></div>
-            <div class="spec-row"><span class="spec-key">Authentication</span><span class="spec-val">MFA supported, SAML 2.0 / OIDC</span></div>
-            <div class="spec-row"><span class="spec-key">Vulnerability disclosure</span><span class="spec-val">security@liveintel.com</span></div>
-            <div class="spec-row"><span class="spec-key">Response SLA</span><span class="spec-val">Acknowledgement within 48 hours</span></div>
+            <div class="spec-row"><span class="spec-key">Deployment</span><span class="spec-val">Local agent with cloud coordination</span></div>
+            <div class="spec-row"><span class="spec-key">Data approach</span><span class="spec-val">Minimized campaign metadata and reporting metrics</span></div>
+            <div class="spec-row"><span class="spec-key">Simulation boundary</span><span class="spec-val">No real credential collection in simulated forms</span></div>
+            <div class="spec-row"><span class="spec-key">Security contact</span><span class="spec-val">security@liveintel.com</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECURITY PRACTICES -->
-  <section class="section" id="practices" aria-labelledby="practices-heading">
+  <section class="section" aria-labelledby="details-heading">
     <div class="container">
       <div class="legal-section">
-        <h2 class="section-title fade-in" id="practices-heading" style="text-align:left; margin-bottom:1.5rem;">Security Practices</h2>
-
-        <h2 class="fade-in">Infrastructure Security</h2>
-        <ul class="fade-in">
-          <li>All data in transit is encrypted with <strong>TLS 1.3</strong>; older protocol versions are not accepted.</li>
-          <li>All data at rest is encrypted with <strong>AES-256-GCM</strong>, including backups.</li>
-          <li>Infrastructure is hosted on SOC 2 Type II certified cloud providers with private networking and restricted egress.</li>
-          <li>Secrets and credentials are managed via a dedicated secret store; no credentials in source code or configuration files.</li>
-          <li>Production access is limited to a small number of authorised engineers using MFA and short-lived SSH certificates.</li>
-          <li>All infrastructure changes are applied through automated pipelines with audit trails.</li>
-        </ul>
-
-        <h2 class="fade-in">Application Security</h2>
-        <ul class="fade-in">
-          <li>Code changes undergo mandatory peer review and automated static analysis (SAST) before merge.</li>
-          <li>Dependencies are monitored for known vulnerabilities using automated advisory scanning.</li>
-          <li>Regular penetration testing is conducted by independent third-party security firms.</li>
-          <li>HTTP security headers are enforced on all endpoints: HSTS, CSP, X-Frame-Options, and more.</li>
-          <li>Input validation and parameterised queries are enforced throughout the application stack.</li>
-          <li>Rate limiting and brute-force detection are applied to all authentication endpoints.</li>
-        </ul>
-
-        <h2 class="fade-in">Phishing Simulation Safety</h2>
+        <h2 class="section-title fade-in" id="details-heading" style="text-align:left;">Security Overview</h2>
         <p class="fade-in">
-          PhishSim runs controlled phishing simulations against your own organization.
-          Because that involves sending realistic-looking phishing emails to real people,
-          we hold it to specific rules beyond our general security practices.
-        </p>
-        <ul class="fade-in">
-          <li><strong>No real credentials.</strong> Simulated login pages record that a
-            field was submitted. The value typed into it is never captured, transmitted,
-            or stored.</li>
-          <li><strong>Data minimization.</strong> We collect what's needed to report on
-            campaign behavior (opens, clicks, reports) and nothing beyond that.</li>
-          <li><strong>Role-based access.</strong> Individual-level results are visible to
-            the admins an organization designates, not by default to everyone with a login.</li>
-          <li><strong>Training, not surveillance.</strong> Campaign design and reporting are
-            built around improving awareness, not building a case against individual employees.</li>
-          <li><strong>Audit-friendly records.</strong> Every campaign is logged with who
-            configured it, who it targeted, and what template was used.</li>
-        </ul>
-
-        <h2 class="fade-in">Free Tool Data Boundaries</h2>
-        <ul class="fade-in">
-          <li><strong>PassMeter runs in your browser.</strong> Password strength analysis is local. Passwords are never sent to LiveIntel.</li>
-          <li><strong>PassForge runs in your browser.</strong> Generated passwords and passphrases are never sent to LiveIntel.</li>
-          <li><strong>SPF Flattener checks public DNS.</strong> It sends only the domain name or SPF record needed to resolve public DNS data.</li>
-        </ul>
-
-        <h2 class="fade-in">Access Control</h2>
-        <ul class="fade-in">
-          <li>Role-based access control (RBAC) is enforced at every API endpoint.</li>
-          <li>Principle of least privilege: users and services are granted only the minimum permissions required.</li>
-          <li>Multi-factor authentication (MFA) is available for all user accounts and required for all internal staff.</li>
-          <li>SAML 2.0 and OIDC are supported for enterprise single sign-on.</li>
-          <li>Session tokens are short-lived and automatically rotated.</li>
-        </ul>
-
-        <h2 class="fade-in">Monitoring and Incident Response</h2>
-        <ul class="fade-in">
-          <li>All platform activity is logged to an immutable, append-only audit log.</li>
-          <li>Real-time security monitoring and anomaly detection are operational 24/7.</li>
-          <li>A formal incident response plan is in place with defined escalation paths and communication procedures.</li>
-          <li>Affected customers will be notified of any data breach within 72 hours of our becoming aware, in line with applicable law.</li>
-        </ul>
-
-        <h2 class="fade-in">Vulnerability Disclosure Program</h2>
-        <p class="fade-in">
-          We welcome responsible disclosure from the security community. If you believe you have
-          discovered a security vulnerability in LiveIntel, please report it to us before disclosing
-          it publicly.
+          LiveIntel is a phishing simulation and awareness measurement platform. The security model is built around customer-controlled execution, privacy-conscious collection, and reporting focused on campaign outcomes.
         </p>
 
-        <div class="spec-box fade-in" style="max-width:100%; margin-bottom:1.5rem;">
-          <div class="spec-box-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            disclosure-process
-          </div>
-          <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Step 1</span><span class="spec-val">Email a detailed report to security@liveintel.com</span></div>
-            <div class="spec-row"><span class="spec-key">Step 2</span><span class="spec-val">We acknowledge receipt within 48 hours</span></div>
-            <div class="spec-row"><span class="spec-key">Step 3</span><span class="spec-val">We investigate and confirm the issue within 5 business days</span></div>
-            <div class="spec-row"><span class="spec-key">Step 4</span><span class="spec-val">We develop and deploy a fix, keeping you informed</span></div>
-            <div class="spec-row"><span class="spec-key">Step 5</span><span class="spec-val">We coordinate public disclosure timing with you</span></div>
-            <div class="spec-row"><span class="spec-key">Recognition</span><span class="spec-val">Valid reports are credited in our security acknowledgements</span></div>
-          </div>
-        </div>
-
+        <h2 class="fade-in">Deployment Model</h2>
         <p class="fade-in">
-          <strong>Please include in your report:</strong> a description of the vulnerability, the
-          affected component or URL, steps to reproduce, and potential impact. We ask that you act
-          in good faith, avoid accessing or modifying user data, and refrain from denial-of-service
-          testing.
-        </p>
-        <p class="fade-in">
-          We commit to responding promptly and working with you in good faith. Researchers who
-          follow these guidelines will not face legal action from LiveIntel.
+          LiveIntel uses a lightweight local agent to execute phishing simulations from the customer environment. The cloud platform provides campaign management, coordination, and reporting.
         </p>
 
-        <h2 class="fade-in">Contact</h2>
+        <h2 class="fade-in">What Stays Local</h2>
+        <ul class="fade-in">
+          <li>Simulation execution is performed by the local agent in the customer environment.</li>
+          <li>Customer mail flow and environment-specific configuration remain under customer control.</li>
+          <li>Simulated credential values are not collected by LiveIntel. A simulation may record that a form submission happened, but not the real value typed into the field.</li>
+        </ul>
+
+        <h2 class="fade-in">What LiveIntel Collects</h2>
         <p class="fade-in">
-          For security vulnerability reports: <a href="mailto:security@liveintel.com">security@liveintel.com</a><br />
-          For general security questions: <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>
+          LiveIntel minimizes data collection and focuses on the campaign metadata and reporting metrics needed to operate the service. Depending on configuration, this may include:
+        </p>
+        <ul class="fade-in">
+          <li>Account and administrator contact details.</li>
+          <li>Campaign configuration, template selection, launch timing, and target group metadata.</li>
+          <li>Reporting events such as delivery status, opens, clicks, reports, and simulated form submission events.</li>
+          <li>Operational logs needed to troubleshoot the agent, platform, and reporting workflow.</li>
+        </ul>
+
+        <h2 class="fade-in">What LiveIntel Does Not Collect</h2>
+        <ul class="fade-in">
+          <li>LiveIntel does not intentionally collect real passwords or real credential values through phishing simulations.</li>
+          <li>LiveIntel does not need mailbox contents to provide campaign reporting.</li>
+          <li>LiveIntel does not sell customer data.</li>
+        </ul>
+
+        <h2 class="fade-in">Data Retention</h2>
+        <p class="fade-in">
+          Campaign and reporting data is retained for as long as needed to provide the service, support customer review, meet legal obligations, and maintain operational integrity. Customers can contact LiveIntel to request data deletion or retention details for their account.
+        </p>
+
+        <h2 class="fade-in">Encryption</h2>
+        <p class="fade-in">
+          LiveIntel uses encryption in transit for communications between browsers, the cloud platform, and connected agents. Stored service data is protected with encryption at rest where supported by the underlying hosting and database services.
+        </p>
+
+        <h2 class="fade-in">Responsible Disclosure</h2>
+        <p class="fade-in">
+          If you believe you have found a vulnerability in LiveIntel, email security@liveintel.com with a clear description, affected URL or component, steps to reproduce, and potential impact. Please avoid accessing customer data, modifying data, or performing denial-of-service testing.
+        </p>
+
+        <h2 class="fade-in">Security Contact</h2>
+        <p class="fade-in">
+          Security reports: <a href="mailto:security@liveintel.com">security@liveintel.com</a><br />
+          General questions: <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>
         </p>
       </div>
     </div>

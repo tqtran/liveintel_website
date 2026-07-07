@@ -90,7 +90,7 @@ require_once __DIR__ . '/../includes/header.php';
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
             <a href="../index.php#platform" class="btn btn-primary">Explore Platform</a>
-            <a href="../contact.php" class="btn btn-outline">Request Demo</a>
+            <a href="../contact" class="btn btn-outline">Request Demo</a>
           </div>
         </div>
         <div class="spec-box fade-in">

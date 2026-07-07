@@ -1,9 +1,10 @@
 <?php
 $basePath = "../";
 $pageTitle = "Terms of Service | LiveIntel";
-$pageDescription = "LiveIntel Terms of Service — the legal agreement governing your use of the LiveIntel platform and services.";
+$pageDescription = "LiveIntel Terms of Service covering use of the service, accounts, acceptable use, customer responsibilities, availability, disclaimers, and contact.";
+$pageCanonicalPath = "/terms";
 $pageStyles = '<style>
-  .legal-section { max-width: 760px; margin: 0 auto; }
+  .legal-section { max-width: 820px; margin: 0 auto; }
   .legal-section h2 { font-size: 1.25rem; color: var(--clr-text); margin: 2rem 0 .75rem; }
   .legal-section p, .legal-section ul { color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1rem; }
   .legal-section ul { padding-left: 1.5rem; }
@@ -14,142 +15,68 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main>
-
-  <section class="section" aria-labelledby="tos-heading">
+  <section class="section" aria-labelledby="terms-heading">
     <div class="container">
       <div class="legal-section">
-        <h1 class="section-title fade-in" id="tos-heading">Terms of Service</h1>
-        <p class="legal-meta fade-in">Effective date: 1 January 2025 &nbsp;·&nbsp; Last updated: 1 March 2026</p>
+        <h1 class="section-title fade-in" id="terms-heading">Terms of Service</h1>
+        <p class="legal-meta fade-in">Last updated: July 7, 2026</p>
 
+        <h2 class="fade-in">Acceptance of Terms</h2>
         <p class="fade-in">
-          These Terms of Service ("Terms") govern your access to and use of the LiveIntel platform,
-          applications, APIs, and website (collectively, the "Services") provided by LiveIntel
-          ("LiveIntel", "we", "us", or "our"). By accessing or using the Services you agree to be
-          bound by these Terms. If you are using the Services on behalf of an organisation, you
-          represent that you have authority to bind that organisation.
+          These Terms of Service govern access to and use of the LiveIntel website, platform, tools, and related services. By using LiveIntel, you agree to these Terms. If you use LiveIntel on behalf of an organization, you represent that you have authority to accept these Terms for that organization.
         </p>
 
-        <h2 class="fade-in">1. Eligibility</h2>
+        <h2 class="fade-in">Use of Service</h2>
         <p class="fade-in">
-          You must be at least 16 years old and capable of forming a binding contract to use our
-          Services. Access by individuals under 16 is not permitted.
+          LiveIntel provides phishing simulation, campaign coordination, awareness measurement, reporting, and related security tools. You may use the service only for lawful, authorized purposes and in accordance with these Terms and any applicable agreement with LiveIntel.
         </p>
 
-        <h2 class="fade-in">2. Account Registration</h2>
+        <h2 class="fade-in">Accounts</h2>
         <p class="fade-in">
-          To access certain features you must create an account. You agree to provide accurate,
-          complete, and up-to-date information and to keep your credentials confidential. You are
-          responsible for all activity that occurs under your account. Notify us immediately at
-          <a href="mailto:hello@liveintel.com">hello@liveintel.com</a> if you suspect unauthorized
-          use of your account.
+          You are responsible for keeping account information accurate and protecting account credentials. You are responsible for activity under your account unless caused by LiveIntel's failure to meet its own obligations. Notify LiveIntel promptly if you suspect unauthorized access.
         </p>
 
-        <h2 class="fade-in">3. Acceptable Use</h2>
-        <p class="fade-in">You agree not to:</p>
+        <h2 class="fade-in">Acceptable Use</h2>
         <ul class="fade-in">
-          <li>Use the Services for any unlawful purpose or in violation of these Terms.</li>
-          <li>Conduct phishing simulations or security tests against individuals or organisations without prior written authorisation from them.</li>
-          <li>Attempt to probe, scan, or penetrate any LiveIntel system without our written permission.</li>
-          <li>Reverse-engineer, decompile, or disassemble any part of the Services.</li>
-          <li>Resell, sublicense, or commercially exploit the Services without our express written consent.</li>
-          <li>Upload or transmit malicious code, spam, or any content that infringes third-party rights.</li>
-          <li>Interfere with or disrupt the integrity or performance of the Services or related systems.</li>
+          <li>Do not use LiveIntel to target people, systems, or organizations without proper authorization.</li>
+          <li>Do not use the service to collect real credentials, payment information, or other sensitive secrets.</li>
+          <li>Do not interfere with the service, bypass access controls, or attempt unauthorized testing of LiveIntel systems.</li>
+          <li>Do not upload malicious code, unlawful content, or content that infringes the rights of others.</li>
+          <li>Do not resell or redistribute the service without written permission from LiveIntel.</li>
         </ul>
 
-        <h2 class="fade-in">4. Subscriptions and Payment</h2>
+        <h2 class="fade-in">Customer Responsibilities</h2>
         <p class="fade-in">
-          Paid plans are billed in advance on a monthly or annual basis. All fees are non-refundable
-          except as required by law or stated in a separate order form. We reserve the right to change
-          pricing with 30 days' notice. Failure to pay may result in suspension or termination of
-          your account.
+          Customers are responsible for obtaining required approvals before launching simulations, selecting appropriate audiences and templates, configuring their environment, complying with applicable law and internal policies, and using results responsibly.
         </p>
 
-        <h2 class="fade-in">5. Intellectual Property</h2>
+        <h2 class="fade-in">Service Availability</h2>
         <p class="fade-in">
-          The Services and all associated content, technology, and trademarks are the property of
-          LiveIntel or its licensors. These Terms do not grant you any rights in our intellectual
-          property beyond a limited, non-exclusive, non-transferable licence to access the Services
-          for their intended purpose.
-        </p>
-        <p class="fade-in">
-          You retain ownership of any data you upload to the Services. By uploading data you grant
-          us a limited licence to process it solely to provide and improve the Services.
+          LiveIntel works to keep the service available and reliable, but availability may be affected by maintenance, third-party providers, network conditions, customer environments, or events outside LiveIntel's control. Unless a separate written agreement says otherwise, no specific uptime commitment is provided by these Terms.
         </p>
 
-        <h2 class="fade-in">6. Confidentiality</h2>
+        <h2 class="fade-in">Disclaimers</h2>
         <p class="fade-in">
-          You may have access to non-public information about our platform ("Confidential Information").
-          You agree not to disclose Confidential Information to third parties and to use it only to
-          exercise your rights under these Terms.
+          LiveIntel is provided on an "as is" and "as available" basis unless a separate written agreement states otherwise. LiveIntel does not guarantee that phishing simulations will prevent security incidents, eliminate risk, or identify every awareness issue.
         </p>
 
-        <h2 class="fade-in">7. Privacy</h2>
+        <h2 class="fade-in">Limitation of Liability</h2>
         <p class="fade-in">
-          Your use of the Services is also governed by our
-          <a href="privacy-policy.php">Privacy Policy</a>, which is incorporated into these Terms
-          by reference.
+          To the maximum extent permitted by law, LiveIntel will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for lost profits, revenue, goodwill, or data, arising from use of the service. Where liability cannot be excluded, it is limited to the amount permitted by applicable law or any separate written agreement.
         </p>
 
-        <h2 class="fade-in">8. Disclaimer of Warranties</h2>
+        <h2 class="fade-in">Changes to Terms</h2>
         <p class="fade-in">
-          THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND,
-          EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-          PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED,
-          ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.
+          LiveIntel may update these Terms from time to time. Material changes will be posted on the website or communicated through reasonable channels. Continued use of the service after changes take effect means you accept the updated Terms.
         </p>
 
-        <h2 class="fade-in">9. Limitation of Liability</h2>
+        <h2 class="fade-in">Contact</h2>
         <p class="fade-in">
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, LIVEINTEL SHALL NOT BE LIABLE FOR ANY INDIRECT,
-          INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR
-          REVENUES, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN
-          ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY FOR ANY CLAIM SHALL
-          NOT EXCEED THE GREATER OF $100 USD OR THE AMOUNT YOU PAID US IN THE TWELVE MONTHS
-          PRECEDING THE CLAIM.
-        </p>
-
-        <h2 class="fade-in">10. Indemnification</h2>
-        <p class="fade-in">
-          You agree to indemnify and hold LiveIntel, its officers, directors, employees, and agents
-          harmless from any claims, damages, or expenses (including reasonable legal fees) arising
-          from your use of the Services, your violation of these Terms, or your violation of any
-          third-party rights.
-        </p>
-
-        <h2 class="fade-in">11. Term and Termination</h2>
-        <p class="fade-in">
-          These Terms remain in effect while you use the Services. We may suspend or terminate your
-          access at any time for violation of these Terms or for any other legitimate business reason
-          with reasonable notice where practicable. You may cancel your account at any time through
-          your account settings or by contacting <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>.
-          Sections 5, 8, 9, 10, and 13 survive termination.
-        </p>
-
-        <h2 class="fade-in">12. Changes to Terms</h2>
-        <p class="fade-in">
-          We may update these Terms at any time. We will notify you of material changes by email or
-          by posting a prominent notice on our website at least 14 days before the change takes
-          effect. Your continued use of the Services after changes take effect constitutes acceptance
-          of the updated Terms.
-        </p>
-
-        <h2 class="fade-in">13. Governing Law and Dispute Resolution</h2>
-        <p class="fade-in">
-          These Terms are governed by applicable law. Any disputes arising from these Terms or your
-          use of the Services shall be resolved through good-faith negotiation first. If the dispute
-          cannot be resolved informally, it shall be submitted to binding arbitration or, where
-          arbitration is not available, to the courts of competent jurisdiction.
-        </p>
-
-        <h2 class="fade-in">14. Contact Us</h2>
-        <p class="fade-in">
-          Questions about these Terms? Contact us at
-          <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>.
+          Questions about these Terms can be sent to <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>.
         </p>
       </div>
     </div>
   </section>
-
 </main>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

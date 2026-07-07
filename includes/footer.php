@@ -12,13 +12,13 @@
           </svg>
           Live<span>Intel</span>
         </a>
-        <p>Phishing simulation and analytics, with free tools you can use before you need the platform.</p>
+        <p>Privacy-conscious phishing simulation, customer-controlled execution, and practical awareness measurement.</p>
       </div>
-      <nav aria-label="Platform footer links">
-        <h3 class="footer-col-title">Platform</h3>
+      <nav aria-label="Capability footer links">
+        <h3 class="footer-col-title">Capabilities</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>products/phishsim/">PhishSim</a></li>
-          <li><a href="<?php echo $basePath; ?>products/liveinsight/">LiveInsight</a></li>
+          <li><a href="<?php echo $basePath; ?>products/phishsim/">Campaign simulation</a></li>
+          <li><a href="<?php echo $basePath; ?>products/liveinsight/">Behavior reporting</a></li>
         </ul>
       </nav>
       <nav aria-label="Tools footer links">
@@ -32,11 +32,13 @@
       <nav aria-label="Company footer links">
         <h3 class="footer-col-title">Company</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>about.php">About</a></li>
-          <li><a href="<?php echo $basePath; ?>contact.php">Contact</a></li>
-          <li><a href="<?php echo $basePath; ?>legal/security.php">Security</a></li>
-          <li><a href="<?php echo $basePath; ?>legal/privacy-policy.php">Privacy Policy</a></li>
-          <li><a href="<?php echo $basePath; ?>legal/terms-of-service.php">Terms of Service</a></li>
+          <li><a href="<?php echo $basePath; ?>about">About</a></li>
+          <li><a href="<?php echo $basePath; ?>security">Security</a></li>
+          <li><a href="<?php echo $basePath; ?>getting-started">Docs</a></li>
+          <li><a href="<?php echo $basePath; ?>contact">Contact</a></li>
+          <li><a href="<?php echo $basePath; ?>privacy">Privacy</a></li>
+          <li><a href="<?php echo $basePath; ?>terms">Terms</a></li>
+          <li><a href="<?php echo $basePath; ?>sitemap.xml">Sitemap</a></li>
         </ul>
       </nav>
     </div>

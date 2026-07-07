@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? ''); ?>" />
   <title><?php echo htmlspecialchars($pageTitle ?? 'LiveIntel'); ?></title>
+  <?php
+    if (!empty($pageCanonicalPath) && empty($pageCanonical)) {
+        $siteUrl = getenv('SITE_URL') ?: '';
+        if ($siteUrl === '') {
+            $host = $_SERVER['HTTP_HOST'] ?? 'www.liveintel.com';
+            $isLocalHost = preg_match('/^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/', $host) === 1;
+            $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+            $canonicalHost = $isLocalHost ? $host : 'www.' . preg_replace('/^www\./i', '', $host);
+            $siteUrl = ($isLocalHost ? $scheme : 'https') . '://' . $canonicalHost;
+        }
+        $pageCanonical = rtrim($siteUrl, '/') . '/' . ltrim($pageCanonicalPath, '/');
+    }
+  ?>
+  <?php if (!empty($pageCanonical)): ?>
+  <link rel="canonical" href="<?php echo htmlspecialchars($pageCanonical, ENT_QUOTES, 'UTF-8'); ?>" />
+  <?php endif; ?>
   <link rel="stylesheet" href="<?php echo $basePath; ?>css/styles.css" />
   <style>
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
@@ -35,12 +51,13 @@
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="<?php echo $basePath; ?>index.php#platform">Platform</a></li>
         <li><a href="<?php echo $basePath; ?>index.php#analytics">Analytics</a></li>
+        <li><a href="<?php echo $basePath; ?>getting-started">Getting Started</a></li>
         <li><a href="<?php echo $basePath; ?>tools/">Tools</a></li>
-        <li><a href="<?php echo $basePath; ?>legal/security.php">Security</a></li>
-        <li><a href="<?php echo $basePath; ?>about.php">About</a></li>
+        <li><a href="<?php echo $basePath; ?>security">Security</a></li>
+        <li><a href="<?php echo $basePath; ?>about">About</a></li>
       </ul>
 
-      <a href="<?php echo $basePath; ?>tools/" class="btn btn-primary nav-cta">Try Free Tools</a>
+      <a href="<?php echo $basePath; ?>contact" class="btn btn-primary nav-cta">Start Free</a>
     </nav>
   </div>
 </header>

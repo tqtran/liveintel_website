@@ -867,6 +867,10 @@ a:hover { text-decoration: underline; }
   padding-top: 1rem;
 }
 
+.workflow-five {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .workflow-node {
   position: relative;
   display: flex;
@@ -923,6 +927,14 @@ a:hover { text-decoration: underline; }
   font-size: .78rem;
   color: var(--clr-text-muted);
   max-width: 150px;
+}
+
+.pillar-grid-five {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.analytics-grid-four {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* ---------- Analytics dashboard mockup ---------------------- */
@@ -1775,6 +1787,7 @@ a:hover { text-decoration: underline; }
 @media (max-width: 1024px) {
   .pillar-grid { grid-template-columns: 1fr; }
   .workflow { grid-template-columns: repeat(4, 1fr); }
+  .workflow-five { grid-template-columns: repeat(5, 1fr); }
   .analytics-grid { grid-template-columns: repeat(2, 1fr); }
   .analytics-grid .span-2 { grid-column: span 2; }
   .audience-grid { grid-template-columns: repeat(3, 1fr); }

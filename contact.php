@@ -1,95 +1,68 @@
 <?php
 $basePath = "";
 $pageTitle = "Contact | LiveIntel";
-$pageDescription = "Get in touch with LiveIntel to request a demo, ask a support question, or report a security issue.";
+$pageDescription = "Contact LiveIntel for general questions, support, security reports, or business inquiries.";
+$pageCanonicalPath = "/contact";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
 <main>
 
-  <!-- HERO -->
   <section class="product-hero" aria-labelledby="contact-title">
     <div class="container">
-      <div style="max-width:640px;">
+      <div style="max-width:680px;">
         <span class="badge badge-blue">Contact</span>
-        <h1 class="product-hero-title" id="contact-title">Let's talk about your phishing program.</h1>
-        <p class="product-hero-desc" style="max-width:600px;">
-          Tell us what you're using today, and where the gaps are. We'll
-          walk you through PhishSim and LiveInsight based on that, not a
-          generic pitch deck.
+        <h1 class="product-hero-title" id="contact-title">Reach LiveIntel.</h1>
+        <p class="product-hero-desc" style="max-width:620px;">
+          Use the channel that best matches your question. Keep sensitive vulnerability details out of public channels and send them directly to the security contact.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT CHANNELS -->
   <section class="section" aria-labelledby="channels-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="channels-heading">Reach the right team</h2>
-      <p class="section-subtitle fade-in">Email is the fastest way to reach us. We reply from a real person, not a ticket queue bot.</p>
+      <h2 class="section-title fade-in" id="channels-heading">Contact channels</h2>
+      <p class="section-subtitle fade-in">Simple inboxes, clear purpose. Include enough context for a useful reply.</p>
 
       <div class="features-grid">
-
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📅</div>
-          <h3 class="feature-title">Request a demo</h3>
-          <p class="feature-desc">
-            Want to see PhishSim or LiveInsight in action?
-            Tell us a bit about your team size and current phishing process.
-          </p>
-          <p style="margin-top:.85rem;"><a href="mailto:demo@liveintel.com">demo@liveintel.com</a></p>
+          <h3 class="feature-title">General contact</h3>
+          <p class="feature-desc">Product questions, company questions, and anything that does not fit another channel.</p>
+          <p style="margin-top:.85rem;"><a href="mailto:hello@liveintel.com">hello@liveintel.com</a></p>
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🛠️</div>
-          <h3 class="feature-title">Support</h3>
-          <p class="feature-desc">
-            Existing customer with a question about a campaign, a report,
-            or one of the free tools? Reach the support team directly.
-          </p>
+          <h3 class="feature-title">Support contact</h3>
+          <p class="feature-desc">Help with a campaign, report, agent connection, or one of the free tools.</p>
           <p style="margin-top:.85rem;"><a href="mailto:support@liveintel.com">support@liveintel.com</a></p>
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🔒</div>
-          <h3 class="feature-title">Security disclosure</h3>
-          <p class="feature-desc">
-            Found a vulnerability? We welcome responsible disclosure and
-            acknowledge reports within 48 hours.
-          </p>
+          <h3 class="feature-title">Security contact</h3>
+          <p class="feature-desc">Responsible disclosure reports and security-sensitive questions about LiveIntel.</p>
           <p style="margin-top:.85rem;"><a href="mailto:security@liveintel.com">security@liveintel.com</a></p>
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">💬</div>
-          <h3 class="feature-title">Everything else</h3>
-          <p class="feature-desc">
-            Press, partnerships, or anything that doesn't fit the categories
-            above. This inbox is read by the founding team.
-          </p>
+          <h3 class="feature-title">Business inquiries</h3>
+          <p class="feature-desc">Partnership, purchasing, or organizational evaluation questions.</p>
           <p style="margin-top:.85rem;"><a href="mailto:hello@liveintel.com">hello@liveintel.com</a></p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- WHAT TO INCLUDE -->
-  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="prep-heading">
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="include-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="prep-heading">Getting the most out of a demo</h2>
-      <p class="section-subtitle fade-in">A few details that help us tailor the call instead of running a generic script.</p>
-
-      <div class="spec-box fade-in" style="max-width:680px;">
-        <div class="spec-box-header">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          before-the-call
-        </div>
+      <h2 class="section-title fade-in" id="include-heading">What to include</h2>
+      <div class="spec-box fade-in" style="max-width:760px;">
+        <div class="spec-box-header">helpful-context</div>
         <div class="spec-box-body">
-          <div class="spec-row"><span class="spec-key">Team size</span><span class="spec-val">Roughly how many people you're protecting</span></div>
-          <div class="spec-row"><span class="spec-key">Current tools</span><span class="spec-val">What you use today for reporting and simulation, if anything</span></div>
-          <div class="spec-row"><span class="spec-key">Main pain point</span><span class="spec-val">Triage speed, awareness testing, or reporting to leadership</span></div>
-          <div class="spec-row"><span class="spec-key">Industry</span><span class="spec-val">Especially if you're in education, government, or an MSP</span></div>
+          <div class="spec-row"><span class="spec-key">Product questions</span><span class="spec-val">Team size, current process, and what you want to measure</span></div>
+          <div class="spec-row"><span class="spec-key">Support questions</span><span class="spec-val">Affected page, campaign, agent, or tool, plus steps already tried</span></div>
+          <div class="spec-row"><span class="spec-key">Security reports</span><span class="spec-val">Affected URL or component, reproduction steps, and potential impact</span></div>
+          <div class="spec-row"><span class="spec-key">Business inquiries</span><span class="spec-val">Organization name and the type of conversation you need</span></div>
         </div>
       </div>
     </div>

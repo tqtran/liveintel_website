@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../includes/header.php';
             and reports leadership can actually read.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../contact.php" class="btn btn-primary">Request Demo</a>
+            <a href="../../contact" class="btn btn-primary">Request Demo</a>
             <a href="#dashboards" class="btn btn-outline">See Dashboards</a>
           </div>
         </div>
@@ -56,9 +56,9 @@ require_once __DIR__ . '/../../includes/header.php';
 
       <div class="analytics-grid">
         <div class="metric-card fade-in">
-          <div class="metric-label">Report rate</div>
-          <div class="metric-value"><span data-count="58" data-suffix="%">0%</span></div>
-          <span class="metric-trend trend-up">▲ 6% this quarter</span>
+          <div class="metric-label">Remote content exposure</div>
+          <div class="metric-value"><span data-count="28" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">tracked this quarter</span>
           <svg class="sparkline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
             <polyline points="0,32 20,28 40,24 60,18 80,12 100,8" fill="none" stroke="#10b981" stroke-width="2"/>
           </svg>
@@ -159,9 +159,9 @@ require_once __DIR__ . '/../../includes/header.php';
         <div class="spec-box-body">
           <p style="color:var(--clr-text); font-size:.92rem; margin-bottom:.75rem;">
             Click rate dropped from 19% to 11% over two campaign cycles.
-            Report rate is up in every department. Finance and Support still
-            click more than the rest of the company and are the next
-            training priority.
+            Remote content exposure is visible across departments. Finance
+            and Support still click more than the rest of the company and are
+            the next training priority.
           </p>
           <p style="color:var(--clr-text-muted); font-size:.85rem;">Delivered automatically. No manual slide-building required.</p>
         </div>
@@ -214,7 +214,7 @@ require_once __DIR__ . '/../../includes/header.php';
           week.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../contact" class="btn btn-primary btn-lg">Request Demo</a>
           <a href="../../index.php#platform" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>

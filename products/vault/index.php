@@ -173,7 +173,7 @@ require_once __DIR__ . '/../../includes/header.php';
           you know when it launches.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Get Notified at Launch</a>
+          <a href="../../contact" class="btn btn-primary btn-lg">Get Notified at Launch</a>
           <a href="../../tools/" class="btn btn-outline btn-lg">Try the Live Tools</a>
         </div>
       </div>

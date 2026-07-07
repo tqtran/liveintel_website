@@ -1,9 +1,10 @@
 <?php
 $basePath = "../";
 $pageTitle = "Privacy Policy | LiveIntel";
-$pageDescription = "LiveIntel Privacy Policy — how we collect, use, and protect your personal information.";
+$pageDescription = "LiveIntel privacy policy covering collected information, data use, retention, security measures, third-party services, and customer controls.";
+$pageCanonicalPath = "/privacy";
 $pageStyles = '<style>
-  .legal-section { max-width: 760px; margin: 0 auto; }
+  .legal-section { max-width: 820px; margin: 0 auto; }
   .legal-section h2 { font-size: 1.25rem; color: var(--clr-text); margin: 2rem 0 .75rem; }
   .legal-section p, .legal-section ul { color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1rem; }
   .legal-section ul { padding-left: 1.5rem; }
@@ -14,128 +15,70 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main>
-
-  <section class="section" aria-labelledby="pp-heading">
+  <section class="section" aria-labelledby="privacy-heading">
     <div class="container">
       <div class="legal-section">
-        <h1 class="section-title fade-in" id="pp-heading">Privacy Policy</h1>
-        <p class="legal-meta fade-in">Effective date: 1 January 2025 &nbsp;·&nbsp; Last updated: 1 March 2026</p>
+        <h1 class="section-title fade-in" id="privacy-heading">Privacy Policy</h1>
+        <p class="legal-meta fade-in">Last updated: July 7, 2026</p>
 
         <p class="fade-in">
-          LiveIntel ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy
-          explains what information we collect, how we use it, and the choices you have in relation to it.
-          By using any LiveIntel service or visiting <a href="https://liveintel.com">liveintel.com</a> you
-          agree to the practices described below.
+          This Privacy Policy explains how LiveIntel collects, uses, retains, and protects information when you use the LiveIntel website, platform, tools, and related services.
         </p>
 
-        <h2 class="fade-in">1. Information We Collect</h2>
-        <p class="fade-in">We may collect the following categories of information:</p>
+        <h2 class="fade-in">Information Collected</h2>
         <ul class="fade-in">
-          <li><strong>Account data</strong> — name, email address, and password hash when you register.</li>
-          <li><strong>Usage data</strong> — pages visited, features used, timestamps, and referring URLs.</li>
-          <li><strong>Technical data</strong> — IP address, browser type, operating system, and device identifiers.</li>
-          <li><strong>Communications</strong> — messages you send to our support team or via contact forms.</li>
-          <li><strong>Payment data</strong> — processed by our payment processor; we never store raw card details.</li>
-          <li><strong>Phishing simulation activity</strong> — for organizations using PhishSim, we record opens, clicks, reports, and whether a credential field was submitted. The value typed into a simulated field is never captured.</li>
+          <li>Account information, such as name, email address, organization, role, and authentication-related records.</li>
+          <li>Contact and support communications you send to LiveIntel.</li>
+          <li>Campaign metadata, such as campaign names, template choices, target group metadata, timing, and configuration.</li>
+          <li>Reporting metrics, such as delivery status, opens, clicks, reports, time to report, and simulated form submission events.</li>
+          <li>Technical and operational data, such as IP address, browser or device information, logs, diagnostic events, and security events needed to operate the service.</li>
         </ul>
 
-        <h2 class="fade-in">2. How We Use Your Information</h2>
+        <h2 class="fade-in">Information Not Intentionally Collected</h2>
         <ul class="fade-in">
-          <li>Provide, operate, and improve our platform and services.</li>
-          <li>Send transactional emails, security alerts, and product updates.</li>
-          <li>Respond to support requests and communicate with you.</li>
-          <li>Detect, investigate, and prevent fraudulent or unauthorized activity.</li>
-          <li>Comply with applicable laws and enforce our Terms of Service.</li>
-          <li>Generate aggregated, anonymized analytics to understand usage trends.</li>
+          <li>LiveIntel does not intentionally collect real passwords or credential values through simulated phishing forms.</li>
+          <li>LiveIntel does not require mailbox contents to produce campaign reports.</li>
+          <li>LiveIntel does not intentionally collect sensitive personal information unless a customer or user includes it in a communication, campaign name, uploaded data, or support request.</li>
         </ul>
 
-        <h2 class="fade-in">3. Legal Bases for Processing (EEA / UK)</h2>
-        <p class="fade-in">
-          Where GDPR or UK GDPR applies, we process personal data on the following legal bases:
-          contractual necessity (to provide our services), legitimate interests (security monitoring,
-          fraud prevention, product improvement), legal obligation, and — where required — your
-          explicit consent.
-        </p>
-
-        <h2 class="fade-in">4. Sharing Your Information</h2>
-        <p class="fade-in">
-          We do not sell your personal data. We may share information with:
-        </p>
+        <h2 class="fade-in">How Information Is Used</h2>
         <ul class="fade-in">
-          <li><strong>Service providers</strong> — hosting, analytics, payment processing, and customer support tools operating under strict data-processing agreements.</li>
-          <li><strong>Legal authorities</strong> — when required by law, court order, or to protect the rights and safety of our users.</li>
-          <li><strong>Business transfers</strong> — in the event of a merger, acquisition, or sale of assets, your data may be transferred with appropriate notice.</li>
+          <li>Provide, operate, secure, and improve the LiveIntel service.</li>
+          <li>Create, coordinate, execute, and report on phishing simulation campaigns.</li>
+          <li>Respond to support, security, and business inquiries.</li>
+          <li>Detect, investigate, and prevent misuse, abuse, or unauthorized access.</li>
+          <li>Meet legal, contractual, accounting, or compliance obligations.</li>
         </ul>
 
-        <h2 class="fade-in">5. Data Retention</h2>
+        <h2 class="fade-in">Data Retention</h2>
         <p class="fade-in">
-          We retain personal data for as long as your account is active or as needed to provide services.
-          You may request deletion of your account and associated data at any time by contacting
-          <a href="mailto:privacy@liveintel.com">privacy@liveintel.com</a>. Certain data may be retained
-          longer where required by law or for fraud-prevention purposes.
+          LiveIntel retains information for as long as needed to provide the service, maintain reports requested by customers, resolve support issues, meet legal obligations, and protect the integrity of the platform. Customers may contact LiveIntel to request deletion or retention details for their account.
         </p>
 
-        <h2 class="fade-in">6. Cookies and Tracking</h2>
+        <h2 class="fade-in">Security Measures</h2>
         <p class="fade-in">
-          We use strictly necessary cookies to operate our platform (e.g. session management). We may
-          use analytics cookies to understand aggregate usage patterns. You can manage cookie preferences
-          through your browser settings. Disabling certain cookies may affect platform functionality.
+          LiveIntel uses administrative, technical, and operational safeguards intended to protect service data. These include access controls, encryption in transit, encryption at rest where supported by underlying services, logging, and operational review of security-sensitive activity.
         </p>
 
-        <h2 class="fade-in">7. Security</h2>
+        <h2 class="fade-in">Third-Party Services</h2>
         <p class="fade-in">
-          We apply industry-standard security controls — including encryption in transit (TLS 1.3) and
-          at rest (AES-256-GCM), access controls, and regular security assessments — to protect your
-          data. See our <a href="security.php">Security page</a> for full details.
+          LiveIntel may use third-party providers for hosting, email delivery, analytics, payment processing, support, and security operations. These providers are used to operate the service and are expected to process information only for the purposes LiveIntel authorizes.
         </p>
 
-        <h2 class="fade-in">8. International Transfers</h2>
-        <p class="fade-in">
-          Your data may be processed in countries outside your own. Where we transfer data from the
-          EEA or UK, we use Standard Contractual Clauses or other approved mechanisms to ensure
-          adequate protection.
-        </p>
-
-        <h2 class="fade-in">9. Your Rights</h2>
-        <p class="fade-in">Depending on your location you may have the right to:</p>
+        <h2 class="fade-in">User and Customer Controls</h2>
         <ul class="fade-in">
-          <li>Access a copy of personal data we hold about you.</li>
-          <li>Correct inaccurate or incomplete data.</li>
-          <li>Request erasure of your personal data.</li>
-          <li>Object to or restrict certain processing activities.</li>
-          <li>Receive your data in a portable, machine-readable format.</li>
-          <li>Withdraw consent at any time (where processing is consent-based).</li>
-          <li>Lodge a complaint with your local data protection authority.</li>
+          <li>Customers control campaign configuration, audience selection, and use of the local agent in their environment.</li>
+          <li>Account administrators can request access, correction, export, or deletion of account information where applicable.</li>
+          <li>Users can contact LiveIntel to ask privacy questions or request assistance with personal information associated with the service.</li>
         </ul>
-        <p class="fade-in">
-          To exercise any of these rights, contact us at
-          <a href="mailto:privacy@liveintel.com">privacy@liveintel.com</a>.
-        </p>
 
-        <h2 class="fade-in">10. Children's Privacy</h2>
+        <h2 class="fade-in">Contact</h2>
         <p class="fade-in">
-          Our services are not directed to individuals under the age of 16. We do not knowingly
-          collect personal data from children. If you believe a child has provided us with personal
-          information, please contact us and we will promptly delete it.
-        </p>
-
-        <h2 class="fade-in">11. Changes to This Policy</h2>
-        <p class="fade-in">
-          We may update this Privacy Policy from time to time. We will notify you of material changes
-          by email or by posting a prominent notice on our website. Your continued use of our services
-          after changes take effect constitutes acceptance of the updated policy.
-        </p>
-
-        <h2 class="fade-in">12. Contact Us</h2>
-        <p class="fade-in">
-          If you have any questions about this Privacy Policy or our privacy practices, please contact
-          us at <a href="mailto:privacy@liveintel.com">privacy@liveintel.com</a> or write to:<br />
-          LiveIntel, Privacy Team, hello@liveintel.com.
+          Privacy questions can be sent to <a href="mailto:privacy@liveintel.com">privacy@liveintel.com</a>. General inquiries can be sent to <a href="mailto:hello@liveintel.com">hello@liveintel.com</a>.
         </p>
       </div>
     </div>
   </section>
-
 </main>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

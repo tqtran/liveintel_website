@@ -24,7 +24,7 @@ require_once __DIR__ . '/../../includes/header.php';
             or storing a single real password.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="../../contact.php" class="btn btn-primary">Request Demo</a>
+            <a href="../../contact" class="btn btn-primary">Request Demo</a>
             <a href="#safety" class="btn btn-outline">Safety &amp; Privacy</a>
           </div>
         </div>
@@ -112,9 +112,9 @@ require_once __DIR__ . '/../../includes/header.php';
 
       <div class="analytics-grid">
         <div class="metric-card fade-in">
-          <div class="metric-label">Report rate</div>
-          <div class="metric-value"><span data-count="58" data-suffix="%">0%</span></div>
-          <span class="metric-trend trend-up">▲ 6% vs last campaign</span>
+          <div class="metric-label">Remote content exposure</div>
+          <div class="metric-value"><span data-count="28" data-suffix="%">0%</span></div>
+          <span class="metric-trend trend-up">tracked during simulation</span>
         </div>
         <div class="metric-card fade-in">
           <div class="metric-label">Click rate</div>
@@ -226,7 +226,7 @@ require_once __DIR__ . '/../../includes/header.php';
           results without turning it into a witch hunt.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
+          <a href="../../contact" class="btn btn-primary btn-lg">Request Demo</a>
           <a href="../../index.php#platform" class="btn btn-outline btn-lg">Other Products</a>
         </div>
       </div>
