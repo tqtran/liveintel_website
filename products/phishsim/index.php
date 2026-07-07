@@ -39,7 +39,7 @@ require_once __DIR__ . '/../../includes/header.php';
             <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Controlled phishing simulation</span></div>
             <div class="spec-row"><span class="spec-key">Tracks</span><span class="spec-val">Opens, clicks, reports, submission events</span></div>
             <div class="spec-row"><span class="spec-key">Credentials</span><span class="spec-val">Never collected or stored</span></div>
-            <div class="spec-row"><span class="spec-key">Connects to</span><span class="spec-val">PhishCheck &amp; LiveInsight</span></div>
+            <div class="spec-row"><span class="spec-key">Connects to</span><span class="spec-val">LiveInsight</span></div>
           </div>
         </div>
       </div>

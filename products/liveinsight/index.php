@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
 $pageTitle = "LiveInsight | Phishing Analytics | LiveIntel";
-$pageDescription = "LiveInsight turns PhishCheck and PhishSim activity into dashboards, trends, department comparisons, and executive summaries.";
+$pageDescription = "LiveInsight turns phishing simulation activity into dashboards, trends, department comparisons, and executive summaries.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../includes/header.php';
           <span class="badge badge-blue">Core Platform · Analytics</span>
           <h1 class="product-hero-title" id="li-title">LiveInsight</h1>
           <p class="product-hero-desc">
-            LiveInsight turns PhishCheck analysis and PhishSim campaign results
-            into dashboards, trends, and reports leadership can actually read.
+            LiveInsight turns PhishSim campaign results into dashboards, trends,
+            and reports leadership can actually read.
           </p>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="../../contact.php" class="btn btn-primary">Request Demo</a>
@@ -36,7 +36,7 @@ require_once __DIR__ . '/../../includes/header.php';
           <div class="spec-box-body">
             <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">LiveInsight</span></div>
             <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Phishing &amp; human-risk analytics</span></div>
-            <div class="spec-row"><span class="spec-key">Data sources</span><span class="spec-val">PhishCheck, PhishSim</span></div>
+            <div class="spec-row"><span class="spec-key">Data sources</span><span class="spec-val">PhishSim campaigns and reporting events</span></div>
             <div class="spec-row"><span class="spec-key">Output</span><span class="spec-val">Dashboards, trends, scheduled reports</span></div>
             <div class="spec-row"><span class="spec-key">Audience</span><span class="spec-val">Analysts, managers, and leadership</span></div>
           </div>
@@ -210,8 +210,8 @@ require_once __DIR__ . '/../../includes/header.php';
       <div class="cta-banner fade-in">
         <h2 class="cta-banner-title" id="cta-heading">Turn phishing activity into a report leadership reads</h2>
         <p class="cta-banner-desc">
-          Connect LiveInsight to PhishCheck and PhishSim and see your first
-          dashboard the same week.
+          Connect LiveInsight to PhishSim and see your first dashboard the same
+          week.
         </p>
         <div class="cta-banner-actions">
           <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>

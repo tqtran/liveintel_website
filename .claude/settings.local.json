@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /d/repos/liveintel_website log --oneline -10)"
+    ]
+  }
+}

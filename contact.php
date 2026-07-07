@@ -15,8 +15,8 @@ require_once __DIR__ . '/includes/header.php';
         <h1 class="product-hero-title" id="contact-title">Let's talk about your phishing program.</h1>
         <p class="product-hero-desc" style="max-width:600px;">
           Tell us what you're using today, and where the gaps are. We'll
-          walk you through PhishCheck, PhishSim, and LiveInsight based on that,
-          not a generic pitch deck.
+          walk you through PhishSim and LiveInsight based on that, not a
+          generic pitch deck.
         </p>
       </div>
     </div>
@@ -34,7 +34,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="feature-icon" aria-hidden="true">📅</div>
           <h3 class="feature-title">Request a demo</h3>
           <p class="feature-desc">
-            Want to see PhishCheck, PhishSim, or LiveInsight in action?
+            Want to see PhishSim or LiveInsight in action?
             Tell us a bit about your team size and current phishing process.
           </p>
           <p style="margin-top:.85rem;"><a href="mailto:demo@liveintel.com">demo@liveintel.com</a></p>

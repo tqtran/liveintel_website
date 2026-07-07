@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
-$pageTitle = "LiveIntel | Phishing Intelligence and Analytics Platform";
-$pageDescription = "LiveIntel helps security teams analyze phishing emails, run controlled phishing simulations, and turn user behavior into measurable security analytics.";
+$pageTitle = "LiveIntel | Phishing Simulation and Analytics Platform";
+$pageDescription = "LiveIntel helps security teams run controlled phishing simulations and turn user behavior into measurable security analytics.";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -17,22 +17,25 @@ require_once __DIR__ . '/includes/header.php';
         <div>
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span class="badge badge-blue">Phishing Intelligence Platform</span>
+            <span class="badge badge-blue">Phishing Simulation Platform</span>
           </div>
 
           <h1 class="hero-title" id="hero-heading">
-            Phishing intelligence<br />and <span>analytics</span> for modern security teams.
+            Phishing simulation<br />and <span>analytics</span> for security teams.
           </h1>
 
           <p class="hero-desc">
-            LiveIntel helps teams analyze suspicious emails, run controlled phishing
-            simulations, and turn user behavior into measurable security intelligence.
+            Run phishing simulations and turn user behavior into clear reports.
           </p>
 
           <div class="hero-actions">
-            <a href="contact.php" class="btn btn-primary btn-lg">Request Demo</a>
-            <a href="#platform" class="btn btn-outline btn-lg">Explore Platform</a>
+            <a href="#platform" class="btn btn-primary btn-lg">Explore Platform</a>
+            <a href="#tools" class="btn btn-outline btn-lg">Try Free Tools</a>
           </div>
+          <p class="tool-note" style="max-width:620px; margin-top:1rem;">
+            Not ready for a platform yet? Start with free tools for passwords,
+            SPF records, and email trust.
+          </p>
         </div>
 
         <!-- Terminal + dashboard hybrid visual -->
@@ -41,22 +44,22 @@ require_once __DIR__ . '/includes/header.php';
           <span class="ioc-chip chip-warn chip-2" style="top:38%; right:-24px;" aria-hidden="true">SPF: fail</span>
           <span class="ioc-chip chip-warn chip-3" style="bottom:-16px; left:8%;" aria-hidden="true">macro: enabled</span>
 
-          <div class="hero-terminal" role="img" aria-label="PhishCheck analyzing a suspicious email, followed by PhishSim and LiveInsight summaries">
+          <div class="hero-terminal" role="img" aria-label="PhishSim campaign activity followed by LiveInsight summaries">
             <div class="terminal-bar">
               <span class="terminal-dot dot-red"    aria-hidden="true"></span>
               <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
               <span class="terminal-dot dot-green"  aria-hidden="true"></span>
-              <span class="terminal-title">phishcheck — analysis session</span>
+              <span class="terminal-title">phishsim: campaign session</span>
             </div>
             <div class="terminal-body" aria-hidden="true">
-              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishcheck analyze invoice-overdue.eml</span></div>
-              <div class="terminal-line"><span class="t-out t-ok">✔ Header checks complete (SPF, DKIM, DMARC)</span></div>
-              <div class="terminal-line"><span class="t-out t-warn">⚠ 2 lookalike domains found</span></div>
-              <div class="terminal-line"><span class="t-out t-err">✖ Credential-harvesting link detected</span></div>
+              <div class="terminal-line"><span class="t-prompt">❯</span><span class="t-cmd">phishsim launch q3-training</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ 480 recipients queued</span></div>
+              <div class="terminal-line"><span class="t-out t-warn">⚠ finance cohort needs extra coaching</span></div>
+              <div class="terminal-line"><span class="t-out t-ok">✔ credential fields record submission events only</span></div>
 
               <div class="risk-meter" style="margin:.85rem 0 1rem;">
                 <div class="risk-meter-track"><div class="risk-meter-fill" data-fill="82" style="width:0%"></div></div>
-                <div class="risk-meter-labels"><span>risk score</span><span>82 / 100 — high</span></div>
+                <div class="risk-meter-labels"><span>risk score</span><span>82 / 100, high</span></div>
               </div>
 
               <div class="terminal-line t-info"><span class="t-prompt">❯</span><span class="t-cmd">phishsim campaign report --q3</span></div>
@@ -82,21 +85,21 @@ require_once __DIR__ . '/includes/header.php';
           <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>The problem</div>
           <h2 class="section-title fade-in" id="problem-heading">Phishing defense usually lives in five different places.</h2>
           <p class="fade-in">
-            A user reports a suspicious email. Someone triages it by hand. A different
-            tool runs the phishing simulation. Results end up in a spreadsheet. Someone
+            A team runs a phishing simulation. Results land in one system.
+            Training notes live somewhere else. Someone
             builds a slide deck for leadership once a quarter.
           </p>
           <p class="fade-in">
             Every handoff loses context, and nobody can answer a simple question:
-            is phishing risk actually going down? LiveIntel connects those signals
-            into one phishing intelligence workflow, so the answer is always current.
+            is phishing risk actually going down? LiveIntel connects simulation
+            and reporting signals, so the answer is always current.
           </p>
         </div>
 
         <div class="glass-panel scatter-diagram fade-in">
           <div class="scatter-row">
-            <span class="scatter-chip">inbox reports</span>
-            <span class="scatter-chip">manual triage</span>
+            <span class="scatter-chip">simulation results</span>
+            <span class="scatter-chip">training notes</span>
           </div>
           <div class="scatter-row">
             <span class="scatter-chip">simulation tool</span>
@@ -106,7 +109,7 @@ require_once __DIR__ . '/includes/header.php';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
             becomes one workflow
           </div>
-          <span class="scatter-result">LiveIntel — analyze, simulate, measure</span>
+          <span class="scatter-result">LiveIntel: simulate, measure, improve</span>
         </div>
       </div>
     </div>
@@ -118,32 +121,16 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" id="platform" aria-labelledby="platform-heading" style="background:var(--clr-surface); border-block:1px solid var(--clr-border);">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>The platform</div>
-      <h2 class="section-title fade-in" id="platform-heading">Three products. One phishing intelligence workflow.</h2>
+      <h2 class="section-title fade-in" id="platform-heading">Two products. One phishing behavior workflow.</h2>
       <p class="section-subtitle fade-in">
-        PhishCheck, PhishSim, and LiveInsight work together, so every signal your
-        team collects feeds the same picture of risk.
+        PhishSim and LiveInsight work together, so simulations, reports, and
+        behavior trends feed the same picture of risk.
       </p>
 
       <div class="pillar-grid">
 
         <article class="pillar-card fade-in">
           <span class="pillar-step">Step 01</span>
-          <div class="product-card-icon icon-blue" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="pillar-name">Analyze phishing threats</h3>
-          <p class="pillar-product">PhishCheck</p>
-          <p class="pillar-desc">
-            Analyze suspicious emails, links, headers, attachments, and sender
-            signals to support faster triage and consistent phishing review.
-          </p>
-          <a href="products/phishcheck/" class="pillar-link">See how PhishCheck works
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </article>
-
-        <article class="pillar-card fade-in">
-          <span class="pillar-step">Step 02</span>
           <div class="product-card-icon icon-purple" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
@@ -159,7 +146,7 @@ require_once __DIR__ . '/includes/header.php';
         </article>
 
         <article class="pillar-card fade-in">
-          <span class="pillar-step">Step 03</span>
+          <span class="pillar-step">Step 02</span>
           <div class="product-card-icon icon-blue" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
@@ -167,7 +154,7 @@ require_once __DIR__ . '/includes/header.php';
           <p class="pillar-product">LiveInsight</p>
           <p class="pillar-desc">
             Turn phishing reports and simulation results into dashboards, trends,
-            executive summaries, and analytics your team can act on.
+            executive summaries, and reports your team can act on.
           </p>
           <a href="products/liveinsight/" class="pillar-link">See how LiveInsight works
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -184,23 +171,16 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" aria-labelledby="workflow-heading">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>How it fits together</div>
-      <h2 class="section-title fade-in" id="workflow-heading">From a reported email to measurable risk</h2>
-      <p class="section-subtitle fade-in">One workflow, five steps, no manual handoffs between tools.</p>
+      <h2 class="section-title fade-in" id="workflow-heading">From a simulation to measurable improvement</h2>
+      <p class="section-subtitle fade-in">One workflow, four steps, with reporting built in.</p>
 
       <div class="workflow fade-in">
         <div class="workflow-node">
           <div class="workflow-node-dot" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg>
           </div>
-          <div class="workflow-node-label">User reports</div>
-          <div class="workflow-node-desc">A suspicious email gets flagged</div>
-        </div>
-        <div class="workflow-node">
-          <div class="workflow-node-dot" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="workflow-node-label">PhishCheck analyzes</div>
-          <div class="workflow-node-desc">Headers, links, attachments, sender signals</div>
+          <div class="workflow-node-label">Team plans</div>
+          <div class="workflow-node-desc">Choose audience, scenario, and learning goal</div>
         </div>
         <div class="workflow-node">
           <div class="workflow-node-dot" aria-hidden="true">
@@ -233,11 +213,11 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" id="analytics" aria-labelledby="analytics-heading" style="background:var(--clr-surface); border-block:1px solid var(--clr-border);">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Analytics</div>
-      <h2 class="section-title fade-in" id="analytics-heading">Analytics that turn phishing activity into security decisions.</h2>
+      <h2 class="section-title fade-in" id="analytics-heading">See what changes over time.</h2>
       <p class="section-subtitle fade-in">
-        LiveInsight helps security teams move beyond one-off campaigns. Track
-        behavior over time, identify weak points, compare departments, and show
-        leadership whether risk is improving.
+        Free tools answer one question. LiveInsight shows patterns. See which
+        groups report, which campaigns work, where repeat risk shows up, and
+        whether behavior is improving.
         <br /><span style="font-size:.82rem; opacity:.75;">Figures below are sample data for illustration.</span>
       </p>
 
@@ -322,7 +302,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div class="metric-card span-2 fade-in">
-          <div class="metric-label" style="margin-bottom:1rem;">Campaign comparison — click rate</div>
+          <div class="metric-label" style="margin-bottom:1rem;">Campaign comparison: click rate</div>
           <div class="dept-bars">
             <div class="dept-bar-row">
               <span class="dept-bar-name">Q1 campaign</span>
@@ -353,7 +333,7 @@ require_once __DIR__ . '/includes/header.php';
               is up in every department. Finance and Support still click more than the
               rest of the company and are the next training priority.
             </p>
-            <p style="color:var(--clr-text-muted); font-size:.85rem;">Generated by LiveInsight from PhishCheck and PhishSim activity.</p>
+            <p style="color:var(--clr-text-muted); font-size:.85rem;">Generated by LiveInsight from PhishSim activity.</p>
           </div>
         </div>
 
@@ -399,7 +379,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div>
             <div class="trust-item-title">Role-based access</div>
-            <div class="trust-item-desc">Campaign and analysis results are visible based on role, not open to the whole company.</div>
+            <div class="trust-item-desc">Campaign and reporting results are visible based on role, not open to the whole company.</div>
           </div>
         </div>
         <div class="trust-item fade-in">
@@ -430,58 +410,39 @@ require_once __DIR__ . '/includes/header.php';
   <!-- ============================================================
        TOOLS / HOOKS
   ============================================================ -->
-  <section class="section tools-hook-band" aria-labelledby="tools-heading">
+  <section class="section tools-hook-band" id="tools" aria-labelledby="tools-heading">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Free tools</div>
-      <h2 class="section-title fade-in" id="tools-heading">Start with useful security tools.</h2>
+      <h2 class="section-title fade-in" id="tools-heading">Start with a free security tool.</h2>
       <p class="section-subtitle fade-in">
-        Free tools that introduce your team to the LiveIntel workflow, before you
-        need the full platform.
+        Check a password, generate a stronger one, or inspect an SPF record.
+        No account needed.
       </p>
 
       <div class="tool-grid-mini">
-        <a href="products/safelink/" class="tool-card-mini fade-in">
-          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-          <div class="tool-card-mini-name">SafeLink</div>
-          <p class="tool-card-mini-desc">Inspect or safely preview a suspicious link.</p>
-          <span class="tool-card-mini-link">Try it →</span>
-        </a>
         <a href="products/passforge/" class="tool-card-mini fade-in">
           <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <div class="tool-card-mini-name">PassForge</div>
-          <p class="tool-card-mini-desc">Generate a strong password or passphrase.</p>
-          <span class="tool-card-mini-link">Try it →</span>
+          <p class="tool-card-mini-desc">Generate strong passwords locally in your browser using secure browser randomness.</p>
+          <span class="tool-card-mini-link">Generate Password →</span>
         </a>
         <a href="products/passmeter/" class="tool-card-mini fade-in">
           <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
           <div class="tool-card-mini-name">PassMeter</div>
-          <p class="tool-card-mini-desc">Check how strong a password really is.</p>
-          <span class="tool-card-mini-link">Try it →</span>
-        </a>
-        <a href="products/vault/" class="tool-card-mini fade-in">
-          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 12h2M15 12h2"/></svg></div>
-          <div class="tool-card-mini-name">Vault</div>
-          <p class="tool-card-mini-desc">Store API keys and tokens securely.</p>
-          <span class="tool-card-mini-link">Try it →</span>
-        </a>
-        <a href="products/livesentinel/" class="tool-card-mini fade-in">
-          <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></div>
-          <div class="tool-card-mini-name">LiveSentinel</div>
-          <p class="tool-card-mini-desc">Watch for downtime and expiring certificates.</p>
-          <span class="tool-card-mini-link">Try it →</span>
+          <p class="tool-card-mini-desc">Check password strength in your browser. Your password is never sent to LiveIntel.</p>
+          <span class="tool-card-mini-link">Check a Password →</span>
         </a>
         <a href="products/spf-flattener/" class="tool-card-mini fade-in">
           <div class="tool-card-mini-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 15h6"/></svg></div>
           <div class="tool-card-mini-name">SPF Flattener</div>
-          <p class="tool-card-mini-desc">Keep your SPF record under the 10-lookup limit.</p>
-          <span class="tool-card-mini-link">Try it →</span>
+          <p class="tool-card-mini-desc">Check your SPF record, count DNS lookups, and see whether flattening can help.</p>
+          <span class="tool-card-mini-link">Check SPF Record →</span>
         </a>
       </div>
 
       <p class="tools-connect-note fade-in">
-        These tools are useful on their own. LiveIntel's real value comes from
-        connecting phishing signals, simulations, and analytics into one
-        measurable intelligence cycle. <a href="tools/">See all tools →</a>
+        Use the tools when you need a quick answer. Use LiveIntel when you need
+        simulations, trends, and reports over time. <a href="tools/">See all tools →</a>
       </p>
     </div>
   </section>
@@ -525,35 +486,35 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" aria-labelledby="trust-heading" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);">
     <div class="container">
       <div class="eyebrow fade-in"><span class="eyebrow-dot"></span>Trust</div>
-      <h2 class="section-title fade-in" id="trust-heading">Built with security teams in mind, from the inside out.</h2>
+      <h2 class="section-title fade-in" id="trust-heading">Security tools should not ask for more data than they need.</h2>
 
       <div class="trust-grid">
         <div class="trust-item fade-in">
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div>
-            <div class="trust-item-title">No real credentials in simulations</div>
-            <div class="trust-item-desc">Covered in detail above and on our security page.</div>
+            <div class="trust-item-title">PassMeter runs in the browser</div>
+            <div class="trust-item-desc">Passwords are analyzed locally and are never sent to LiveIntel.</div>
           </div>
         </div>
         <div class="trust-item fade-in">
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div>
-            <div class="trust-item-title">Access controls</div>
-            <div class="trust-item-desc">Role-based access enforced across every service.</div>
+            <div class="trust-item-title">PassForge runs in the browser</div>
+            <div class="trust-item-desc">Generated passwords and passphrases are never sent to LiveIntel.</div>
           </div>
         </div>
         <div class="trust-item fade-in">
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div>
-            <div class="trust-item-title">Audit logging</div>
-            <div class="trust-item-desc">Platform activity is logged for review and compliance.</div>
+            <div class="trust-item-title">SPF checks public DNS</div>
+            <div class="trust-item-desc">SPF Flattener sends only the domain name or pasted SPF record needed for public DNS checks.</div>
           </div>
         </div>
         <div class="trust-item fade-in">
           <div class="trust-item-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div>
-            <div class="trust-item-title">Responsible disclosure</div>
-            <div class="trust-item-desc">We work with researchers who report issues in good faith.</div>
+            <div class="trust-item-title">PhishSim avoids real passwords</div>
+            <div class="trust-item-desc">Simulations measure behavior without collecting, storing, or transmitting real passwords.</div>
           </div>
         </div>
       </div>
@@ -569,14 +530,15 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section" aria-labelledby="cta-heading">
     <div class="container">
       <div class="cta-banner fade-in">
-        <h2 class="cta-banner-title" id="cta-heading">Ready to measure and improve phishing resilience?</h2>
+        <h2 class="cta-banner-title" id="cta-heading">When one-off checks are not enough.</h2>
         <p class="cta-banner-desc">
-          Talk to us about your current phishing reporting process. We'll show you
-          what it looks like connected end to end.
+          LiveIntel helps teams move from individual tools to a repeatable
+          phishing program. Analyze reports, run simulations, measure behavior,
+          and show improvement.
         </p>
         <div class="cta-banner-actions">
           <a href="contact.php" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="products/phishcheck/" class="btn btn-outline btn-lg">View PhishCheck</a>
+          <a href="#platform" class="btn btn-outline btn-lg">Explore Platform</a>
         </div>
       </div>
     </div>

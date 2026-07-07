@@ -40,7 +40,7 @@
         <li><a href="<?php echo $basePath; ?>about.php">About</a></li>
       </ul>
 
-      <a href="<?php echo $basePath; ?>contact.php" class="btn btn-primary nav-cta">Request Demo</a>
+      <a href="<?php echo $basePath; ?>tools/" class="btn btn-primary nav-cta">Try Free Tools</a>
     </nav>
   </div>
 </header>

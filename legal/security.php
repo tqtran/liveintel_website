@@ -1,7 +1,7 @@
 <?php
 $basePath = "../";
 $pageTitle = "Security | LiveIntel";
-$pageDescription = "LiveIntel Security — our security practices, vulnerability disclosure program, and how we protect your data.";
+$pageDescription = "LiveIntel Security: our security practices, vulnerability disclosure program, and how we protect your data.";
 $pageStyles = '<style>
   .legal-section { max-width: 760px; margin: 0 auto; }
   .legal-section h2 { font-size: 1.25rem; color: var(--clr-text); margin: 2rem 0 .75rem; }
@@ -23,7 +23,7 @@ require_once __DIR__ . '/../includes/header.php';
           <span class="badge badge-blue">Security Practices</span>
           <h1 class="product-hero-title" id="sec-heading">Security at LiveIntel</h1>
           <p class="product-hero-desc">
-            Security is not a feature we add on top — it is the foundation everything else is built
+            Security is not a feature we add on top. It is the foundation everything else is built
             on. This page describes how we protect our platform, your data, and how to report
             vulnerabilities responsibly.
           </p>
@@ -97,10 +97,17 @@ require_once __DIR__ . '/../includes/header.php';
             configured it, who it targeted, and what template was used.</li>
         </ul>
 
+        <h2 class="fade-in">Free Tool Data Boundaries</h2>
+        <ul class="fade-in">
+          <li><strong>PassMeter runs in your browser.</strong> Password strength analysis is local. Passwords are never sent to LiveIntel.</li>
+          <li><strong>PassForge runs in your browser.</strong> Generated passwords and passphrases are never sent to LiveIntel.</li>
+          <li><strong>SPF Flattener checks public DNS.</strong> It sends only the domain name or SPF record needed to resolve public DNS data.</li>
+        </ul>
+
         <h2 class="fade-in">Access Control</h2>
         <ul class="fade-in">
           <li>Role-based access control (RBAC) is enforced at every API endpoint.</li>
-          <li>Principle of least privilege — users and services are granted only the minimum permissions required.</li>
+          <li>Principle of least privilege: users and services are granted only the minimum permissions required.</li>
           <li>Multi-factor authentication (MFA) is available for all user accounts and required for all internal staff.</li>
           <li>SAML 2.0 and OIDC are supported for enterprise single sign-on.</li>
           <li>Session tokens are short-lived and automatically rotated.</li>

@@ -1,13 +1,12 @@
 <?php
 $basePath = "../../";
 $pageTitle = "SPF Flattener | Free SPF Record Tool | LiveIntel";
-$pageDescription = "SPF Flattener is a free tool from LiveIntel that resolves nested SPF includes into a flattened record so you stay under the 10 DNS lookup limit.";
+$pageDescription = "Check an SPF record, count DNS lookups, and generate a flattened SPF record using LiveIntel's free SPF Flattener.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
 <main>
 
-  <!-- PRODUCT HERO -->
   <section class="product-hero" aria-labelledby="spf-title">
     <div class="container">
       <div class="product-hero-inner">
@@ -16,165 +15,113 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Tools
           </a>
-          <span class="badge badge-green">Free Tool · Email Deliverability</span>
+          <span class="badge badge-green">Free Tool · Public DNS check</span>
           <h1 class="product-hero-title" id="spf-title">SPF Flattener</h1>
           <p class="product-hero-desc">
-            SPF has a hard limit of 10 DNS lookups. Cross it and mail servers
-            can start failing your SPF check outright. SPF Flattener resolves
-            every nested include down to raw IP ranges so you stay under the limit.
+            Check your SPF record, count DNS lookups, and see whether flattening
+            can help. Enter a domain or paste an SPF record to start.
           </p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="#features" class="btn btn-primary">See Features</a>
-            <a href="../../index.php#platform" class="btn btn-outline">Explore the Platform</a>
-          </div>
         </div>
 
-        <!-- Mini spec card -->
         <div class="spec-box fade-in">
           <div class="spec-box-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 15h6"/></svg>
-            spf-flattener — tool spec
+            dns-boundary
           </div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Product</span><span class="spec-val">SPF Flattener</span></div>
-            <div class="spec-row"><span class="spec-key">Purpose</span><span class="spec-val">Flatten SPF records under the 10-lookup limit</span></div>
-            <div class="spec-row"><span class="spec-key">Input</span><span class="spec-val">Domain name or existing SPF record</span></div>
-            <div class="spec-row"><span class="spec-key">Output</span><span class="spec-val">Flattened, ready-to-publish TXT record</span></div>
-            <div class="spec-row"><span class="spec-key">Limit checked</span><span class="spec-val">RFC 7208 — 10 DNS lookups max</span></div>
+            <div class="spec-row"><span class="spec-key">Account</span><span class="spec-val">Not needed</span></div>
+            <div class="spec-row"><span class="spec-key">Input</span><span class="spec-val">Domain or SPF record</span></div>
+            <div class="spec-row"><span class="spec-key">Backend</span><span class="spec-val">PHP DNS resolver</span></div>
+            <div class="spec-row"><span class="spec-key">Privacy</span><span class="spec-val">Only public DNS data is checked</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section" id="features" aria-labelledby="features-heading">
+  <section class="section" aria-labelledby="tool-heading">
     <div class="container">
-      <h2 class="section-title fade-in" id="features-heading">Core Capabilities</h2>
-      <p class="section-subtitle fade-in">
-        Most broken SPF records aren't wrong, they're just too big. This
-        tool finds the problem and gives you a record you can actually publish.
-      </p>
+      <h2 class="section-title fade-in" id="tool-heading">Check an SPF record.</h2>
+      <p class="section-subtitle fade-in">SPF allows 10 DNS lookups. This tool shows where your record stands.</p>
 
-      <div class="features-grid">
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🔢</div>
-          <h3 class="feature-title">Lookup Counting</h3>
-          <p class="feature-desc">
-            See exactly how many DNS lookups your current SPF record uses,
-            and which include is responsible for the most of them.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🧬</div>
-          <h3 class="feature-title">Recursive Flattening</h3>
-          <p class="feature-desc">
-            Every include, redirect, and nested SPF record gets resolved down
-            to static IPv4 and IPv6 ranges, all in one pass.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">✅</div>
-          <h3 class="feature-title">Record Validation</h3>
-          <p class="feature-desc">
-            Catches syntax errors, duplicate mechanisms, and a missing or
-            misplaced "all" qualifier before you publish anything.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">✂️</div>
-          <h3 class="feature-title">Proper Record Splitting</h3>
-          <p class="feature-desc">
-            Flattened records often exceed the 255-character TXT string limit.
-            This splits them correctly so DNS providers accept them.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">🔔</div>
-          <h3 class="feature-title">Change Monitoring</h3>
-          <p class="feature-desc">
-            A flattened record is a snapshot. Get notified when a provider
-            you included changes its IP ranges, so your record doesn't go stale.
-          </p>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon" aria-hidden="true">📋</div>
-          <h3 class="feature-title">Ready-to-Publish Output</h3>
-          <p class="feature-desc">
-            Copy the finished record straight into your DNS provider. No
-            manual editing or character counting required.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="how-heading">
-    <div class="container">
-      <h2 class="section-title fade-in" id="how-heading">How SPF Flattener Works</h2>
-      <p class="section-subtitle fade-in">Paste a domain or a record. Get back something you can publish.</p>
-
-      <div class="two-col">
-        <div class="spec-box fade-in">
-          <div class="spec-box-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            flattening-pipeline
+      <div class="tool-panel fade-in">
+        <div class="tool-panel-body">
+          <div class="tool-tabs" role="tablist" aria-label="SPF input mode">
+            <button class="tool-tab" id="spf-tab-domain" type="button" role="tab" aria-selected="true" aria-controls="spf-panel-domain">Domain</button>
+            <button class="tool-tab" id="spf-tab-record" type="button" role="tab" aria-selected="false" aria-controls="spf-panel-record">Paste Record</button>
           </div>
-          <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Stage 1</span><span class="spec-val">Enter a domain or paste an existing SPF record</span></div>
-            <div class="spec-row"><span class="spec-key">Stage 2</span><span class="spec-val">Resolve every include and redirect recursively</span></div>
-            <div class="spec-row"><span class="spec-key">Stage 3</span><span class="spec-val">Collect IPv4 / IPv6 ranges and count total lookups</span></div>
-            <div class="spec-row"><span class="spec-key">Stage 4</span><span class="spec-val">Flag anything still over the 10-lookup limit</span></div>
-            <div class="spec-row"><span class="spec-key">Stage 5</span><span class="spec-val">Output a flattened, correctly split TXT record</span></div>
-          </div>
-        </div>
 
-        <div class="fade-in">
-          <p style="color:var(--clr-text-muted); font-size:.92rem; margin-bottom:.85rem;">
-            Flattening trades flexibility for headroom. Once you flatten, an
-            included provider changing their sending IPs won't automatically
-            show up in your SPF record anymore, because you're now listing
-            raw IPs instead of a dynamic include.
-          </p>
-          <p style="color:var(--clr-text-muted); font-size:.92rem;">
-            That's why change monitoring matters. We track the providers you
-            flattened and let you know when it's time to regenerate the record,
-            instead of letting it quietly go stale.
-          </p>
+          <form id="spf-form">
+            <div id="spf-panel-domain" role="tabpanel" aria-labelledby="spf-tab-domain">
+              <div class="tool-field">
+                <label for="spf-domain">Domain</label>
+                <input class="tool-input" id="spf-domain" name="domain" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="example.com" />
+              </div>
+            </div>
+
+            <div id="spf-panel-record" role="tabpanel" aria-labelledby="spf-tab-record" hidden>
+              <div class="tool-field">
+                <label for="spf-record">SPF record</label>
+                <textarea class="tool-textarea" id="spf-record" name="record" spellcheck="false" placeholder="v=spf1 include:_spf.example.com -all"></textarea>
+              </div>
+            </div>
+
+            <div class="tool-actions">
+              <button class="btn btn-primary" id="spf-submit" type="submit">Check SPF Record</button>
+              <button class="btn btn-outline" id="spf-reset" type="button">Reset</button>
+            </div>
+          </form>
+
+          <div class="tool-status" id="spf-status" aria-live="polite">Ready. No account needed.</div>
+
+          <div class="tool-result-block" id="spf-results" hidden>
+            <div class="tool-stats">
+              <span class="tool-stat" id="spf-stat-original">lookups <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-kept">kept lookups <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-ip4">ip4 <strong>-</strong></span>
+              <span class="tool-stat" id="spf-stat-ip6">ip6 <strong>-</strong></span>
+            </div>
+
+            <div class="tool-result-title">Plain-English result</div>
+            <p class="tool-note" id="spf-summary" style="margin-top:0;"></p>
+
+            <div class="tool-result-title">Current record</div>
+            <div class="tool-record" id="spf-original"></div>
+
+            <div class="tool-result-title" style="margin-top:1rem;">Flattened record</div>
+            <div class="tool-record" id="spf-flat"></div>
+            <div class="tool-actions" style="margin-top:.75rem;">
+              <button class="btn btn-outline btn-sm" id="spf-copy" type="button">Copy Flattened Record</button>
+            </div>
+
+            <div class="tool-result-title" style="margin-top:1rem;">Warnings and trace</div>
+            <ul class="tool-findings" id="spf-warnings"></ul>
+            <div class="tool-log" id="spf-log" aria-label="SPF resolver trace"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" aria-labelledby="cta-heading">
+  <section class="section" style="background:var(--clr-surface); border-top:1px solid var(--clr-border);" aria-labelledby="next-heading">
     <div class="container">
       <div class="utility-banner fade-in">
         <p class="utility-banner-text">
-          <strong>A clean SPF record stops spoofed senders at the DNS level.</strong>
-          It doesn't tell you if a phishing email got through anyway. PhishCheck
-          reviews SPF, DKIM, and DMARC results on every message you analyze.
+          <strong>SPF helps with spoofing.</strong> LiveIntel helps with the
+          bigger phishing workflow: simulations, analytics, and reporting.
         </p>
-        <a href="../../products/phishcheck/" class="btn btn-outline">See PhishCheck</a>
+        <a href="../../products/phishsim/" class="btn btn-outline">See PhishSim</a>
       </div>
 
       <div class="cta-banner fade-in" style="margin-top:2rem;">
-        <h2 class="cta-banner-title" id="cta-heading">Fix your SPF record before it fails silently</h2>
+        <h2 class="cta-banner-title" id="next-heading">When one-off checks are not enough.</h2>
         <p class="cta-banner-desc">
-          Use SPF Flattener on its own, or ask us how email authentication
-          fits into a broader phishing analysis program.
+          LiveIntel helps teams move from individual tools to a repeatable
+          phishing program with simulations, analytics, trends, and reports.
         </p>
         <div class="cta-banner-actions">
-          <a href="../../contact.php" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../tools/" class="btn btn-outline btn-lg">Other Tools</a>
+          <a href="../../index.php#platform" class="btn btn-primary btn-lg">Explore LiveIntel</a>
+          <a href="../../tools/" class="btn btn-outline btn-lg">Try Another Tool</a>
         </div>
       </div>
     </div>
@@ -182,4 +129,5 @@ require_once __DIR__ . '/../../includes/header.php';
 
 </main>
 
+<script src="../../js/spf-flattener.js"></script>
 <?php require_once __DIR__ . '/../../includes/footer.php'; ?>

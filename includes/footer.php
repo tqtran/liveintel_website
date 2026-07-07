@@ -12,12 +12,11 @@
           </svg>
           Live<span>Intel</span>
         </a>
-        <p>Phishing analysis, simulation, and analytics in one platform.</p>
+        <p>Phishing simulation and analytics, with free tools you can use before you need the platform.</p>
       </div>
       <nav aria-label="Platform footer links">
         <h3 class="footer-col-title">Platform</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>products/phishcheck/">PhishCheck</a></li>
           <li><a href="<?php echo $basePath; ?>products/phishsim/">PhishSim</a></li>
           <li><a href="<?php echo $basePath; ?>products/liveinsight/">LiveInsight</a></li>
         </ul>
@@ -25,11 +24,8 @@
       <nav aria-label="Tools footer links">
         <h3 class="footer-col-title">Free Tools</h3>
         <ul class="footer-links" role="list">
-          <li><a href="<?php echo $basePath; ?>products/safelink/">SafeLink</a></li>
-          <li><a href="<?php echo $basePath; ?>products/passforge/">PassForge</a></li>
           <li><a href="<?php echo $basePath; ?>products/passmeter/">PassMeter</a></li>
-          <li><a href="<?php echo $basePath; ?>products/vault/">Vault</a></li>
-          <li><a href="<?php echo $basePath; ?>products/livesentinel/">LiveSentinel</a></li>
+          <li><a href="<?php echo $basePath; ?>products/passforge/">PassForge</a></li>
           <li><a href="<?php echo $basePath; ?>products/spf-flattener/">SPF Flattener</a></li>
         </ul>
       </nav>
@@ -46,7 +42,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <?php echo date('Y'); ?> LiveIntel. All rights reserved.</p>
-      <p>Built with ❤ for cybersecurity professionals.</p>
+      <p>Built for practical phishing defense.</p>
     </div>
   </div>
 </footer>

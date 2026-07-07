@@ -1,7 +1,7 @@
 <?php
 $basePath = "";
 $pageTitle = "About | LiveIntel";
-$pageDescription = "LiveIntel builds phishing analysis, simulation, and analytics tools for security teams. Here's why, and how we think about the problem.";
+$pageDescription = "LiveIntel builds phishing simulation and analytics tools for security teams. Here's why, and how we think about the problem.";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -14,9 +14,9 @@ require_once __DIR__ . '/includes/header.php';
         <span class="badge badge-blue">About</span>
         <h1 class="product-hero-title" id="about-title">We build tools for the phishing problem specifically.</h1>
         <p class="product-hero-desc" style="max-width:640px;">
-          Not general security monitoring. Not a full SIEM. LiveIntel analyzes
-          phishing emails, tests how people respond to them, and measures
-          whether that response is getting better.
+          Not general security monitoring. Not a full SIEM. LiveIntel helps
+          teams run safer phishing simulations, measure how people respond,
+          and see whether behavior is getting better.
         </p>
       </div>
     </div>
@@ -38,13 +38,14 @@ require_once __DIR__ . '/includes/header.php';
           <p style="color:var(--clr-text-muted); margin-bottom:1rem;">
             That gap makes a simple question hard to answer: is phishing risk
             actually going down, or does it just feel that way? We built
-            PhishCheck, PhishSim, and LiveInsight to answer it with data
+            PhishSim and LiveInsight to answer it with data
             instead of a guess.
           </p>
           <p style="color:var(--clr-text-muted);">
             The free tools came later, once we noticed people wanted a quick
-            way to check a link or a password before they needed the full
-            platform. They stayed useful on their own, so we kept them that way.
+            way to check a password, generate a safer one, or diagnose an SPF
+            record before they needed the full platform. They stayed useful on
+            their own, so we kept them that way.
           </p>
         </div>
         <div class="spec-box fade-in">
@@ -53,9 +54,9 @@ require_once __DIR__ . '/includes/header.php';
             what-we-focus-on
           </div>
           <div class="spec-box-body">
-            <div class="spec-row"><span class="spec-key">Core focus</span><span class="spec-val">Phishing analysis, simulation, analytics</span></div>
-            <div class="spec-row"><span class="spec-key">Core products</span><span class="spec-val">PhishCheck, PhishSim, LiveInsight</span></div>
-            <div class="spec-row"><span class="spec-key">Free tools</span><span class="spec-val">SafeLink, PassForge, PassMeter, Vault, LiveSentinel</span></div>
+            <div class="spec-row"><span class="spec-key">Core focus</span><span class="spec-val">Phishing simulation, behavior analytics</span></div>
+            <div class="spec-row"><span class="spec-key">Core products</span><span class="spec-val">PhishSim, LiveInsight</span></div>
+            <div class="spec-row"><span class="spec-key">Free tools</span><span class="spec-val">PassMeter, PassForge, SPF Flattener</span></div>
             <div class="spec-row"><span class="spec-key">Not trying to be</span><span class="spec-val">A full SIEM or EDR platform</span></div>
           </div>
         </div>
@@ -95,9 +96,9 @@ require_once __DIR__ . '/includes/header.php';
         <div class="feature-card fade-in">
           <h3 class="feature-title">Tools should work standalone</h3>
           <p class="feature-desc">
-            SafeLink, PassForge, PassMeter, and the rest work fine without a
-            LiveIntel account. They get more useful once connected, but
-            they're not crippled on their own.
+            PassMeter, PassForge, and SPF Flattener work without a LiveIntel
+            account. They get more useful once connected to a broader phishing
+            program, but they are not blocked behind signup.
           </p>
         </div>
       </div>
