@@ -11,7 +11,6 @@ require_once __DIR__ . '/includes/header.php';
   <section class="product-hero" aria-labelledby="getting-started-title">
     <div class="container">
       <div style="max-width:720px;">
-        <span class="badge badge-blue">Getting Started</span>
         <h1 class="product-hero-title" id="getting-started-title">Start with the local agent, one small campaign, and clear results.</h1>
         <p class="product-hero-desc" style="max-width:680px;">
           LiveIntel provides the agent package and connection details as part of the free setup flow. Here is the basic path.

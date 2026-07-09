@@ -10,7 +10,6 @@ require_once __DIR__ . '/../includes/header.php';
   <section class="product-hero" aria-labelledby="tools-title">
     <div class="container">
       <div style="max-width:720px;">
-        <span class="badge badge-blue">Free Tools</span>
         <h1 class="product-hero-title" id="tools-title">Start with a free security tool.</h1>
         <p class="product-hero-desc" style="max-width:680px;">
           Check a password, generate a stronger one, or inspect an SPF record.

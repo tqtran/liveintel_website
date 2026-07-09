@@ -56,7 +56,7 @@ a:hover { text-decoration: underline; }
 }
 
 .section {
-  padding-block: 5rem;
+  padding-block: 3rem;
 }
 
 .section-title {
@@ -433,7 +433,7 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Product Detail Page ------------------------ */
 .product-hero {
-  padding-block: 5rem 4rem;
+  padding-block: 5rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -450,7 +450,7 @@ a:hover { text-decoration: underline; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 }
 
 .product-hero-back {
@@ -1339,6 +1339,55 @@ a:hover { text-decoration: underline; }
 
 .tool-panel-body { padding: 1.5rem; }
 
+/* isolated-sandbox frame — for tools that run fully client-side */
+.tool-panel--sandbox {
+  border-color: rgba(0,194,255,.35);
+  animation: sandbox-glow 4.5s ease-in-out infinite;
+}
+
+@keyframes sandbox-glow {
+  0%, 100% { box-shadow: var(--shadow-card), 0 0 0 1px rgba(0,194,255,.10); }
+  50%      { box-shadow: var(--shadow-card), 0 0 16px -2px rgba(0,194,255,.28); }
+}
+
+.sandbox-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem 1.5rem;
+  background: var(--clr-surface-2);
+  border-bottom: 1px solid var(--clr-border);
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--clr-text-muted);
+}
+
+.sandbox-bar .sandbox-icon { color: var(--clr-primary); flex-shrink: 0; }
+.sandbox-label { color: var(--clr-text); letter-spacing: .02em; }
+.sandbox-note { margin-left: auto; font-size: .72rem; opacity: .85; }
+
+.sandbox-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--clr-accent-2);
+  flex-shrink: 0;
+  animation: sandbox-pulse 2.4s ease-out infinite;
+}
+
+@keyframes sandbox-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(16,185,129,.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-panel--sandbox { animation: none; }
+  .sandbox-dot { animation: none; }
+}
+
 /* "why this tool exists" intro blurb */
 .tool-intro {
   max-width: 860px;
@@ -1498,21 +1547,6 @@ a:hover { text-decoration: underline; }
   font-size: .75rem;
   color: var(--clr-danger);
   margin-left: .25rem;
-}
-
-/* split-record chunks */
-.spf-chunks { display: flex; flex-direction: column; gap: .5rem; }
-
-.spf-chunk { position: relative; }
-.spf-chunk .tool-record { padding-right: 4rem; }
-
-.spf-chunk-index {
-  position: absolute;
-  top: .55rem;
-  right: .65rem;
-  font-family: var(--font-mono);
-  font-size: .7rem;
-  color: var(--clr-text-muted);
 }
 
 /* example quick-fill chips */

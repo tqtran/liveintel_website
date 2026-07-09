@@ -15,11 +15,14 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Tools
           </a>
-          <span class="badge badge-green">Free Tool · Public DNS check</span>
-          <h1 class="product-hero-title" id="spf-title">SPF Flattener</h1>
+                    <h1 class="product-hero-title" id="spf-title">SPF Flattener</h1>
           <p class="product-hero-desc">
-            Check your SPF record, count DNS lookups, and see whether flattening
-            can help. Enter a domain or paste an SPF record to start.
+            SPF quietly starts failing once a domain needs more than
+            <strong>10 DNS lookups</strong> (RFC 7208), and every
+            <code>include:</code>, <code>a</code>, <code>mx</code>, and
+            <code>redirect</code> spends one. Records cross the line as you keep
+            adding senders, until the day mail bounces. This tool walks the whole
+            tree, counts your lookups, and hands back a flattened record that fits.
           </p>
         </div>
 
@@ -42,14 +45,6 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="tool-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="tool-heading">Check an SPF record.</h2>
-      <div class="tool-intro fade-in">
-        SPF has a rule almost nobody remembers until mail starts bouncing:
-        receiving servers stop after <strong>10 DNS lookups</strong> (RFC 7208),
-        and every <code>include:</code> — plus every include hiding inside
-        it — burns one. Records grow one "just add us to your DNS" at a time
-        until they quietly cross the line. This tool walks the whole tree,
-        counts the damage, and hands back a flattened record that fits.
-      </div>
 
       <div class="tool-panel fade-in">
         <div class="tool-panel-body">
@@ -80,8 +75,9 @@ require_once __DIR__ . '/../../includes/header.php';
             </div>
 
             <div class="tool-actions" style="margin-top:1.25rem;">
-              <button class="btn btn-primary" id="spf-submit" type="submit">Check &amp; Flatten</button>
+              <button class="btn btn-primary" id="spf-submit" type="submit">Analyze &amp; Flatten</button>
               <button class="btn btn-outline" id="spf-reset" type="button">Reset</button>
+              <button class="btn btn-outline" id="spf-share" type="button" hidden>Share Link</button>
             </div>
           </form>
 
@@ -133,19 +129,25 @@ require_once __DIR__ . '/../../includes/header.php';
             <div class="tool-record" id="spf-original"></div>
 
             <div class="tool-result-title" style="margin-top:1rem;">Flattened record</div>
+            <p class="tool-note" style="margin-top:.15rem; margin-bottom:.5rem;">
+              One plain value. Paste this into hosts that accept a full TXT record and
+              split it for you — Cloudflare, Route&nbsp;53, Google Cloud DNS, Azure, and
+              most modern DNS panels.
+            </p>
             <div class="tool-record" id="spf-flat"></div>
             <div class="tool-actions" style="margin-top:.75rem;">
               <button class="btn btn-primary btn-sm" id="spf-copy" type="button">Copy Flattened Record</button>
-              <button class="btn btn-outline btn-sm" id="spf-copy-split" type="button" hidden>Copy as Split Strings</button>
             </div>
 
-            <div id="spf-chunks-wrap" hidden>
-              <div class="tool-result-title" style="margin-top:1.25rem;">Split for publishing</div>
-              <p class="tool-note" style="margin-top:0; margin-bottom:.6rem;">
-                DNS TXT strings max out at 255 characters. Publish these as one
-                record with multiple strings — resolvers join them back together.
-              </p>
-              <div class="spf-chunks" id="spf-chunks"></div>
+            <div class="tool-result-title" style="margin-top:1.25rem;">Zone-file format</div>
+            <p class="tool-note" style="margin-top:.15rem; margin-bottom:.5rem;">
+              The same record as quoted strings, the way it looks in a zone file. Use this
+              for hosts that don't auto-split. Anything past 255 characters is broken into
+              multiple strings — resolvers join them back into one record.
+            </p>
+            <div class="tool-record" id="spf-zone"></div>
+            <div class="tool-actions" style="margin-top:.75rem;">
+              <button class="btn btn-primary btn-sm" id="spf-copy-zone" type="button">Copy Zone-file Format</button>
             </div>
 
             <div class="tool-result-title" style="margin-top:1.25rem;">Warnings</div>

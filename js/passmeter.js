@@ -1,8 +1,6 @@
 /* =========================================================
    PassMeter – client-side password strength analyzer
-   Analysis is 100% local. The optional breach check sends
-   only the first 5 chars of a SHA-1 hash (k-anonymity) -
-   the password itself never leaves this page.
+   Analysis is 100% local. The password never leaves this page.
    ========================================================= */
 
 (function () {
@@ -221,13 +219,13 @@
 
     eff = Math.max(1, eff);
 
-    /* composite score: entropy 40 / dictionary 25 / patterns 20 / breach 15 */
+    /* composite score: entropy 40 / dictionary 25 / patterns 20 / baseline 15 */
     var entropyPts = Math.min(40, (eff / 70) * 40);
     var dictPts    = isCommon ? 0 : (isPassphrase ? 25 : Math.max(0, 25 - dictHits.length * 10));
     var patternPts = Math.max(0, 20 - patternCount * 7);
-    var breachPts  = 15; // granted until a breach check says otherwise
+    var basePts    = 15; // baseline credit; breach lookup removed to keep analysis fully local
 
-    var score = Math.round(entropyPts + dictPts + patternPts + breachPts);
+    var score = Math.round(entropyPts + dictPts + patternPts + basePts);
     if (isCommon) score = Math.min(score, 8);
     else if (!isPassphrase && dictCoverage >= 0.6) score = Math.min(score, 40);
 
@@ -264,13 +262,6 @@
   /* ---- Render ----------------------------------------------------- */
   function render(pw) {
     var findingsEl = $('pm-findings');
-    var breachBtn = $('pm-breach-btn');
-    var breachResult = $('pm-breach-result');
-
-    /* password changed → previous breach verdict no longer applies */
-    breachResult.textContent = '';
-    breachResult.className = 'tool-status';
-    breachBtn.disabled = pw.length === 0;
 
     if (!pw) {
       var emptyInfo = poolInfo('');
@@ -324,59 +315,6 @@
     });
   }
 
-  /* ---- HIBP k-anonymity breach check ------------------------------ */
-  function sha1Hex(str) {
-    var data = new TextEncoder().encode(str);
-    return crypto.subtle.digest('SHA-1', data).then(function (buf) {
-      return Array.prototype.map.call(new Uint8Array(buf), function (b) {
-        return ('0' + b.toString(16)).slice(-2);
-      }).join('').toUpperCase();
-    });
-  }
-
-  function checkBreach() {
-    var pw = $('pm-input').value;
-    if (!pw) return;
-    var result = $('pm-breach-result');
-    var btn = $('pm-breach-btn');
-
-    if (!(window.crypto && crypto.subtle)) {
-      result.textContent = '✖ breach check needs a secure (https) context. Analysis above still works.';
-      result.className = 'tool-status s-err';
-      return;
-    }
-
-    btn.disabled = true;
-    result.className = 'tool-status';
-    result.textContent = '❯ hashing locally, sending 5-char prefix to HIBP…';
-
-    sha1Hex(pw).then(function (hash) {
-      var prefix = hash.slice(0, 5);
-      var suffix = hash.slice(5);
-      return fetch('https://api.pwnedpasswords.com/range/' + prefix).then(function (r) {
-        if (!r.ok) throw new Error('API returned ' + r.status);
-        return r.text();
-      }).then(function (body) {
-        var hit = body.split('\n').find(function (line) {
-          return line.split(':')[0].trim() === suffix;
-        });
-        if (hit) {
-          var count = parseInt(hit.split(':')[1], 10).toLocaleString();
-          result.textContent = '✖ found in ' + count + ' known breaches. Use a new password for this account.';
-          result.className = 'tool-status s-err';
-        } else {
-          result.textContent = '✔ not found in any known breach corpus.';
-          result.className = 'tool-status s-ok';
-        }
-      });
-    }).catch(function () {
-      result.textContent = '✖ couldn\'t reach the breach API. Try again in a moment.';
-      result.className = 'tool-status s-err';
-    }).finally(function () {
-      btn.disabled = false;
-    });
-  }
-
   /* ---- Wire up ------------------------------------------------------ */
   document.addEventListener('DOMContentLoaded', function () {
     var input = $('pm-input');
@@ -402,8 +340,6 @@
         render(input.value);
       });
     });
-
-    $('pm-breach-btn').addEventListener('click', checkBreach);
 
     render('');
   });

@@ -15,10 +15,6 @@ require_once __DIR__ . '/includes/header.php';
       <div class="hero-grid">
 
         <div>
-          <div class="hero-eyebrow">
-            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            <span class="badge badge-blue">Phishing Simulation Platform</span>
-          </div>
 
           <h1 class="hero-title" id="hero-heading">
             Run phishing simulations without turning awareness training into a second job.

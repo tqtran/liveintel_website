@@ -19,7 +19,6 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <span class="badge badge-blue">Security</span>
           <h1 class="product-hero-title" id="security-heading">LiveIntel security and privacy model</h1>
           <p class="product-hero-desc">
             This page explains how LiveIntel operates, what data is needed to run the service, and where the simulation boundaries are. Security claims should be clear, specific, and reviewable.

@@ -12,7 +12,6 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <div class="product-hero-inner">
         <div>
-          <span class="badge badge-blue">Start Free</span>
           <h1 class="product-hero-title" id="start-title">Start LiveIntel free.</h1>
           <p class="product-hero-desc">
             Tell us where to send your setup details. We'll help you get your first phishing simulation running without making it a whole project.

@@ -11,7 +11,6 @@ require_once __DIR__ . '/includes/header.php';
   <section class="product-hero" aria-labelledby="about-title">
     <div class="container">
       <div style="max-width:720px;">
-        <span class="badge badge-blue">About</span>
         <h1 class="product-hero-title" id="about-title">Phishing awareness should be practical before it gets complicated.</h1>
         <p class="product-hero-desc" style="max-width:680px;">
           LiveIntel makes phishing simulation easier to run, easier to understand, and easier to adopt for teams that do not have a spare security department waiting around.

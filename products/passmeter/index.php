@@ -1,7 +1,7 @@
 <?php
 $basePath = "../../";
 $pageTitle = "PassMeter | Free Password Strength Checker | LiveIntel";
-$pageDescription = "Check password strength in your browser. PassMeter explains weak patterns, estimated crack time, and optional breach exposure without sending your password to LiveIntel.";
+$pageDescription = "Check password strength in your browser. PassMeter explains weak patterns and estimated crack time without sending your password to LiveIntel.";
 require_once __DIR__ . '/../../includes/header.php';
 ?>
 
@@ -15,11 +15,14 @@ require_once __DIR__ . '/../../includes/header.php';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Tools
           </a>
-          <span class="badge badge-yellow">Free Tool · Runs in your browser</span>
-          <h1 class="product-hero-title" id="pm-title">PassMeter</h1>
+                    <h1 class="product-hero-title" id="pm-title">PassMeter</h1>
           <p class="product-hero-desc">
-            Check password strength safely. The analysis runs in your browser,
-            and your password is never sent to LiveIntel.
+            Every signup form has an opinion about your password, and most are
+            lying to you: "must contain a symbol" waves <code>P@ssw0rd1</code>
+            right through. PassMeter gives you the
+            <strong>attacker's-eye view</strong> instead, showing how big the real
+            search space is, which shortcuts shrink it, and how long a cracking
+            rig would actually chew on it.
           </p>
         </div>
 
@@ -32,7 +35,6 @@ require_once __DIR__ . '/../../includes/header.php';
             <div class="spec-row"><span class="spec-key">Account</span><span class="spec-val">Not needed</span></div>
             <div class="spec-row"><span class="spec-key">Password</span><span class="spec-val">Never sent to LiveIntel</span></div>
             <div class="spec-row"><span class="spec-key">Analysis</span><span class="spec-val">Local browser scoring</span></div>
-            <div class="spec-row"><span class="spec-key">Breach check</span><span class="spec-val">Optional k-anonymity lookup</span></div>
           </div>
         </div>
       </div>
@@ -42,17 +44,14 @@ require_once __DIR__ . '/../../includes/header.php';
   <section class="section" aria-labelledby="tool-heading">
     <div class="container">
       <h2 class="section-title fade-in" id="tool-heading">Start with a quick check.</h2>
-      <div class="tool-intro fade-in">
-        Every signup form has an opinion about your password, and most of them
-        are lying to you — "must contain a symbol" will happily wave
-        <code>P@ssw0rd1</code> through. PassMeter gives you the
-        <strong>attacker's-eye view</strong> instead: how big the real search
-        space is, which shortcuts (dictionary words, keyboard walks, that birth
-        year) shrink it, and how long a cracking rig would actually chew on it.
-        All of it runs in your browser — the password never leaves this page.
-      </div>
 
-      <div class="tool-panel fade-in">
+      <div class="tool-panel tool-panel--sandbox fade-in">
+        <div class="sandbox-bar" role="note" aria-label="This tool runs in an isolated sandbox in your browser">
+          <span class="sandbox-dot" aria-hidden="true"></span>
+          <svg class="sandbox-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="sandbox-label">isolated-sandbox</span>
+          <span class="sandbox-note">runs in your browser · nothing sent</span>
+        </div>
         <div class="tool-panel-body">
           <div class="tool-field">
             <label for="pm-input">Password to check</label>
@@ -108,14 +107,6 @@ require_once __DIR__ . '/../../includes/header.php';
           </div>
 
           <ul class="tool-findings" id="pm-findings" aria-live="polite"></ul>
-
-          <div class="tool-actions">
-            <button class="btn btn-outline" id="pm-breach-btn" type="button" disabled>Check Known Breaches</button>
-          </div>
-          <div class="tool-status" id="pm-breach-result" aria-live="polite"></div>
-          <p class="tool-note">
-            The optional breach check hashes the password locally and sends only a short hash prefix to the public breach API.
-          </p>
         </div>
       </div>
     </div>

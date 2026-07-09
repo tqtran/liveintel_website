@@ -11,7 +11,6 @@ require_once __DIR__ . '/includes/header.php';
   <section class="product-hero" aria-labelledby="contact-title">
     <div class="container">
       <div style="max-width:680px;">
-        <span class="badge badge-blue">Contact</span>
         <h1 class="product-hero-title" id="contact-title">Reach LiveIntel.</h1>
         <p class="product-hero-desc" style="max-width:620px;">
           Questions, support, security reports, or something weird? Send it our way. Keep sensitive vulnerability details out of public channels and send them directly to security.

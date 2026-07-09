@@ -44,6 +44,4 @@ return [
     $route('/contact', 'Contact | LiveIntel', 'monthly', '0.6', 'contact.php'),
     $route('/privacy', 'Privacy Policy | LiveIntel', 'yearly', '0.3', 'legal/privacy-policy.php'),
     $route('/terms', 'Terms of Service | LiveIntel', 'yearly', '0.3', 'legal/terms-of-service.php'),
-    $route('/products/livesentinel/', 'LiveSentinel (Coming Soon) | Uptime & Certificate Monitoring | LiveIntel', 'monthly', '0.4', 'products/livesentinel/index.php'),
-    $route('/products/vault/', 'Vault (Coming Soon) | Secure Secret Storage | LiveIntel', 'monthly', '0.4', 'products/vault/index.php'),
 ];

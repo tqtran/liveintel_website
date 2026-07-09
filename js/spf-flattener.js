@@ -10,7 +10,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var replayTimer = null;
-  var lastChunks = [];
+  var lastShareQuery = '';
 
   var LINE_STYLES = {
     info:   { prefix: '',   cls: 't-out'  },
@@ -161,27 +161,11 @@
     $('spf-original').textContent = data.original || '(record was provided directly)';
     $('spf-flat').textContent = data.flattened || '(no flattened output)';
 
-    lastChunks = data.chunks || [];
-    var needsSplit = lastChunks.length > 1;
-    $('spf-chunks-wrap').hidden = !needsSplit;
-    $('spf-copy-split').hidden = !needsSplit;
-    if (needsSplit) {
-      var list = $('spf-chunks');
-      list.innerHTML = '';
-      lastChunks.forEach(function (chunk, i) {
-        var wrap = document.createElement('div');
-        wrap.className = 'spf-chunk';
-        var rec = document.createElement('div');
-        rec.className = 'tool-record';
-        rec.textContent = chunk;
-        var idx = document.createElement('span');
-        idx.className = 'spf-chunk-index';
-        idx.textContent = (i + 1) + ' / ' + lastChunks.length;
-        wrap.appendChild(rec);
-        wrap.appendChild(idx);
-        list.appendChild(wrap);
-      });
-    }
+    var chunks = (data.chunks && data.chunks.length)
+      ? data.chunks
+      : (data.flattened ? [data.flattened] : []);
+    var zone = chunks.map(function (c) { return '"' + c + '"'; }).join(' ');
+    $('spf-zone').textContent = zone || '(no output)';
 
     var warnings = $('spf-warnings');
     warnings.innerHTML = '';
@@ -199,6 +183,7 @@
     }
 
     $('spf-results').hidden = false;
+    $('spf-share').hidden = false;
     $('spf-status').textContent = data.overLimit
       ? 'Finished. SPF is over the 10-lookup limit.'
       : 'Finished. SPF is within the 10-lookup limit.';
@@ -218,7 +203,7 @@
 
   function setLoading(loading) {
     $('spf-submit').disabled = loading;
-    $('spf-submit').textContent = loading ? 'Resolving…' : 'Check & Flatten';
+    $('spf-submit').textContent = loading ? 'Resolving…' : 'Analyze & Flatten';
     if (loading) {
       $('spf-status').className = 'tool-status';
       $('spf-status').textContent = 'Walking every include, redirect, a, and mx…';
@@ -261,6 +246,7 @@
       return;
     }
 
+    lastShareQuery = params.toString();
     $('spf-results').hidden = true;
     setLoading(true);
     startRun(domainMode ? domain : '(pasted record)');
@@ -293,6 +279,19 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (!$('spf-form')) return;
 
+    // Prefill from the URL (?domain=… or ?record=…) without auto-running —
+    // the user still clicks Analyze & Flatten so nothing resolves on load.
+    var qp = new URLSearchParams(window.location.search);
+    var qDomain = (qp.get('domain') || '').trim();
+    var qRecord = (qp.get('record') || '').trim();
+    if (qDomain) {
+      $('spf-domain').value = qDomain;
+      setMode('domain');
+    } else if (qRecord) {
+      $('spf-record').value = qRecord;
+      setMode('record');
+    }
+
     $('spf-tab-domain').addEventListener('click', function () { setMode('domain'); });
     $('spf-tab-record').addEventListener('click', function () { setMode('record'); });
 
@@ -314,6 +313,7 @@
       $('spf-domain').value = '';
       $('spf-record').value = '';
       $('spf-results').hidden = true;
+      $('spf-share').hidden = true;
       $('spf-terminal').hidden = true;
       $('spf-log').innerHTML = '';
       $('spf-status').className = 'tool-status';
@@ -323,8 +323,13 @@
     $('spf-copy').addEventListener('click', function () {
       copyText($('spf-flat').textContent, this);
     });
-    $('spf-copy-split').addEventListener('click', function () {
-      copyText(lastChunks.map(function (c) { return '"' + c + '"'; }).join(' '), this);
+    $('spf-copy-zone').addEventListener('click', function () {
+      copyText($('spf-zone').textContent, this);
+    });
+    $('spf-share').addEventListener('click', function () {
+      var query = lastShareQuery || window.location.search.replace(/^\?/, '');
+      var url = window.location.origin + window.location.pathname + (query ? '?' + query : '');
+      copyText(url, this);
     });
   });
 })();
