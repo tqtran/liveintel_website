@@ -6,38 +6,9 @@
 (function () {
   'use strict';
 
-  /* ---- Wordlist for passphrases (600 words ≈ 9.2 bits/word) ---- */
-  var WORDS = [
-    'acorn','actor','adobe','agent','alarm','album','alert','alley','amber','anchor','ankle','antler','anvil','apple','apron','arch','arena','argon','armor','arrow',
-    'aspen','atlas','attic','audio','autumn','avocado','awning','axis','bacon','badge','badger','bagel','baker','bamboo','banjo','barge','barley','basil','basket','baton',
-    'beach','beacon','beak','bean','bear','beard','beaver','bell','belt','bench','berry','bicycle','birch','bison','blade','blanket','blaze','blimp','bloom','blossom',
-    'bluff','board','bobcat','bolt','bonfire','bongo','bonus','book','booth','borrow','bottle','boulder','bounce','bowl','brace','braid','brain','branch','brave','bread',
-    'breeze','brick','bridge','brisk','broom','brush','bubble','bucket','buddy','buffalo','bugle','bundle','bunny','burrow','butter','button','cabin','cable','cactus','camel',
-    'camera','canal','candle','candy','canoe','canyon','carbon','cargo','carol','carrot','carve','castle','catfish','cedar','cellar','cello','chair','chalk','charm','chase',
-    'cheek','cheer','cherry','chess','chest','chill','chime','chipmunk','chord','cider','cinder','circle','citrus','clam','clarinet','clasp','claw','clay','cliff','climb',
-    'cloak','clock','cloud','clover','coach','coast','cobalt','cocoa','comet','compass','copper','coral','cotton','couch','cougar','cove','coyote','crab','cradle','craft',
-    'crane','crater','crayon','creek','crest','cricket','crisp','crocus','crumb','crystal','cub','curtain','cushion','cycle','dagger','dairy','daisy','dandelion','dawn','decoy',
-    'deer','delta','denim','depot','desk','dew','diesel','dill','dime','dinghy','dodge','dome','donkey','donut','dove','dozen','draft','dragon','drift','drill',
-    'drum','duckling','dune','dusk','eagle','easel','echo','eclipse','eel','elbow','elder','elk','elm','ember','emerald','engine','envoy','ferry','fiddle','field',
-    'finch','fjord','flame','flannel','flask','fleet','flint','flute','foam','fog','forge','fossil','fox','freckle','frost','gadget','galaxy','garlic','gecko','geyser',
-    'giant','ginger','glacier','glade','glider','glow','goat','goose','gourd','granite','grape','gravel','griffin','grove','guitar','gull','gust','hammer','hamper','harbor',
-    'harp','hatch','hawk','hazel','hedge','helmet','heron','hickory','hillside','hinge','holly','honey','hornet','horse','husk','ibis','icicle','igloo','inlet','iris',
-    'iron','island','ivory','ivy','jacket','jade','jaguar','jasper','jelly','jigsaw','jungle','juniper','kayak','kelp','kettle','kiosk','kitten','kiwi','knapsack','knoll',
-    'koala','lagoon','lantern','lapel','larch','lasso','latch','lava','leaf','ledge','lemon','lentil','levee','lilac','lily','limber','linen','lion','lizard','llama',
-    'locket','locust','lodge','loft','lotus','lumber','lunar','lynx','magma','magnet','magpie','mango','mantis','maple','marble','marsh','mason','meadow','melon','mesa',
-    'meteor','mint','mitten','moat','mocha','molar','monsoon','moose','morning','moss','moth','mountain','mule','mural','mustard','napkin','nectar','nettle','newt','nickel',
-    'night','noodle','north','nova','nugget','nutmeg','oasis','oatmeal','ocean','ocelot','octave','olive','onion','opal','orbit','orchid','osprey','otter','owl','oxen',
-    'oyster','paddle','pagoda','palm','panda','pantry','papaya','parcel','parrot','pasture','patio','peach','peanut','pebble','pecan','pelican','penguin','pepper','perch','pewter',
-    'phantom','piano','pickle','pigeon','pillow','pilot','pine','pistachio','pixel','plank','plasma','plaza','plume','pocket','pond','pony','poppy','porch','portal','prairie',
-    'prism','pumpkin','puppet','python','quail','quarry','quartz','quill','quilt','rabbit','raccoon','radar','radish','raft','rain','ranch','raven','reef','ribbon','ridge',
-    'river','robin','rocket','rooster','rose','rudder','rune','rustic','saddle','saffron','sage','salmon','sand','sapling','satchel','scarf','scooter','scout','sedan','sequoia',
-    'shale','shark','shelf','shore','shrub','sierra','silk','silo','skate','sketch','skillet','sled','sleet','sloth','smock','snail','sonar','sparrow','spice','spiral',
-    'spruce','squash','squid','stable','stag','stairs','stamp','starling','static','steam','stone','stork','storm','stove','strudel','summit','sunset','swan','sweater','syrup',
-    'table','tadpole','taffy','talon','tandem','tangelo','tapir','tavern','teapot','tempest','temple','terrace','thicket','thistle','thunder','tiger','timber','toad','toffee','token',
-    'torch','totem','toucan','trail','tram','trench','trout','truffle','trumpet','tulip','tundra','tunnel','turnip','turtle','tusk','twig','umbrella','urchin','valley','vanilla',
-    'vault','velvet','vessel','vine','violet','violin','vista','volcano','vole','waffle','wagon','walnut','walrus','wasp','waterfall','weasel','wharf','wheat','whistle','willow',
-    'wind','winter','wolf','wombat','wren','yarn','yodel','yonder','zebra','zephyr','zinc','zinnia','zipper','saddlebag','marmot','falcon','gondola','harvest','lantana','mesquite'
-  ];
+  /* ---- Wordlist for passphrases: shared 1000-word list in
+     js/wordlist.js (~10 bits/word) ---- */
+  var WORDS = window.LI_GENERATOR_WORDS;
 
   var SETS = {
     upper:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -111,7 +82,26 @@
     var value = words.join(sep);
     var bits = count * Math.log2(WORDS.length);
     if (num) { value += sep + randInt(100); bits += Math.log2(100); }
-    return { value: value, bits: Math.round(bits), pool: 'abcdefghijklmnopqrstuvwxyz' + sep };
+    /* headline = wordlist model: attackers run dictionary/combinator
+       modes before byte-level brute force, so the wordlist figure is
+       the strength that matters; char-space shown for comparison */
+    return {
+      value: value,
+      bits: Math.round(bits),
+      charBits: charSpaceBits(value),
+      pool: 'abcdefghijklmnopqrstuvwxyz' + sep
+    };
+  }
+
+  /* character-space entropy: length x log2(union of charsets present) -
+     mirrors PassMeter's baseline so both tools agree on the same string */
+  function charSpaceBits(value) {
+    var pool = 0;
+    if (/[a-z]/.test(value)) pool += 26;
+    if (/[A-Z]/.test(value)) pool += 26;
+    if (/[0-9]/.test(value)) pool += 10;
+    if (/[^a-zA-Z0-9]/.test(value)) pool += 33;
+    return Math.round(value.length * Math.log2(pool || 1));
   }
 
   /* ---- Meter -------------------------------------------------- */
@@ -122,12 +112,14 @@
     return { cls: 'm-strong', text: 'excellent - strong for high-value accounts' };
   }
 
-  function updateMeter(bits) {
+  function updateMeter(bits, charBits) {
     var fill = $('pf-meter-fill');
     var level = meterLevel(bits);
     fill.className = 'tool-meter-fill ' + level.cls;
     fill.style.width = Math.min(100, (bits / 128) * 100) + '%';
-    $('pf-meter-bits').textContent = '~' + bits + ' bits of entropy';
+    var label = '~' + bits + ' bits of entropy';
+    if (charBits) label += ' (~' + charBits + ' bits vs blind brute force)';
+    $('pf-meter-bits').textContent = label;
     $('pf-meter-text').textContent = level.text;
   }
 
@@ -150,7 +142,7 @@
     }
     currentValue = result.value;
     out.style.color = '';
-    updateMeter(result.bits);
+    updateMeter(result.bits, result.charBits);
 
     var value = result.value;
     if (reducedMotion) { out.textContent = value; return; }

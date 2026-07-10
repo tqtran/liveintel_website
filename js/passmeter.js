@@ -161,12 +161,24 @@
     dictHits.forEach(function (w) { matchedLen += w.length; });
     var dictCoverage = len ? Math.min(1, matchedLen / len) : 0;
 
-    /* 3+ words and decent length = deliberate passphrase, not a weakness */
-    var isPassphrase = dictHits.length >= 3 && len >= 15;
+    /* 3+ word-like chunks = passphrase. Attackers run wordlist/combinator
+       modes before byte-level brute force, so score words as draws from a
+       wordlist (~10 bits if on a known generator list, ~15.6 bits for a
+       large cracking dictionary), not as raw characters. */
+    var GEN = window.LI_GENERATOR_WORDS || [];
+    var chunks = lower.split(/[^a-z]+/).filter(function (w) { return w.length >= 3; });
+    var isPassphrase = chunks.length >= 3 && len >= 15;
     if (isPassphrase) {
-      // score by word count, not raw character entropy
-      eff = Math.min(eff, dictHits.length * 11 + 15);
-      findings.push({ cls: 'f-ok', text: 'Looks like a multi-word passphrase - length does the heavy lifting here, which is exactly right.' });
+      var wordBits = 0;
+      var knownCount = 0;
+      chunks.forEach(function (w) {
+        var known = GEN.indexOf(w) !== -1 || DICT.indexOf(w) !== -1 || COMMON.indexOf(w) !== -1;
+        if (known) knownCount++;
+        wordBits += Math.log2(known ? 1000 : 50000);
+      });
+      wordBits += (pw.match(/[0-9]/g) || []).length * Math.log2(10);
+      eff = Math.min(eff, wordBits);
+      findings.push({ cls: 'f-ok', text: 'Looks like a ' + chunks.length + '-word passphrase - scored against wordlist attacks (' + (knownCount ? knownCount + ' of ' + chunks.length + ' words are on common generator wordlists' : 'words not on common generator lists') + '), since attackers try those before brute force.' });
     } else {
       dictHits.forEach(function (w) {
         eff -= w.length * 3.5;
@@ -234,21 +246,22 @@
 
   /* ---- Crack-time formatting ------------------------------------ */
   /* returns { v: duration, cmp: something relatable to compare it to } */
+  function unit(n, name) { return n + ' ' + name + (n === 1 ? '' : 's'); }
   function fmtTime(seconds) {
-    if (seconds < 1)        return { v: 'instantly',                              cmp: 'gone before you finish blinking' };
-    if (seconds < 60)       return { v: Math.round(seconds) + ' seconds',         cmp: 'shorter than a red light' };
-    if (seconds < 3600)     return { v: Math.round(seconds / 60) + ' minutes',    cmp: 'about a coffee break' };
-    if (seconds < 86400)    return { v: Math.round(seconds / 3600) + ' hours',    cmp: 'an overnight cracking run' };
-    if (seconds < 604800)   return { v: Math.round(seconds / 86400) + ' days',    cmp: 'a long weekend for an attacker' };
-    if (seconds < 2629800)  return { v: Math.round(seconds / 604800) + ' weeks',  cmp: 'a determined attacker might wait this out' };
-    if (seconds < 31557600) return { v: Math.round(seconds / 2629800) + ' months', cmp: 'longer than most attackers bother' };
+    if (seconds < 1)        return { v: 'instantly',                                       cmp: 'gone before you finish blinking' };
+    if (seconds < 60)       return { v: unit(Math.round(seconds), 'second'),               cmp: 'shorter than a red light' };
+    if (seconds < 3600)     return { v: unit(Math.round(seconds / 60), 'minute'),          cmp: 'about a coffee break' };
+    if (seconds < 86400)    return { v: unit(Math.round(seconds / 3600), 'hour'),          cmp: 'an overnight cracking run' };
+    if (seconds < 604800)   return { v: unit(Math.round(seconds / 86400), 'day'),          cmp: 'a long weekend for an attacker' };
+    if (seconds < 2629800)  return { v: unit(Math.round(seconds / 604800), 'week'),        cmp: 'a determined attacker might wait this out' };
+    if (seconds < 31557600) return { v: unit(Math.round(seconds / 2629800), 'month'),      cmp: 'longer than most attackers bother' };
     var years = seconds / 31557600;
-    if (years < 10)     return { v: Math.round(years) + ' years',                 cmp: 'outlives the laptop cracking it' };
-    if (years < 100)    return { v: Math.round(years) + ' years',                 cmp: 'roughly a human lifetime' };
-    if (years < 1e3)    return { v: Math.round(years) + ' years',                 cmp: 'older than the printing press' };
-    if (years < 1e6)    return { v: Math.round(years / 1e3) + ' thousand years',  cmp: 'longer than all of recorded history' };
-    if (years < 1e9)    return { v: Math.round(years / 1e6) + ' million years',   cmp: 'the dinosaurs are closer in time' };
-    if (years < 13.8e9) return { v: Math.round(years / 1e9) + ' billion years',   cmp: 'approaching the age of the universe' };
+    if (years < 10)     return { v: unit(Math.round(years), 'year'),                       cmp: 'outlives the laptop cracking it' };
+    if (years < 100)    return { v: unit(Math.round(years), 'year'),                       cmp: 'roughly a human lifetime' };
+    if (years < 1e3)    return { v: unit(Math.round(years), 'year'),                       cmp: 'older than the printing press' };
+    if (years < 1e6)    return { v: Math.round(years / 1e3) + ' thousand years',           cmp: 'longer than all of recorded history' };
+    if (years < 1e9)    return { v: Math.round(years / 1e6) + ' million years',            cmp: 'the dinosaurs are closer in time' };
+    if (years < 13.8e9) return { v: Math.round(years / 1e9) + ' billion years',            cmp: 'approaching the age of the universe' };
     return { v: 'trillions of years', cmp: 'the universe ends before the crack finishes' };
   }
 

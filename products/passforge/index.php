@@ -139,5 +139,6 @@ require_once __DIR__ . '/../../includes/header.php';
 
 </main>
 
+<script src="../../js/wordlist.js"></script>
 <script src="../../js/passforge.js"></script>
 <?php require_once __DIR__ . '/../../includes/footer.php'; ?>
