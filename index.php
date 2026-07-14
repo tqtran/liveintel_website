@@ -194,6 +194,9 @@ require_once __DIR__ . '/includes/header.php';
           <p class="fade-in">
             LiveIntel uses a lightweight local agent to execute phishing simulations from the customer's environment. The cloud platform handles campaign management, coordination, and results while the agent handles local execution.
           </p>
+          <p class="fade-in" style="margin-top:1.25rem;">
+            <a href="products/agent/" class="btn btn-outline">Explore the technical Agent architecture</a>
+          </p>
         </div>
 
         <div class="spec-box fade-in">

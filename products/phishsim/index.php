@@ -226,7 +226,7 @@ require_once __DIR__ . '/../../includes/header.php';
         </p>
         <div class="cta-banner-actions">
           <a href="../../contact" class="btn btn-primary btn-lg">Request Demo</a>
-          <a href="../../index.php#platform" class="btn btn-outline btn-lg">Other Products</a>
+          <a href="../agent/" class="btn btn-outline btn-lg">Agent Technical Overview</a>
         </div>
       </div>
     </div>

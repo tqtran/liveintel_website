@@ -8,6 +8,7 @@ LiveIntel is a phishing simulation and analytics platform. PhishSim and LiveInsi
 |---|---|
 | **PhishSim** | Controlled phishing simulation and behavior measurement |
 | **LiveInsight** | Phishing and human-risk analytics |
+| **LiveIntel Agent** | Customer-controlled execution, local identity handling, and local report handoff |
 
 ## Free tools
 

@@ -33,6 +33,7 @@ return [
     $route('/', 'LiveIntel | Privacy-Conscious Phishing Simulation Platform', 'weekly', '1.0', 'index.php'),
     $route('/products/phishsim/', 'PhishSim | Phishing Simulation | LiveIntel', 'monthly', '0.9', 'products/phishsim/index.php'),
     $route('/products/liveinsight/', 'LiveInsight | Phishing Analytics | LiveIntel', 'monthly', '0.9', 'products/liveinsight/index.php'),
+    $route('/products/agent/', 'LiveIntel Agent | Technical Product Overview', 'monthly', '0.8', 'products/agent/index.php'),
     $route('/tools/', 'Free Security Tools | LiveIntel', 'monthly', '0.8', 'tools/index.php'),
     $route('/products/passmeter/', 'PassMeter | Free Password Strength Checker | LiveIntel', 'monthly', '0.8', 'products/passmeter/index.php'),
     $route('/products/passforge/', 'PassForge | Free Password Generator | LiveIntel', 'monthly', '0.8', 'products/passforge/index.php'),

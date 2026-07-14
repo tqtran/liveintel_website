@@ -22,6 +22,7 @@
           <li><a href="<?php echo $basePath; ?>getting-started">Getting Started</a></li>
           <li><a href="<?php echo $basePath; ?>products/phishsim/">Campaign simulation</a></li>
           <li><a href="<?php echo $basePath; ?>products/liveinsight/">Behavior analytics</a></li>
+          <li><a href="<?php echo $basePath; ?>products/agent/">Agent technical overview</a></li>
         </ul>
       </nav>
       <nav aria-label="Tools footer links">
@@ -47,7 +48,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <?php echo date('Y'); ?> LiveIntel. All rights reserved.</p>
-      <p>Built for practical phishing defense.</p>
+      <p>Visibility without surveillance.</p>
     </div>
   </div>
 </footer>
